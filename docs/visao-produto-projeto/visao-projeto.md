@@ -2,7 +2,7 @@
 
 |    Data    | Versão |              Descrição              |  Autor(es)  |
 | :--------: | :----: | :---------------------------------: | :---------: |
-| 24/09/2023 |  0.1   | Criação e estruturação do documento | Luan Mateus |
+| 26/09/2023 |  0.2   | Alteração da tabela de Planejamento das Fases e/ou Iterações do Projeto e da Matriz de Comunicação | Pedro Sampaio |
 
 ## Organização do projeto
 
@@ -17,21 +17,26 @@
 
 ## Planejamento das Fases e/ou Iterações do Projeto
 
-| Sprint | Produto (Entrega)                                                                                                                                         | Data Início | Data fim   |
+| Fase | Produto (Entrega)                                                                                                                                           | Data Início | Data fim   |
 | :----: | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ---------- |
-|   1    | Definição do produto;<br>Definição do Problema;<br>Início do GitPages;<br>Definição da Metodologia;<br>Definição dos Processos de ER, MVP e Planejamento. | 05/09/2023  | 19/09/2023 |
-|   2    | Elaboração da Visão de Produto e Projeto;                                                                                                                 | 20/09/2023  | 04/10/2023 |
+|   1    | Definição do Produto e Metodologia                                                                                                                        | 05/09/2023  | 14/09/2023 |
+|   2    | Definição dos Processos de Engenharia de Requisitos                                                                                                       | 15/09/2023  | 19/09/2023 |
+|   3    | Documentação da Visão do Produto e Projeto                                                                                                                | 20/09/2023  | 28/09/2023 |
+|   4    | Definição do backlog do produto                                                                                                                           | 03/10/2023  | 12/10/2023 |
+|   5    | Definição do MVP e Arquitetura do Projeto                                                                                                                 | 17/10/2023  | 26/10/2023 |
+|   6    | Desenvolvimento do MVP do projeto                                                                                                                         | 31/10/2023  | 21/11/2023 |
+|   7    | Validação, entrega e deploy do projeto                                                                                                                    | 28/11/2023  | 14/12/2023 |
 
 
 ## Matriz de Comunicação
 
 | Descrição            | Área/Envolvidos                         | Periodicidade | Produtos Gerados                                                                                   |
 | -------------------- | --------------------------------------- | ------------- | -------------------------------------------------------------------------------------------------- |
-| Sprint Planning      | Equipe do Projeto                       | Quinzenal     | Backlog da sprint                                                                                  |
-| Sprint Review        | Equipe do Projeto                       | Quinzenal     | Revisão dos resultados da sprint atual                                                             |
-| Sprint Retrospective | Equipe do Projeto                       | Quinzenal     | Documentação de melhorias e lições aprendidas, prezando sempre pelo feedback                       |
-| Daily Scrum          | Equipe do Projeto                       | Diária        | Revisão de progresso da sprint                                                                     |
-| Situação do Projeto  | Equipe do Projeto,<br> George Marsicano | Semanal       | Comunicação de situação atual do projeto para o professor e atualização da documentação do projeto |
+| **Sprint Planning** - Distribuição de atividades (issues) para os membros da equipe. Definição das entregas a serem feitas | Equipe do Projeto                       | Quinzenal     | Backlog da sprint                                                                                  |
+| **Sprint Review** - Reunião de validação das atividades entregues e ata sobre os pontos de melhorias                       | Equipe do Projeto                       | Quinzenal     | Revisão dos resultados da sprint atual                                                             |
+| **Sprint Retrospective** - Levantamento de pontos de melhoria da sprint                                                    | Equipe do Projeto                       | Quinzenal     | Documentação de melhorias e lições aprendidas, prezando sempre pelo feedback                       |
+| **Daily Scrum**  - Conversa informal sobre o andamento das atividades                                                      | Equipe do Projeto                       | Diária        | Revisão de progresso da sprint                                                                     |
+| **Situação do Projeto**                                                                                                    | Equipe do Projeto,<br> George Marsicano | Semanal       | Comunicação de situação atual do projeto para o professor e atualização da documentação do projeto |
 
 ## Gerenciamento de Riscos
 
