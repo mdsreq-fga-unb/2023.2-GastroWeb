@@ -4,6 +4,12 @@
 | :--------: | :----: | :---------------------------------: | :---------: |
 | 26/09/2023 |  0.1   | Criação e estruturação do documento | Luan Mateus |
 
+
+<div style="text-align: center; margin: 3px">
+<img src="https://raw.githubusercontent.com/mdsreq-fga-unb/2023.2-GastroWeb/GitPages/docs/images/escamadepeixe.png" alt="Emblema Bardo" style="width: 15rem">
+</div>
+
+
 ## Declaração Geral do Produto
 
 <p style="text-indent: 50px;text-align: justify;">Nossa cliente, uma graduada na área de Gastronomia, enfrenta uma série de desafios ao utilizar a plataforma atual para compartilhar suas receitas e experiências culinárias. O principal obstáculo reside na formatação das receitas no Instagram, onde as restrições, incluindo limitações de caracteres, exercem um impacto significativo. Essas limitações não apenas restringem sua liberdade criativa ao compartilhar receitas, tornando a inclusão de informações cruciais, como porções, tempo de preparo e variações, uma tarefa árdua ou mesmo impossível, mas também demandam que ela divida suas instruções em múltiplos comentários em uma única postagem para esclarecer as receitas. Além disso, frequentemente ela se vê compelida a responder a perguntas semelhantes nos comentários ou a repetir informações em diferentes postagens.
