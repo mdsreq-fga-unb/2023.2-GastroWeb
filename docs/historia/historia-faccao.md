@@ -10,7 +10,7 @@
 
 ## Personagens
 
-- Líder - Tahiry (Felipe D.)
+- Líder - Tahiry (Felipe Direito)
 
 <p style="text-indent: 50px;text-align: justify;">O primeiro membro e o mais velho do clã, Tahiry, se viu obrigado a organizar um grupo armado, a facção Tanás, após perder seus dois filhos e ter o seu planeta dizimado em uma guerra contra o Grupo Apache. Em sua jornada, encontrou dois irmãos gêmeos ainda jovens e perdidos no planeta Skree e se viu na obrigação de ajudá-los a sobreviver. Até hoje o seu passado é um segredo para os demais membros da Facção, apesar da suspeita gerada pelo afeto que tem com os gêmeos.
 </p>
@@ -25,7 +25,7 @@
 <p style="text-indent: 50px;text-align: justify;">Fitiavana, o irmão mais novo dos gêmeos era diferente de seu irmão, apesar de não terem uma estrutura familiar e serem sozinhos no universo, Fitiavana construiu muitas habilidades sociais que o permitiram influenciar pessoas e ganhar sua confiança. Como um bom caçador e bem articulado, Fitiavana conseguia as missões mais lucrativas e com esse dinheiro ele podia investir em seus armamentos e projetos tecnológicos, (tecnologia e poder bélico sempre foram sua ambição), porém, sempre se preocupando com o bem comum.
 </p>
 
-- Ex Escravo - Mandresy (Felipe H.)
+- Ex Escravo - Mandresy (Felipe Hansen)
 
 <p style="text-indent: 50px;text-align: justify;">Foi escravizado durante a ocupação do planeta Gartus ainda quando era novo e passou 10 anos trabalhando como cobaia dos guerreiros apaches nas ocupações dos outros planetas. Durante a ocupação de Skree, auxiliado por Rano e conseguiu fugir e se libertar na saída das tropas do planeta, 15 anos atrás. Desde então motivado a se vingar e acreditando que possui uma dívida de vida com Rano passou a segui-lo.
 </p>
@@ -35,7 +35,7 @@
 <p style="text-indent: 50px;text-align: justify;">Rano, um cientista talentoso nos ramos de engenharia e tecnologias avançadas, teve uma carreira promissora antes de ser cooptado pelo conglomerado. Seu conflito interno se intensificou ao testemunhar os experimentos cruéis da organização, usando suas próprias descobertas científicas para fins nefastos. Em segredo, ele se aliou a Mandresy, usando seu acesso privilegiado para sabotar as operações internas e garantir o sucesso da fuga.
 </p>
 
-- Caçador de Recompensas - Hen (Matheus)
+- Caçador de Recompensas - Hen (Matheus Henrique)
 
 <p style="text-indent: 50px;text-align: justify;">Hen é um caçador de recompensas errante que vaga de planeta em planeta em buscando acabar com as atividades da Spark Tech, seu principal desafeto. Apesar de sempre viajar sozinho, ele se juntou ao grupo, mas pouco fala sobre suas motivações ou seu passado. Amargurado, ele custa a confiar em Rano, por este já ter trabalhado com a Spark Tech.
 </p>
@@ -67,3 +67,10 @@ Com interesses em comum, decidiram se unir ao Tahiry na Facção Tanás.
     <p style="font-weight: bold">Ghia</p>
   </div>
 </div>
+
+
+## Medalhas da Facção
+
+- Emblema Bardo Intergaláctico: A equipe ganhou a votação de melhor história e, com isso, conquistou esse emblema com muita honra!
+
+![Emblema](https://github.com/mdsreq-fga-unb/2023.2-GastroWeb/blob/GitPages/docs/images/emblema1.png)
