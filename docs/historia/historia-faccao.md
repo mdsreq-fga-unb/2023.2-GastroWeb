@@ -73,4 +73,7 @@ Com interesses em comum, decidiram se unir ao Tahiry na Facção Tanás.
 
 - Emblema Bardo Intergaláctico: A equipe ganhou a votação de melhor história e, com isso, conquistou esse emblema com muita honra!
 
-![Emblema](https://github.com/mdsreq-fga-unb/2023.2-GastroWeb/blob/GitPages/docs/images/emblema1.png)
+
+<div style="display: inline-block; text-align: center; margin: 3px">
+    <img src="https://raw.githubusercontent.com/mdsreq-fga-unb/2023.2-GastroWeb/GitPages/docs/images/emblema1.png" alt="Emblema Bardo" style="width: 15rem">
+  </div>
