@@ -6,7 +6,7 @@
 
 
 <div style="text-align: center; margin: 3px">
-<img src="https://raw.githubusercontent.com/mdsreq-fga-unb/2023.2-GastroWeb/GitPages/docs/images/escamadepeixe.png" alt="Emblema Bardo" style="width: 15rem">
+<img src="https://raw.githubusercontent.com/mdsreq-fga-unb/2023.2-GastroWeb/GitPages/docs/images/escamadepeixe.png" alt="Diagrama de Ishikawa" style="width: 50rem">
 </div>
 
 
