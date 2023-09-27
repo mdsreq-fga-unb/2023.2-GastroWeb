@@ -2,6 +2,7 @@
 
 |    Data    | Versão |              Descrição              |  Autor(es)  |
 | :--------: | :----: | :---------------------------------: | :---------: |
+| 24/09/2023 |  0.1   | Criação e estruturação do documento | Luan Mateus |
 | 26/09/2023 |  0.2   | Alteração da tabela de Planejamento das Fases e/ou Iterações do Projeto e da Matriz de Comunicação | Pedro Sampaio |
 
 ## Organização do projeto
