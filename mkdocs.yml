@@ -2,6 +2,7 @@ site_name: GastroWeb
 
 nav:
   - Home: index.md
+  - História da Facção: historia/historia-faccao.md
   - Visão do produto e projeto:
       - Visão geral do produto: visao-produto-projeto/visao-produto.md
       - Visão geral do projeto: visao-produto-projeto/visao-projeto.md
