@@ -6,7 +6,10 @@
 
 ## Metodologia
 
-<p style="text-indent: 50px;text-align: justify;"> O nosso projeto é primordialmente ágil, com ciclo de vida iterativo incremental e utilizando o Scrum/XP para a execução, entretanto, podemos olhar para o projeto por 2 óticas distintas, a ótica da disciplina de Requisitos e a ótica da cliente real. Nesse sentido, para a disciplina, nosso projeto se torna “híbrido”, adotando uma faceta contratual no início, uma vez que estaremos obedecendo ao plano de ensino da matéria, com prazos bem definidos e com um foco bem maior na elaboração e refinamento dos requisitos levando em consideração que até a Missão 3, ainda nem estaríamos desenvolvendo nada. Nesse sentido, temos também a ótica da cliente, e de como o projeto de fato está sendo desenvolvido, baseado na abordagem ágil e adotando a faceta participativa, onde o início do desenvolvimento pode ser iniciado após a elaboração do Backlog, com requisitos minimamente estáveis.
+<p style="text-indent: 50px;text-align: justify;"> A abordagem que escolhemos para o nosso projeto é a abordagem ágil, com ciclo de vida iterativo incremental e utilizando o Scrum/XP para a execução do projeto. Optamos por essa configuração nos baseando no tamanho da nossa equipe, no prazo que foi estabelecido e também pela "informalidade" do projeto, uma vez que não é um projeto com altos risco e nem precisa ser tão documentado, nesse sentido, o Backlog como documentação de requisitos e a dinâmica iterativa das sprints darão um ritmo adequado para o desenvolvimento. 
+</p>
+
+<p style="text-indent: 50px;text-align: justify;"> Ao analisarmos as facetas do processo de ER, identificamos que a faceta mais adequada seria a do processo Participativo sendo ele iterativo e exploratório que se destaca pela estreita colaboração com um cliente específico ao longo de todo o ciclo de desenvolvimento. Esse método promove a exploração contínua das necessidades e expectativas do cliente, resultando em um software altamente adaptado às suas demandas específicas, devido ao surgimento de novos requisitos ao longo do projeto e com cliente definido, não voltado ao mercado.
 </p>
 
 Todas as atividades de Engenharia de Requisitos são realizadas durante a execução do Projeto:
@@ -20,11 +23,11 @@ Todas as atividades de Engenharia de Requisitos são realizadas durante a execu�
 
 Como pretendemos aplicar cada uma delas:
 
-|    Atividade    | Método |                     Ferramenta                      |                                Entrega                                 |
-| :--------: | :----: | :------------------------------------------------: | :----------------------------------------------------------------------: |
-| Elicitação e Descoberta |  Entrevista, Brainstorming e Benchmarking (comparando com produtos similares)  |        Discord ou outra plataforma de vídeo chamadas e o Google Docs (para anotar o que está sendo declarado)         | Ideias dos possíveis requisitos em um arquivo texto e audiovisual caso a reunião seja gravada. |
-| Análise e Consenso |  Revisão por pares e Feedback dos Stakeholders   |        Discord e Google docs         | Lista refinada com o “esqueleto” dos requisitos contendo Título e uma breve descrição de cada um |
-| Declaração |  Textual   |        Google Docs  | Lista com os os requisitos encontrados |
-| Representação |  Mapas mentais, Wireframes e talvez alguns diagramas de casos de uso   |        Miro, Papel e draw.io         | Representações gráficas dos requisitos |
-| Verificação e Validação |  Rastreamento dos requisitos, prototipagem e testes (aceitação, sistema, unitários, end to end..)   |        Matriz de rastreabilidade (Com auxílio do Google Sheets), Figma e o próprio VS Code         | Aprovação ou não de algum requisito, e o Feedback do que precisa ser evoluído |
-| Organização e Atualização |  Product Backlog e User Story Mapping   |        Google Docs e Miro         | Backlog (sempre atualizado) e o mapa de histórias |
+|    Atividade    | Método |                     Ferramenta                      |                                Entrega                                 | Cerimônia Scrum |
+| :--------: | :----: | :------------------------------------------------: | :----------------------------------------------------------------------: | :--------------------: |
+| Elicitação e Descoberta |  Entrevista, Brainstorming e Benchmarking (comparando com produtos similares)  |        Discord ou outra plataforma de vídeo chamadas e o Google Docs (para anotar o que está sendo declarado)         | Ideias dos possíveis requisitos em um arquivo texto e audiovisual caso a reunião seja gravada. | No desenvolvimento do Backlog e (talvez) na Review, caso a cliente traga algum requisito ao decorrer do projeto |
+| Análise e Consenso |  Revisão por pares e Feedback dos Stakeholders   |        Discord e Google docs         | Lista refinada com o “esqueleto” dos requisitos contendo Título e uma breve descrição de cada um | Também está presente na elaboração do Backlog e na Planning |
+| Declaração |  Textual   |        Google Docs  | Lista com os os requisitos encontrados | No desenvolvimento do Backlog e na Review (caso apareçam novos requisitos) | 
+| Representação |  Mapas mentais, Wireframes e talvez alguns diagramas de casos de uso   |        Miro, Papel e draw.io         | Representações gráficas dos requisitos | Está presente nas Reviews, para que a visualização do que está sendo feito seja mais clara, tanto para o time de desenvolvimento quanto para o cliente |
+| Verificação e Validação |  Rastreamento dos requisitos, prototipagem e testes (aceitação, sistema, unitários, end to end..)   |        Matriz de rastreabilidade (Com auxílio do Google Sheets), Figma e o próprio VS Code         | Aprovação ou não de algum requisito, e o Feedback do que precisa ser evoluído | Review e na Retrospectiva |
+| Organização e Atualização |  Product Backlog e User Story Mapping   |        Google Docs e Miro         | Backlog (sempre atualizado) e o mapa de histórias | Está presente no desenvolvimento do Backlog e nas Plannings |
