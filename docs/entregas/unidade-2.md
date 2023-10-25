@@ -137,7 +137,7 @@ Após a pontuação dos requisitos, foram definidas as categorias de cada um dos
 - **Could Have**: Requisitos com pontuação menor que 15 e valor de negócio maior ou igual a 8.
 - **Won't Have**: Requisitos com pontuação menor ou igual a 13.
 
-## MVP1
+#### MVP1
 
 | Id | Descrição |
 | --- | --- |
@@ -154,7 +154,7 @@ Após a pontuação dos requisitos, foram definidas as categorias de cada um dos
 | US06 | Eu, como administrador, desejo inserir tags nas receitas, para definir quais ingredientes tal prato possui. |
 | US09 | Eu, como usuário, desejo filtrar receitas por tags, para encontrar os pratos de meu interesse mais eficientemente. |
 
-## MVP2
+#### MVP2
 
 | Id | Descrição |
 | --- | --- |
@@ -172,3 +172,9 @@ Após a pontuação dos requisitos, foram definidas as categorias de cada um dos
 | US15 | Eu, como administrador, desejo editar meus tópicos no fórum para manter a corretude do conteúdo. |
 | US17 | Eu, como usuário, desejo excluir meus tópicos no fórum para deletar aquele tópico não mais pertinente. |
 | US11 | Eu, como usuário, desejo excluir receitas do meu livro de favoritos, para retirar aquelas receitas que não são mais desejadas |
+
+
+
+### Planilha do Backlog
+
+![Planilh Backlog](https://github.com/mdsreq-fga-unb/2023.2-GastroWeb/blob/GitPages/docs/images/PlanilhaBacklog.png?raw=true)
