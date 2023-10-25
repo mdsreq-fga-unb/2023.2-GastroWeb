@@ -3,6 +3,61 @@
 |    Data    | Versão |                     Descrição                      |                                Autor(es)                                 |
 | :--------: | :----: | :------------------------------------------------: | :----------------------------------------------------------------------: |
 | 26/09/2023 |  0.1   |        Criação e estruturação do documento         | Felipe Direito, </br> Luan Mateus |
+| 24/10/2023 |  0.2   |        Atualização de Metodologia         | Luan Mateus |
+
+## GUPTA
+
+<p style="text-indent: 50px;text-align: justify;"> O Gupta (2008)¹ propõe que a definição da abordagem de desenvolvimento de software ideal deve ser baseada em uma série de critérios fundamentais. Esses critérios incluem as necessidades e requisitos específicos do projeto, o ambiente e a cultura organizacional em que o projeto será executado, o tamanho e a complexidade do projeto, os riscos envolvidos, o orçamento disponível e o prazo para a conclusão do projeto.
+</p>
+
+### Características dos Requisitos
+
+| Requisitos | Cascata | Prototipação | Iterativo e Incremental | Evolutivo | Spiral | RAD |
+| --- | --- | --- | --- | --- | --- | --- |
+| Os requisitos são facilmente compreensíveis e definidos? (NÃO) | Sim | Não | Não | Não | Não | Sim |
+| Mudamos os requisitos com bastante frequência? (SIM) | Sim | Não | Sim | Sim | Não | Sim |
+| Podemos mudar os requisitos no início do ciclo? (SIM) | Sim | Não | Sim | Sim | Não | Sim |
+| Os requisitos indicam um sistema complexo a ser construído? (NÃO) | Sim | Não | Não | Não | Não | Sim |
+
+### Status da Equipe de Desenvolvimento
+
+| Requisitos | Cascata | Prototipação | Iterativo e Incremental | Evolutivo | Spiral | RAD |
+| --- | --- | --- | --- | --- | --- | --- |
+| Menos experiência em projetos similares(NÃO) | Não | Sim | Não | Não | Sim | Não |
+| Menos conhecimento de domínio (novidade na tecnologia) (NÃO) | Não | Sim | Não | Não | Não | Sim |
+| Menos experiência nas ferramentas a serem utilizadas (NÃO) | Não | Sim | Sim | Sim | Não | Sim |
+| Disponibilidade de treinamento, se necessário(SIM) | Não | Não | Sim | Sim | Não | Sim |
+
+### Envolvimento do Usuário
+
+| Requisitos | Cascata | Prototipação | Iterativo e Incremental | Evolutivo | Spiral | RAD |
+| --- | --- | --- | --- | --- | --- | --- |
+| Envolvimento do usuário em todas as fases (SIM) | Sim | Não | Sim | Sim | Sim | Não |
+| Participação limitada do usuário(NÃO) | Sim | Não | Sim | Sim | Sim | Não |
+| O usuário não tem experiência prévia de participação em projeto semelhante(SIM) | Não | Sim | Sim | Sim | Sim | Não |
+| Os usuários são especialistas no domínio do problema (NÃO) | Sim | Não | Não | Sim | Sim | Não |
+
+### Tipo de Projeto e Risco Associado
+
+| Requisitos | Cascata | Prototipação | Iterativo e Incremental | Evolutivo | Spiral | RAD |
+| --- | --- | --- | --- | --- | --- | --- |
+| O projeto é aprimoramento do sistema existente (SIM) | Sim | Sim | Não | Não | Sim | Não |
+| O financiamento é estável para o projeto(SIM) | Sim | Sim | Não | Não | Não | Sim |
+| Altos requisitos de confiabilidade(SIM) | Não | Não | Sim | Sim | Sim | Não |
+| Cronograma do projeto apertado(SIM) | Não | Sim | Sim | Sim | Sim | Sim |
+| Uso de componentes reutilizáveis(NÃO) | Sim | Não | Sim | Sim | Não | Não |
+| Os recursos (tempo, dinheiro, pessoas etc.) são escassos?(SIM) | Não | Sim | Não | Não | Sim | Não |
+
+### Conclusão
+
+- Cascata: 8
+- Prototipação: 10
+- **Iterativo e Incremental: 12**
+- Evolutivo: 11
+- Spiral: 11
+- RAD: 9
+
+<p style="text-indent: 50px;text-align: justify;"> Ao analisar cada uma das perguntas no contexto atual do projeto, obtivemos o resultado da metodologia Iterativo e Incremental. Essa é uma metodologia ágil e permite o desenvolvimento iterativo do software, com entregas incrementais ao longo do tempo. Ela se baseia na colaboração intensa entre a equipe de desenvolvimento e os stakeholders do projeto.</p>
 
 ## Metodologia
 
@@ -31,3 +86,7 @@ Como pretendemos aplicar cada uma delas:
 | Representação |  Mapas mentais, Wireframes e talvez alguns diagramas de casos de uso   |        Miro, Papel e draw.io         | Representações gráficas dos requisitos | Está presente nas Reviews, para que a visualização do que está sendo feito seja mais clara, tanto para o time de desenvolvimento quanto para o cliente |
 | Verificação e Validação |  Rastreamento dos requisitos, prototipagem e testes (aceitação, sistema, unitários, end to end..)   |        Matriz de rastreabilidade (Com auxílio do Google Sheets), Figma e o próprio VS Code         | Aprovação ou não de algum requisito, e o Feedback do que precisa ser evoluído | Review e na Retrospectiva |
 | Organização e Atualização |  Product Backlog e User Story Mapping   |        Google Docs e Miro         | Backlog (sempre atualizado) e o mapa de histórias | Está presente no desenvolvimento do Backlog e nas Plannings |
+
+## Referências Bibliográficas
+
+> ¹ GUPTA, S. Managing Iterative Software Development Projects. Auerbach Publications, 2008.</br>
