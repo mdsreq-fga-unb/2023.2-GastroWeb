@@ -59,7 +59,7 @@
 
 <p style="text-indent: 50px;text-align: justify;"> Ao analisar cada uma das perguntas no contexto atual do projeto, obtivemos o resultado da metodologia Iterativo e Incremental. Essa é uma metodologia ágil e permite o desenvolvimento iterativo do software, com entregas incrementais ao longo do tempo. Ela se baseia na colaboração intensa entre a equipe de desenvolvimento e os stakeholders do projeto.</p>
 
-## Metodologia
+## Engenharia de Requisitos
 
 <p style="text-indent: 50px;text-align: justify;"> A abordagem que escolhemos para o nosso projeto é a abordagem ágil, com ciclo de vida iterativo incremental e utilizando o Scrum/XP para a execução do projeto. Optamos por essa configuração nos baseando no tamanho da nossa equipe, no prazo que foi estabelecido e também pela "informalidade" do projeto, uma vez que não é um projeto com altos risco e nem precisa ser tão documentado, nesse sentido, o Backlog como documentação de requisitos e a dinâmica iterativa das sprints darão um ritmo adequado para o desenvolvimento. 
 </p>
@@ -83,7 +83,7 @@ Como pretendemos aplicar cada uma delas:
 | Elicitação e Descoberta |  Entrevista, Brainstorming e Benchmarking (comparando com produtos similares)  |        Discord ou outra plataforma de vídeo chamadas e o Google Docs (para anotar o que está sendo declarado)         | Ideias dos possíveis requisitos em um arquivo texto e audiovisual caso a reunião seja gravada. |Ao decorrer de todo o desenvolvimento do projeto|
 | Análise e Consenso |  Negocioação  |        Discord ou outra plataforma de vídeo chamadas         | Não há uma entrega específica | Também está presente na elaboração/atualização do Backlog, Planning e na Review(quando necessário) |
 | Declaração |  Histórias de Usuário   |      Google Docs e Excel  | Lista com os os requisitos funcionais e não funcionais | No desenvolvimento do Backlog e na Review (caso apareçam novos requisitos) | 
-| Representação |  Mapas mentais, Wireframes e talvez alguns diagramas de casos de uso   |        Miro, Papel e draw.io         | Representações gráficas dos requisitos | Está presente nas Reviews, para que a visualização do que está sendo feito seja mais clara, tanto para o time de desenvolvimento quanto para o cliente |
+| Representação |  Mapas mentais, Wireframes e talvez alguns diagramas de casos de uso   |        Miro, Papel e draw.io         | Representações gráficas dos requisitos | Está presente na execução da Sprint, a fim de que os resultados sejam apresentados na cerimônia de Review tanto para a equipe de desenvolvimento quanto para o cliente. |
 | Verificação e Validação |  Análise da estrutura das US's, Revisão por pares utilizando Checklist   |        Google Sheets e Google Docs         | Lista com o que precisa ser alterado | Planning, Execução da Sprint e Review |
 | Organização e Atualização |  Product Backlog   |        Google Sheets         | Backlog (sempre atualizado) | Está presente no desenvolvimento do Backlog e nas Plannings |
 

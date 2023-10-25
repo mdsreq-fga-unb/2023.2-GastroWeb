@@ -190,5 +190,5 @@ De acordo com as definições dos objetivos, alinhamos as features do nosso back
 | --- | --- |
 |Facilitar a Criação de Conteúdo	| Publicar Receita|
 |Facilitar o Compartilhamento de Receitas|	Compartilhar Publicações|
-|Ampliar o Alcance e a Divulgação|	Cria Usuário|
+|Ampliar o Alcance e a Divulgação|	Criar Usuário|
 |Administração do Armazenamento das Receitas|	Gestão de Salvos|
