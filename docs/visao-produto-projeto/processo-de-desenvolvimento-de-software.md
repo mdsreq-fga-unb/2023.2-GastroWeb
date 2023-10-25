@@ -69,7 +69,7 @@
 
 Todas as atividades de Engenharia de Requisitos são realizadas durante a execução do Projeto:
 
-- **Elicitação e Descoberta**: Essa atividade é realizada logo no início do projeto, para levantar os requisitos, ajudar no entendimento do problema, identificar necessidades e possíveis soluções. (Ela deve ser realizada durante o andamento do projeto, caso seja necessário a inclusão de novos requisitos funcionais ou não funcionais)
+- **Elicitação e Descoberta**: Essa atividade tem um foco logo no início do projeto para levantar os primeiros requisitos, ajudar no entendimento do problema e identificar necessidades e possíveis soluções. Entretanto, ela deve ocorrer espontâneamente ao longo de todo o ciclo de vida do produto.
 - **Análise e Consenso**: Essa atividade é feita posteriormente ao levantamento inicial, com o objetivo de decidir se os requisitos estão alinhados com os objetivos do projeto, e identificar conflitos entre as parte interessadas.
 - **Declaração**: Ela é executada juntamente com a atividade de Elicitação e Descoberta, a fim de comunicar os requisitos que estão sendo levantados.
 - **Representação**: Para esse projeto, o tipo de representação será na sua grande maioria informal, e será desenvolvida ao decorrer das sprints.
@@ -80,9 +80,9 @@ Como pretendemos aplicar cada uma delas:
 
 |    Atividade    | Método |                     Ferramenta                      |                                Entrega                                 | Cerimônia Scrum |
 | :--------: | :----: | :------------------------------------------------: | :----------------------------------------------------------------------: | :--------------------: |
-| Elicitação e Descoberta |  Entrevista, Brainstorming e Benchmarking (comparando com produtos similares)  |        Discord ou outra plataforma de vídeo chamadas e o Google Docs (para anotar o que está sendo declarado)         | Ideias dos possíveis requisitos em um arquivo texto e audiovisual caso a reunião seja gravada. | No desenvolvimento do Backlog e (talvez) na Review, caso a cliente traga algum requisito ao decorrer do projeto |
+| Elicitação e Descoberta |  Entrevista, Brainstorming e Benchmarking (comparando com produtos similares)  |        Discord ou outra plataforma de vídeo chamadas e o Google Docs (para anotar o que está sendo declarado)         | Ideias dos possíveis requisitos em um arquivo texto e audiovisual caso a reunião seja gravada. |Ao decorrer de todo o desenvolvimento do projeto|
 | Análise e Consenso |  Revisão por pares e Feedback dos Stakeholders   |        Discord e Google docs         | Lista refinada com o “esqueleto” dos requisitos contendo Título e uma breve descrição de cada um | Também está presente na elaboração do Backlog e na Planning |
-| Declaração |  Textual   |        Google Docs  | Lista com os os requisitos encontrados | No desenvolvimento do Backlog e na Review (caso apareçam novos requisitos) | 
+| Declaração |  Histórias de Usuário   |      Google Docs e Excel  | Lista com os os requisitos funcionais e não funcionais | No desenvolvimento do Backlog e na Review (caso apareçam novos requisitos) | 
 | Representação |  Mapas mentais, Wireframes e talvez alguns diagramas de casos de uso   |        Miro, Papel e draw.io         | Representações gráficas dos requisitos | Está presente nas Reviews, para que a visualização do que está sendo feito seja mais clara, tanto para o time de desenvolvimento quanto para o cliente |
 | Verificação e Validação |  Análise da estrutura das US's, Revisão por pares utilizando Checklist   |        Google Sheets e Google Docs         | Lista com o que precisa ser alterado | Planning, Execução da Sprint e Review |
 | Organização e Atualização |  Product Backlog e User Story Mapping   |        Google Docs e Miro         | Backlog (sempre atualizado) e o mapa de histórias | Está presente no desenvolvimento do Backlog e nas Plannings |
