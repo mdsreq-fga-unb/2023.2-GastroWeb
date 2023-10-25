@@ -35,10 +35,10 @@
 | Descrição            | Área/Envolvidos                         | Periodicidade | Produtos Gerados                                                                                   |
 | -------------------- | --------------------------------------- | ------------- | -------------------------------------------------------------------------------------------------- |
 | **Sprint Planning** - Distribuição de atividades (issues) para os membros da equipe. Definição das entregas a serem feitas | Equipe do Projeto                       | Quinzenal     | Backlog da sprint                                                                                  |
-| **Sprint Review** - Reunião de validação das atividades entregues e ata sobre os pontos de melhorias                       | Equipe do Projeto                       | Quinzenal     | Revisão dos resultados da sprint atual                                                             |
-| **Sprint Retrospective** - Levantamento de pontos de melhoria da sprint                                                    | Equipe do Projeto                       | Quinzenal     | Documentação de melhorias e lições aprendidas, prezando sempre pelo feedback                       |
-| **Daily Scrum**  - Conversa informal sobre o andamento das atividades                                                      | Equipe do Projeto                       | Diária        | Revisão de progresso da sprint                                                                     |
-| **Situação do Projeto**                                                                                                    | Equipe do Projeto,<br> George Marsicano | Semanal       | Comunicação de situação atual do projeto para o professor e atualização da documentação do projeto |
+| **Sprint Review** - Reunião de validação das atividades entregues                                                          | Equipe do Projeto, Cliente              | Quinzenal     | Feedback da cliente, incremento do produto, backlog do produto atualizado                          |
+| **Sprint Retrospective** - Levantamento de pontos de melhoria da sprint                                                    | Equipe do Projeto                       | Quinzenal     | Melhorias e lições aprendidas                                                                      |
+| **Daily Scrum**  - Conversa informal sobre o andamento das atividades                                                      | Equipe do Projeto                       | Diária        | Resumo da reunião                                                                                  |
+| **Situação do Projeto**                                                                                                    | Equipe do Projeto,<br> George Marsicano | Semanal       | Feedback do Comando Estelar |
 
 ## Gerenciamento de Riscos
 
