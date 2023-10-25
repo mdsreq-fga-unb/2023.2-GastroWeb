@@ -84,7 +84,7 @@ Como pretendemos aplicar cada uma delas:
 | Análise e Consenso |  Revisão por pares e Feedback dos Stakeholders   |        Discord e Google docs         | Lista refinada com o “esqueleto” dos requisitos contendo Título e uma breve descrição de cada um | Também está presente na elaboração do Backlog e na Planning |
 | Declaração |  Textual   |        Google Docs  | Lista com os os requisitos encontrados | No desenvolvimento do Backlog e na Review (caso apareçam novos requisitos) | 
 | Representação |  Mapas mentais, Wireframes e talvez alguns diagramas de casos de uso   |        Miro, Papel e draw.io         | Representações gráficas dos requisitos | Está presente nas Reviews, para que a visualização do que está sendo feito seja mais clara, tanto para o time de desenvolvimento quanto para o cliente |
-| Verificação e Validação |  Rastreamento dos requisitos, prototipagem e testes (aceitação, sistema, unitários, end to end..)   |        Matriz de rastreabilidade (Com auxílio do Google Sheets), Figma e o próprio VS Code         | Aprovação ou não de algum requisito, e o Feedback do que precisa ser evoluído | Review e na Retrospectiva |
+| Verificação e Validação |  Análise da estrutura das US's, Revisão por pares utilizando Checklist   |        Google Sheets e Google Docs         | Lista com o que precisa ser alterado | Planning, Execução da Sprint e Review |
 | Organização e Atualização |  Product Backlog e User Story Mapping   |        Google Docs e Miro         | Backlog (sempre atualizado) e o mapa de histórias | Está presente no desenvolvimento do Backlog e nas Plannings |
 
 ## Referências Bibliográficas
