@@ -18,15 +18,15 @@
 
 ## Planejamento das Fases e/ou Iterações do Projeto
 
-| Fase | Produto (Entrega)                                                                                                                                           | Data Início | Data fim   |
+| Sprint | Produto (Entrega)                                                                                                                                           | Data Início | Data fim   |
 | :----: | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ---------- |
-|   1    | Definição do Produto e Metodologia                                                                                                                        | 05/09/2023  | 14/09/2023 |
-|   2    | Definição dos Processos de Engenharia de Requisitos                                                                                                       | 15/09/2023  | 19/09/2023 |
-|   3    | Documentação da Visão do Produto e Projeto                                                                                                                | 20/09/2023  | 28/09/2023 |
-|   4    | Definição do backlog do produto                                                                                                                           | 03/10/2023  | 12/10/2023 |
-|   5    | Definição do MVP e Arquitetura do Projeto                                                                                                                 | 17/10/2023  | 26/10/2023 |
-|   6    | Desenvolvimento do MVP do projeto                                                                                                                         | 31/10/2023  | 21/11/2023 |
-|   7    | Validação, entrega e deploy do projeto                                                                                                                    | 28/11/2023  | 14/12/2023 |
+|   1    | Não há um documento específico, entretanto, nessa fase o grupo defini as metodologias e os processos de engenharia de requisitos que serão utilizados                                                                                                                   | 05/09/2023  | 18/09/2023 |
+|   2    | Visão do Produto e GitPages servindo assim de documentação com o que foi decidido na sprint anterior                                                                                                       | 19/09/2023  | 02/10/2023 |
+|   3    | Lista de Requisitos Funcionais e Não Funcionais                                                                                                                | 03/10/2023  | 16/10/2023 |
+|   4    | Backlog do projeto e MVP definido                                                                                                                           | 17/10/2023  | 30/10/2023 |
+|   5    | Produto com as US de (criar, editar, vizualizar e deletar receitas) finalizadas                                                                                                                 | 31/10/2023  | 13/11/2023 |
+|   6    | Produto com as US de (comentários, categorias, tags e publicações) finalizadas                                                                                                                         | 14/11/2023  | 27/11/2023 |
+|   7    | MVP do projeto                                                                                                                    | 28/11/2023  | 11/12/2023 |
 
 
 ## Matriz de Comunicação
