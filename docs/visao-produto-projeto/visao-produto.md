@@ -3,7 +3,7 @@
 |    Data    | Versão |              Descrição              |  Autor(es)  |
 | :--------: | :----: | :---------------------------------: | :---------: |
 | 26/09/2023 |  0.1   | Criação e estruturação do documento | Luan Mateus |
-
+| 25/10/2023 |  0.2   | Correção do documento               | Matheus Henrick |
 
 <div style="text-align: center; margin: 3px">
 <img src="https://raw.githubusercontent.com/mdsreq-fga-unb/2023.2-GastroWeb/GitPages/docs/images/escamadepeixe.png" alt="Diagrama de Ishikawa" style="width: 50rem">
@@ -39,17 +39,13 @@
 </p>
 
 
-- **Facilitar o Compartilhamento de Receitas Criativas**: Nosso produto se propõe a permitir que nossa cliente compartilhe suas receitas de forma criativa, eliminando as restrições de formatação impostas pelo Instagram. Queremos que nossa usuária possa incluir informações cruciais, como porções, tempo de preparo e variações, de maneira fácil e eficaz, sem a necessidade de dividir instruções em múltiplos comentários.
+- **Facilitar a Criação de Conteúdo**: Para cada nova receita, vamos aumentar o limite atual de 10 fotos e videos com duração de 60 segundos, que serão adicionados ao corpo do texto e não mais em formato de carrossel. Além disso, queremos que nossa cliente possa incluir informações cruciais, como porções, tempo de preparo e variações, de modo que ela não precise dividir as instruções em múltiplos comentários.
 
-- **Melhorar a Experiência de Visualização**: Vamos proporcionar uma experiência de visualização mais agradável e eficiente, permitindo a inserção de imagens ou vídeos entre os passos da receita, sem limitações quanto à quantidade máxima de fotos ou ao tamanho dos vídeos. Queremos eliminar a necessidade de rolar a tela repetidamente para alternar entre o texto e as imagens, tornando a compreensão e a conclusão das receitas mais intuitivas.
+- **Facilitar o Compartilhamento de Receitas**: Nosso produto se propõe a permitir que nossa cliente compartilhe suas receitas da maneira que ela achar mais conveniente, seja por meio de legendas nas imagens ou no formato de receita tradicional, sem as restrições de formatação do Instagram.
 
-- **Simplificar a Criação de Conteúdo**: Nosso produto oferecerá ferramentas intuitivas de construção de texto, tornando a criação de conteúdo de alta qualidade uma tarefa simples e eficaz.
+- **Ampliar o Alcance e a Divulgação**: Queremos que tanto nossa cliente, quanto os demais usuários que acessarão a plataforma tenham mais liberdade para acessar o conteúdo, sem precisar de uma conta no Instagram. Assim, poderemos alcançar tanto os usuários que usam o Instagram quanto os que não usam.
 
-- **Ampliar o Alcance e a Divulgação**: Vamos abolir a obrigatoriedade de possuir uma conta no Instagram como requisito para acessar o conteúdo, proporcionando uma maior expansão para além dessa plataforma. Nosso objetivo é empoderar nossa cliente, permitindo que ela escolha como deseja compartilhar suas receitas e reduzindo a dependência direta do algoritmo do Instagram. O Instagram será uma opção adicional, servindo como um trampolim para o nosso site, caso a cliente o considere relevante naquele momento.
-
-- **Favoritar e Receitas Imprimíveis**: Vamos fornecer recursos de favoritar receitas e a capacidade de gerar receitas imprimíveis, tornando o acesso e a organização de receitas mais convenientes para nossos usuários e facilitando o alcance do público-alvo desejado.
-
-- **Melhorar a Busca por Receitas**: Implementaremos uma funcionalidade eficaz de busca por receitas na plataforma, garantindo que os usuários encontrem resultados precisos e relevantes. Vamos garantir que as receitas sejam apresentadas de forma organizada e bem formatada, eliminando a frustração associada à busca por receitas específicas.
+- **Administração do Armazenamento das Receitas**: Um dos objetivos é melhorar a organização e a manutenibilidade das receitas. Ou seja, as receitas precisam ser editáveis, e devem poder ser categorizadas para auxiliar na administração delas no site.
 
 ## Tecnologias Utilizadas
 
