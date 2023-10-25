@@ -105,6 +105,7 @@ Segue abaixo a tabela completa de pontuação dos requisitos, ordenada da maior 
 | [FT03] | US07 | Eu, como usuário, desejo buscar receitas por nome para obtê-las rapidamente; | 10 | 3 | 3 | 16 |
 | [FT02] | US05 | Eu, como administrador, desejo inserir categorias nas receitas, para organizá-las em um catálogo. | 10 | 2 | 3 | 15 |
 | [FT02] | US06 | Eu, como administrador, desejo inserir tags nas receitas, para definir quais ingredientes tal prato possui. | 10 | 2 | 3 | 15 |
+| [FT03] | US08 | Eu, como usuário, desejo filtrar receitas por categorias, para encontrar os pratos de meu interesse mais eficientemente. | 10 | 2 | 3 | 15 |
 | [FT03] | US09 | Eu, como usuário, desejo filtrar receitas por tags, para encontrar os pratos de meu interesse mais eficientemente. | 10 | 3 | 3 | 15 |
 | [FT05] | US13 | Eu, como administrador, desejo criar uma publicação no fórum para compartilhar ideias quaisquer. | 9 | 3 | 3 | 15 |
 | [FT05] | US14 | Eu, como usuário, desejo criar uma publicação no fórum para interagir com outras pessoas sobre assuntos gastronômicos. | 9 | 3 | 3 | 15 |
@@ -114,7 +115,6 @@ Segue abaixo a tabela completa de pontuação dos requisitos, ordenada da maior 
 | [FT09] | US27 | Eu, como usuário, desejo poder editar minha conta de usuário para atualizar informações pessoais. | 8 | 3 | 4 | 15 |
 | [FT09] | US28 | Eu, como usuário, desejo fazer login na minha conta para acessar meu livro de receitas; | 8 | 3 | 4 | 15 |
 | [FT09] | US29 | Eu, como usuário, desejo excluir minha conta para apagar meus dados quando não quiser mais acessar o site. | 8 | 3 | 4 | 15 |
-| [FT03] | US08 | Eu, como usuário, desejo filtrar receitas por categorias, para encontrar os pratos de meu interesse mais eficientemente. | 10 | 2 | 3 | 15 |
 | [FT04] | US10 | Eu, como usuário, desejo adicionar receitas no meu livro de favoritos, para localizar minhas receitas preferidas. | 8 | 4 | 3 | 15 |
 | [FT05] | US18 | Eu, como usuário, desejo editar meus tópicos no fórum para corrigir o conteúdo. | 9 | 3 | 3 | 15 |
 | [FT05] | US15 | Eu, como administrador, desejo editar meus tópicos no fórum para manter a corretude do conteúdo. | 8 | 3 | 3 | 14 |
@@ -152,6 +152,7 @@ Após a pontuação dos requisitos, foram definidas as categorias de cada um dos
 | US07 | Eu, como usuário, desejo buscar receitas por nome para obtê-las rapidamente; |
 | US05 | Eu, como administrador, desejo inserir categorias nas receitas, para organizá-las em um catálogo. |
 | US06 | Eu, como administrador, desejo inserir tags nas receitas, para definir quais ingredientes tal prato possui. |
+| US08 | Eu, como usuário, desejo filtrar receitas por categorias, para encontrar os pratos de meu interesse mais eficientemente. |
 | US09 | Eu, como usuário, desejo filtrar receitas por tags, para encontrar os pratos de meu interesse mais eficientemente. |
 
 #### MVP2
