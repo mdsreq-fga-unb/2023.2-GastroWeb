@@ -69,11 +69,11 @@
 
 Todas as atividades de Engenharia de Requisitos são realizadas durante a execução do Projeto:
 
-- **Elicitação e Descoberta**: Essa atividade é realizada logo no início do projeto, para levantar os requisitos, na fase de elaboração do Backlog. (Ela pode ser realizada durante o andamento do projeto, caso seja necessário a inclusão de uma nova funcionalidade)
-- **Análise e Consenso**: Essa atividade é feita posteriormente ao levantamento inicial, com o objetivo de reafirmar os requisitos e fortalecer o entendimento do time Scrum e os Stakeholders sobre o projeto.
-- **Declaração**: Ela é executada juntamente com a atividade de Elicitação e Descoberta, a fim de registrar os requisitos que estão sendo levantados.
+- **Elicitação e Descoberta**: Essa atividade é realizada logo no início do projeto, para levantar os requisitos, ajudar no entendimento do problema, identificar necessidades e possíveis soluções. (Ela deve ser realizada durante o andamento do projeto, caso seja necessário a inclusão de novos requisitos funcionais ou não funcionais)
+- **Análise e Consenso**: Essa atividade é feita posteriormente ao levantamento inicial, com o objetivo de decidir se os requisitos estão alinhados com os objetivos do projeto, e identificar conflitos entre as parte interessadas.
+- **Declaração**: Ela é executada juntamente com a atividade de Elicitação e Descoberta, a fim de comunicar os requisitos que estão sendo levantados.
 - **Representação**: Para esse projeto, o tipo de representação será na sua grande maioria informal, e será desenvolvida ao decorrer das sprints.
-- **Verificação e Validação**: Essa atividade também será realizada a cada ciclo (sprint), mais especificamente na revisão da sprint. 
+- **Verificação e Validação**: Essa atividade também será realizada a cada ciclo (sprint), mais especificamente na planning, execução da sprint e na review.
 - **Organização e Atualização**: Essa atividade está presente durante todo o andamento do projeto, sendo uma atividade primordial no início(planning) da sprint, e no final(revisão) da mesma.
 
 Como pretendemos aplicar cada uma delas:
