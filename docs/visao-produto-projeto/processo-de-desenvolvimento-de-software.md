@@ -85,7 +85,7 @@ Como pretendemos aplicar cada uma delas:
 | Declaração |  Histórias de Usuário   |      Google Docs e Excel  | Lista com os os requisitos funcionais e não funcionais | No desenvolvimento do Backlog e na Review (caso apareçam novos requisitos) | 
 | Representação |  Mapas mentais, Wireframes e talvez alguns diagramas de casos de uso   |        Miro, Papel e draw.io         | Representações gráficas dos requisitos | Está presente nas Reviews, para que a visualização do que está sendo feito seja mais clara, tanto para o time de desenvolvimento quanto para o cliente |
 | Verificação e Validação |  Análise da estrutura das US's, Revisão por pares utilizando Checklist   |        Google Sheets e Google Docs         | Lista com o que precisa ser alterado | Planning, Execução da Sprint e Review |
-| Organização e Atualização |  Product Backlog e User Story Mapping   |        Google Docs e Miro         | Backlog (sempre atualizado) e o mapa de histórias | Está presente no desenvolvimento do Backlog e nas Plannings |
+| Organização e Atualização |  Product Backlog   |        Google Sheets         | Backlog (sempre atualizado) | Está presente no desenvolvimento do Backlog e nas Plannings |
 
 ## Referências Bibliográficas
 

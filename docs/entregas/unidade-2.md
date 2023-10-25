@@ -3,6 +3,7 @@
 |    Data    | Versão |                     Descrição                      |                                Autor(es)                                 |
 | :--------: | :----: | :------------------------------------------------: | :----------------------------------------------------------------------: |
 | 25/10/2023 |  0.1   |        Documentação da segunda entrega         | Felipe Direito |
+| 25/10/2023 |  0.2   |        Alinhamento Backlog com os objetivos         | Felipe Hansen |
 
 
 ## Backlog do Produto
@@ -179,3 +180,15 @@ Após a pontuação dos requisitos, foram definidas as categorias de cada um dos
 ### Planilha do Backlog
 
 ![Planilh Backlog](https://github.com/mdsreq-fga-unb/2023.2-GastroWeb/blob/GitPages/docs/images/PlanilhaBacklog.png?raw=true)
+
+### Alinhamento com os objetivos
+
+
+De acordo com as definições dos objetivos, alinhamos as features do nosso backlog com cada um dos objetivos do nosso projeto. Esse alinhamento resultou na tabela abaixo: 
+
+| Id | Descrição |
+| --- | --- |
+|Facilitar a Criação de Conteúdo	| Publicar Receita|
+|Facilitar o Compartilhamento de Receitas|	Compartilhar Publicações|
+|Ampliar o Alcance e a Divulgação|	Cria Usuário|
+|Administração do Armazenamento das Receitas|	Gestão de Salvos|
