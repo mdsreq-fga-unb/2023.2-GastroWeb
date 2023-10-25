@@ -1,19 +1,10 @@
-# 🍽️ GastroWeb - 2023/02
-Repositório de projeto da disciplina de REQ-T3.
+# <h1><b> <span style="color: #F3910A;">😊</span> Bem-vindo(a) ao **<span style="color: #970BC7;"> GastroWeb</span>**! </h1></b>
 
-<p align="center">
-<img src="http://img.shields.io/static/v1?label=STATUS&message=PROCESSING&color=GREEN&style=for-the-badge"/>
+<p style="text-indent: 50px;text-align: justify;">
+Documentação para projeto criado por estudantes da disciplina Requisitos de Software da Universidade de Brasília.
 </p>
 
-## 🌭 Introdução
-
-O projeto **"GastroWeb"** está em desenvolvimento pela equipe **"Tanás"** durante a disciplina **"Requisitos de Software"** no semestre 2023/2. O propósito do projeto consiste em criar uma aplicação web para postagem de receitas. 
-
-### 🥗 Documentação
-
-[Clique aqui](https://mdsreq-fga-unb.github.io/2023.2-GastroWeb/) para acessar a documentação do projeto. 
-
-## <h2><span style="color: #F3910A;">🍙</span> Membros da Facção </h2>
+## <h2><span style="color: #F3910A;">😎</span> Membros da Equipe </h2>
 
 <br/>
 <p align="center">
@@ -21,7 +12,7 @@ O projeto **"GastroWeb"** está em desenvolvimento pela equipe **"Tanás"** dura
 </p>
 <br/>
 
-<p style="text-indent: 50px;text-align: justify;">Estudantes da disciplina Requisitos de Software, Engenharia de Software, UnB. Saiba um pouco mais sobre nossa facção...</p>
+<p style="text-indent: 50px;text-align: justify;">Estudantes da disciplina Requisitos de Software, Engenharia de Software, UnB. Saiba um pouco mais sobre nosso time...</p>
 
 <div style="-webkit-display: flex;
        display: flex;
