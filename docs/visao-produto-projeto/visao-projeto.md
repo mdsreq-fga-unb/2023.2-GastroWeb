@@ -21,22 +21,22 @@
 
 | Sprint | Produto (Entrega)                                                                                                                                           | Data Início | Data fim   |
 | :----: | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ---------- |
-|   1    | Não há um documento específico, entretanto, nessa fase o grupo defini as metodologias e os processos de engenharia de requisitos que serão utilizados                                                                                                                   | 05/09/2023  | 18/09/2023 |
-|   2    | Visão do Produto e GitPages servindo assim de documentação com o que foi decidido na sprint anterior                                                                                                       | 19/09/2023  | 02/10/2023 |
-|   3    | Lista de Requisitos Funcionais e Não Funcionais                                                                                                                | 03/10/2023  | 16/10/2023 |
-|   4    | Backlog do projeto e MVP definido                                                                                                                           | 17/10/2023  | 30/10/2023 |
-|   5    | Produto com as US de (criar, editar, vizualizar e deletar receitas) finalizadas                                                                                                                 | 31/10/2023  | 13/11/2023 |
-|   6    | Produto com as US de (comentários, categorias, tags e publicações) finalizadas                                                                                                                         | 14/11/2023  | 27/11/2023 |
-|   7    | MVP do projeto                                                                                                                    | 28/11/2023  | 11/12/2023 |
+|   1    | Definição das metodologias e os processos de engenharia de requisitos que serão utilizados                                                                                                                   | 06/09/2023  | 20/09/2023 |
+|   2    | Visão do Produto e criação do GitPages                                                                                                        | 20/09/2023  | 04/10/2023 |
+|   3    | Lista de Requisitos Funcionais e Não Funcionais                                                                                                                | 04/10/2023  | 18/10/2023 |
+|   4    | Backlog do projeto e MVP definido                                                                                                                           | 18/10/2023  | 01/11/2023 |
+|   5    | Desenvolvimento das primeiras US's                                                                                                                 | 01/11/2023  | 15/11/2023 |
+|   6    | Finalização das US's classificadas como Must Have (MoSCow)                                                                                                                         | 15/11/2023  | 29/11/2023 |
+|   7    | Desenvolvimento da US's restantes e finalização do projeto                                                                                                     | 29/11/2023  | 13/12/2023 |
 
 
 ## Matriz de Comunicação
 
 | Descrição            | Área/Envolvidos                         | Periodicidade | Produtos Gerados                                                                                   |
 | -------------------- | --------------------------------------- | ------------- | -------------------------------------------------------------------------------------------------- |
-| **Sprint Planning** - Distribuição de atividades (issues) para os membros da equipe. Definição das entregas a serem feitas | Equipe do Projeto,<br> PO                       | Quinzenal     | Backlog da sprint                                                                                  |
-| **Sprint Review** - Reunião de validação das atividades entregues                                                          | Equipe do Projeto,<br> PO,<br>Cliente              | Quinzenal     | Feedback da cliente, incremento do produto, backlog do produto atualizado                          |
-| **Sprint Retrospective** - Levantamento de pontos de melhoria da sprint                                                    | Equipe do Projeto,<br> PO                       | Quinzenal     | Melhorias e lições aprendidas                                                                      |
+| **Sprint Planning** - Distribuição de atividades (issues) para os membros da equipe. Definição das entregas a serem feitas | Equipe do Projeto,<br> PO                       | 14 dias     | Backlog da sprint                                                                                  |
+| **Sprint Review** - Reunião de validação das atividades entregues                                                          | Equipe do Projeto,<br> PO,<br>Cliente              | 14 dias     | Feedback da cliente, incremento do produto, backlog do produto atualizado                          |
+| **Sprint Retrospective** - Levantamento de pontos de melhoria da sprint                                                    | Equipe do Projeto,<br> PO                       | 14 dias     | Melhorias e lições aprendidas                                                                      |
 | **Daily Scrum**  - Conversa informal sobre o andamento das atividades                                                      | Equipe do Projeto                       | Diária        | Resumo da reunião                                                                                  |
 | **Situação do Projeto**                                                                                                    | Equipe do Projeto,<br> George Marsicano | Semanal       | Feedback do Comando Estelar |
 
