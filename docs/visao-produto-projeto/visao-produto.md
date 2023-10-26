@@ -35,15 +35,15 @@
 
 ## Objetivos do Produto
 
-<p style="text-indent: 50px;text-align: justify;">Nosso objetivo principal é elevar a experiência de compartilhamento de receitas para os entusiastas da culinária, transcender as atuais limitações da plataforma e oferecer uma experiência mais clara e estruturada tanto para nossa cliente como para seus seguidores. Para alcançar esse objetivo, estamos comprometidos com as seguintes melhorias:
+<p style="text-indent: 50px;text-align: justify;">Nosso objetivo principal é estabelecer uma estrutura de criação de receitas que simplifique a intercalação de textos, imagens e vídeos, garantindo uma padronização consistente. Nosso objetivo é otimizar o processo de publicação para nossa cliente e melhorar a compreensão dos leitores, garantindo que cada receita atenda a esses requisitos estabelecidos. Além de democratizar o acesso de qualquer pessoa, permitindo compartilhar e exportar facilmente as receitas do site. Para alcançar esse objetivo, estamos comprometidos com as seguintes melhorias:
 </p>
 
 
-- **Facilitar a Criação de Conteúdo**: Para cada nova receita, vamos aumentar o limite atual de 10 fotos e videos com duração de 60 segundos, que serão adicionados ao corpo do texto e não mais em formato de carrossel. Além disso, queremos que nossa cliente possa incluir informações cruciais, como porções, tempo de preparo e variações, de modo que ela não precise dividir as instruções em múltiplos comentários.
+- **Otimizar a Criação de Conteúdo**: Para cada nova receita, vamos aumentar o limite atual de 10 fotos e videos com duração de 60 segundos, que serão adicionados ao corpo do texto e não mais em formato de carrossel. Além disso, queremos que nossa cliente possa incluir informações cruciais, como porções, tempo de preparo e variações, de modo que ela não precise dividir as instruções em múltiplos comentários.
 
-- **Facilitar o Compartilhamento de Receitas**: Nosso produto se propõe a permitir que nossa cliente compartilhe suas receitas da maneira que ela achar mais conveniente, seja por meio de legendas nas imagens ou no formato de receita tradicional, sem as restrições de formatação do Instagram.
+- **Permitir o Compartilhamento de Receitas**: Nosso produto se propõe a permitir que nossa cliente compartilhe suas receitas da maneira que ela achar mais conveniente, seja por meio de legendas nas imagens ou no formato de receita tradicional, sem as restrições de formatação do Instagram.
 
-- **Ampliar o Alcance e a Divulgação**: Queremos que tanto nossa cliente, quanto os demais usuários que acessarão a plataforma tenham mais liberdade para acessar o conteúdo, sem precisar de uma conta no Instagram. Assim, poderemos alcançar tanto os usuários que usam o Instagram quanto os que não usam.
+- **Democratizar o Acesso ao Conteúdo**: Queremos que tanto nossa cliente, quanto os demais usuários que acessarão a plataforma tenham mais liberdade para acessar o conteúdo, sem precisar de uma conta no Instagram. Assim, poderemos alcançar tanto os usuários que usam o Instagram quanto os que não usam.
 
 - **Administração do Armazenamento das Receitas**: Um dos objetivos é melhorar a organização e a manutenibilidade das receitas. Ou seja, as receitas precisam ser editáveis, e devem poder ser categorizadas para auxiliar na administração delas no site.
 
