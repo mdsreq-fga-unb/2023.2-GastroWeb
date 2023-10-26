@@ -11,6 +11,7 @@ nav:
       - Backlog: backlog-produto/backlog.md
       - Priorização: backlog-produto/priorizacao-requisitos.md
       - MVP: backlog-produto/mvp.md
+      - Alinhamento: backlog-produto/alinhamento_backlog.md
   - Entregas:
       - Unidade 1: entregas/unidade-1.md
       - Unidade 2: entregas/unidade-2.md
