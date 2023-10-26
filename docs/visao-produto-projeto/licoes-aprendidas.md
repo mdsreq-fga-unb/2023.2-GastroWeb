@@ -3,6 +3,7 @@
 |    Data    | Versão |              Descrição              |                                Autor(es)                                 |
 | :--------: | :----: | :---------------------------------: | :----------------------------------------------------------------------: |
 | 24/09/2023 |  0.1   | Criação e estruturação do documento |Luan Mateus|
+| 25/10/2023 |  0.2   | Inserção das Lições Aprendidas na Missão 2 |Luan Mateus|
 
 ## Unidade 1
 
@@ -10,3 +11,7 @@
 
 <p style="text-indent: 50px;text-align: justify;">Ademais, foi explicado pela primeira vez o processo de Engenharia de Requisitos, sendo necessário cada equipe listar as atividades que mais se adequam no cenário do projeto, sendo elas: Elicitação e Descoberta, Análise e Consenso, Declaração, Representação, Verificação e Validação, Organização e Atualização. Em outra analise, foi apresentado, também, as formas de como se entender um problema e as maneiras para descrever a Visão de Produto e Projeto.
 </p>
+
+## Unidade 2
+
+<p style="text-indent: 50px;text-align: justify;">Nessa unidade foi apresentado com mais detalhes algumas atividades da Engenharia de Requisitos, sendo elas: Declaração de Requisitos, Organização e Atualização dos Requisitos. Com isso, os alunos experienciaram, na prática, dinâmicas envolvendo tais atividades. Além disso, foi apresentado, com mais detalhes, a atividade de Verificação e Validação, sendo necessário um grupo avaliar o backlog de produto do outro, facilitando assim, a busca e recebimento de feedbacks.</p>
