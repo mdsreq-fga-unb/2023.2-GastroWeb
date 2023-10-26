@@ -54,4 +54,4 @@ Após a pontuação dos requisitos, foram definidas as categorias de cada um dos
 - **Could Have**: Requisitos com pontuação menor que 15 e valor de negócio maior ou igual a 8.
 - **Won't Have**: Requisitos com pontuação menor ou igual a 13.
 
-Com isso, é possível conferir os MVPs <a href="mvp.md">clicando aqui!</a>
+_Com isso, é possível conferir os MVPs [clicando aqui](https://mdsreq-fga-unb.github.io/2023.2-GastroWeb/backlog-produto/mvp/)!_

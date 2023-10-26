@@ -45,7 +45,7 @@ A seguir é apresentado o backlog contendo Épicos, Capacidades, Features e as s
 
 ### User Stories
 
-_Aqui você encontra a lista de Histórias de Usuário sem priorização. Caso você queira acessar as Histórias de Usuário de forma priorizada [Clique aqui!](https://mdsreq-fga-unb.github.io/2023.2-GastroWeb/docs/backlog-produto/priorizacao-requisitos)_
+_Aqui você encontra a lista de Histórias de Usuário sem priorização. Caso você queira acessar as Histórias de Usuário de forma priorizada [Clique aqui!](https://mdsreq-fga-unb.github.io/2023.2-GastroWeb/backlog-produto/priorizacao-requisitos/)_
 
 | Id     | User Story                                                                                                                     | Feature |
 | ------ | ------------------------------------------------------------------------------------------------------------------------------ | ------- |
