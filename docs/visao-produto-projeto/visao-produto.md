@@ -35,17 +35,17 @@
 
 ## Objetivos do Produto
 
-<p style="text-indent: 50px;text-align: justify;">Nosso objetivo principal é estabelecer uma estrutura de criação de receitas que simplifique a intercalação de textos, imagens e vídeos, garantindo uma padronização consistente. Nosso objetivo é otimizar o processo de publicação para nossa cliente e melhorar a compreensão dos leitores, garantindo que cada receita atenda a esses requisitos estabelecidos. Além de democratizar o acesso de qualquer pessoa, permitindo compartilhar e exportar facilmente as receitas do site. Para alcançar esse objetivo, estamos comprometidos com as seguintes melhorias:
+<p style="text-indent: 50px;text-align: justify;">O objetivo principal do GastroWeb é fornecer uma plataforma que permita à nossa cliente publicar suas receitas de forma mais flexível e diminuindo as restrições que ela enfrenta na plataforma atual. Com isso, forneceremos uma ferramenta intuitiva que capacite a administradora a criar, editar e compartilhar de forma mais eficiente suas receitas de maneira livre. Resumidamente, pretende-se atingir o objetivo disponibilizando um sistema que faça a ponte entre a administradora e os usuários, permitindo, assim, o compartilhamento de receitas gastronômicas de forma mais flexível e deixá-la mais próxima de seu público. Isso pode ser mensurado a partir dos seguintes objetivos secundários:
 </p>
 
 
-- **Otimizar a Criação de Conteúdo**: Para cada nova receita, vamos aumentar o limite atual de 10 fotos e videos com duração de 60 segundos, que serão adicionados ao corpo do texto e não mais em formato de carrossel. Além disso, queremos que nossa cliente possa incluir informações cruciais, como porções, tempo de preparo e variações, de modo que ela não precise dividir as instruções em múltiplos comentários.
+- **Otimizar a Criação de Conteúdo**;
 
-- **Permitir o Compartilhamento de Receitas**: Nosso produto se propõe a permitir que nossa cliente compartilhe suas receitas da maneira que ela achar mais conveniente, seja por meio de legendas nas imagens ou no formato de receita tradicional, sem as restrições de formatação do Instagram.
+- **Permitir o Compartilhamento de Receitas**;
 
-- **Democratizar o Acesso ao Conteúdo**: Queremos que tanto nossa cliente, quanto os demais usuários que acessarão a plataforma tenham mais liberdade para acessar o conteúdo, sem precisar de uma conta no Instagram. Assim, poderemos alcançar tanto os usuários que usam o Instagram quanto os que não usam.
+- **Liberar Acesso ao Conteúdo**;
 
-- **Administração do Armazenamento das Receitas**: Um dos objetivos é melhorar a organização e a manutenibilidade das receitas. Ou seja, as receitas precisam ser editáveis, e devem poder ser categorizadas para auxiliar na administração delas no site.
+- **Administração do Armazenamento das Receitas**;
 
 ## Tecnologias Utilizadas
 

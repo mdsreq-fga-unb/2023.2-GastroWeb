@@ -695,7 +695,8 @@
   <h1>Priorização</h1>
 
 <h2 id="pontuacao-dos-requisitos">Pontuação dos requisitos</h2>
-<p>Para priorizar os requisitos atribuímos uma pontuação para cada um deles. Eles foram avaliados levando em conta:</p>
+<p>Para priorizar os requisitos temos três parâmetros necessários para avaliar cada uma das US's (User Storys). Primeiramente, precisamos quantificar o Valor de Negócio da US, ou seja, o quão importante ela é para atingir um valor mínimo para o produto (MVP). Este valor foi quantificado de 1 a 10 pontos, e é o maior peso entre todos os pontos avaliados. O segundo parâmetro é a Viabilidade, ou seja, com a equipe de desenvolvimento que temos, qual é a probabilidade de conseguirmos concluir esta US até a entrega do produto? Esta pergunta foi respondida com uma nota de 1 a 5. Por fim, o último ponto avaliado foi a Complexidade, que dita o conhecimento dos integrantes em relação àquela funcionalidade que precisa ser implementada. Para ajustar a pontuação aos valores que queremos somar, a pontuação ficou invertida no sentido do parâmetro, ou seja, 5 é uma complexidade baixa e 1 é uma US com alta complexidade.</p>
+<p>Em resumo:</p>
 <ul>
 <li><strong>Valor de Negócio :</strong> Pontuação varia de 1 à 10;</li>
 <li><strong>Viabilidade :</strong> Pontuação varia de 1 à 5;</li>
@@ -752,29 +753,11 @@
 <td>18</td>
 </tr>
 <tr>
-<td>[FT07]</td>
-<td>US22</td>
-<td>Eu, como usuário, desejo excluir um comentário para situações de comentários equivocados.</td>
-<td>9</td>
-<td>4</td>
-<td>4</td>
-<td>17</td>
-</tr>
-<tr>
 <td>[FT08]</td>
 <td>US25</td>
 <td>Eu, como um usuário, quero exportar receitas em formato PDF para conseguir fazer a impressão ou download delas.</td>
 <td>10</td>
 <td>3</td>
-<td>4</td>
-<td>17</td>
-</tr>
-<tr>
-<td>[FT07]</td>
-<td>US21</td>
-<td>Eu, como usuário, desejo escrever um comentário em uma publicação para obter ajuda a respeito do conteúdo de uma publicação.</td>
-<td>9</td>
-<td>4</td>
 <td>4</td>
 <td>17</td>
 </tr>
@@ -785,7 +768,7 @@
 <td>9</td>
 <td>3</td>
 <td>4</td>
-<td>17</td>
+<td>16</td>
 </tr>
 <tr>
 <td>[FT03]</td>
@@ -923,6 +906,24 @@
 <td>15</td>
 </tr>
 <tr>
+<td>[FT07]</td>
+<td>US21</td>
+<td>Eu, como usuário, desejo escrever um comentário em uma publicação para obter ajuda a respeito do conteúdo de uma publicação.</td>
+<td>7</td>
+<td>3</td>
+<td>4</td>
+<td>14</td>
+</tr>
+<tr>
+<td>[FT07]</td>
+<td>US22</td>
+<td>Eu, como usuário, desejo excluir um comentário para situações de comentários equivocados.</td>
+<td>7</td>
+<td>3</td>
+<td>4</td>
+<td>14</td>
+</tr>
+<tr>
 <td>[FT05]</td>
 <td>US15</td>
 <td>Eu, como administrador, desejo editar meus tópicos no fórum para manter a corretude do conteúdo.</td>
@@ -1005,8 +1006,9 @@
 </tr>
 </tbody>
 </table>
+<p>Após avaliar cada um dos parâmetros, fizemos um somatorio dos três para conseguir ordenar do mais valioso para o menos valioso e aplicamos o MoSCoW para definir o MVP. </p>
 <h3 id="moscow-must-have-should-have-could-have-wont-have">MoSCoW ( Must Have, Should Have, Could Have, Won't Have )</h3>
-<p>Após a pontuação dos requisitos, foram definidas as categorias de cada um dos requisitos de acordo com o MoSCoW. E, para formar o MVP, percebemos que apenas os itens "Must Have" serão incluídos. O "Should Have" e "Could Have" podem vir a formar um segundo MVP se for preciso.</p>
+<p>Para formar o MVP percebemos que apenas os itens "Must Have" serão incluídos n. O "Should Have" e "Could Have" podem vir a formar um segundo MVP se for preciso, mas não será citado formalmente até que o MVP seja entregue.</p>
 <ul>
 <li><strong>Must Have</strong>: Requisitos com pontuação de valor de negócio igual à 10 ou pontuação maior que 15.</li>
 <li><strong>Should Have</strong>: Requisitos com pontuação de valor de negócio menor que 10 mas com pontuação maior ou igual a 15.</li>
