@@ -55,8 +55,8 @@ Após avaliar cada um dos parâmetros, fizemos um somatorio dos três para conse
 
 Para formar o MVP percebemos que apenas os itens "Must Have" serão incluídos n. O "Should Have" e "Could Have" podem vir a formar um segundo MVP se for preciso, mas não será citado formalmente até que o MVP seja entregue.
 
-- **Must Have**: Requisitos com pontuação maior ou igual a 16.
-- **Should Have**: Requisitos com pontuação igual a 15.
+- **Must Have**: Requisitos com pontuação de valor de negócio igual à 10 ou pontuação maior que 15.
+- **Should Have**: Requisitos com pontuação de valor de negócio menor que 10 mas com pontuação maior ou igual a 15.
 - **Could Have**: Requisitos com pontuação menor que 15 e valor de negócio maior ou igual a 8.
 - **Won't Have**: Requisitos com pontuação menor ou igual a 13.
 
