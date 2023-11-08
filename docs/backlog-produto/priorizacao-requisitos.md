@@ -13,17 +13,17 @@ Segue abaixo a tabela completa de pontuação dos requisitos, ordenada da maior 
 
 | Feature | Id | Descrição | Valor de Negócio | Viabilidade | Complexidade | Total |
 | --- | --- | --- | --- | --- | --- | --- |
-| [FT01] | US03 | Eu, como administrador, desejo deletar as receitas gastronômicas para excluir a receita do site. | 10 | 5 | 5 | 20 |
+| [FT01] | US03 | Eu, como administrador, desejo deletar as receitas gastronômicas para ter mais controle sobre o conteúdo do site. | 10 | 5 | 5 | 20 |
 | [FT01] | US04 | Eu, como administrador, desejo visualizar as receitas gastronômicas para consultá-las sempre que quiser. | 10 | 5 | 5 | 20 |
-| [FT01] | US02 | Eu, como administrador, desejo editar as receitas gastronômicas para corrigir ou atualizar a receita postada. | 10 | 5 | 4 | 19 |
-| [FT01] | US01 | Eu, como administrador, desejo criar receitas gastronômicas para publicá-las no site. | 10 | 5 | 3 | 18 |
-| [FT08] | US25 | Eu, como um usuário, quero exportar receitas em formato PDF para conseguir fazer a impressão ou download delas. | 10 | 3 | 4 | 17 |
-| [FT08] | US24 | Eu, como usuário, desejo compartilhar uma receita com outras pessoas para que elas possam visualizá-la; | 9 | 3 | 4 | 16 |
-| [FT03] | US07 | Eu, como usuário, desejo buscar receitas por nome para obtê-las rapidamente; | 10 | 3 | 3 | 16 |
-| [FT02] | US05 | Eu, como administrador, desejo inserir categorias nas receitas, para organizá-las em um catálogo. | 10 | 2 | 3 | 15 |
-| [FT02] | US06 | Eu, como administrador, desejo inserir tags nas receitas, para definir quais ingredientes tal prato possui. | 10 | 2 | 3 | 15 |
-| [FT03] | US08 | Eu, como usuário, desejo filtrar receitas por categorias, para encontrar os pratos de meu interesse mais eficientemente. | 10 | 2 | 3 | 15 |
-| [FT03] | US09 | Eu, como usuário, desejo filtrar receitas por tags, para encontrar os pratos de meu interesse mais eficientemente. | 10 | 3 | 3 | 15 |
+| [FT01] | US02 | Eu, como administrador, desejo editar as receitas gastronômicas para ter mais flexibilidade sobre as receitas. | 10 | 5 | 4 | 19 |
+| [FT01] | US01 | Eu, como administrador, desejo criar receitas gastronômicas para poder enriquecer o conteúdo do site aumentando a variedade de receitas culinárias. | 10 | 5 | 3 | 18 |
+| [FT08] | US25 | Eu, como um usuário, quero exportar receitas em formato PDF para que eu consiga visualizar a receita offline e em outros dispositivos. | 10 | 3 | 4 | 17 |
+| [FT08] | US24 | Eu, como usuário, desejo compartilhar uma receita com outras pessoas para trocar experiências culinárias com amigos e familiares de forma rápida e conveniente | 9 | 3 | 4 | 16 |
+| [FT03] | US07 | Eu, como usuário, desejo buscar receitas por nome para encontrar rapidamente receitas específicas e facilitar o acesso a pratos de meu interesse. | 10 | 3 | 3 | 16 |
+| [FT02] | US05 | Eu, como administrador, desejo inserir categorias nas receitas para organizar o conteúdo de forma estruturada | 10 | 2 | 3 | 15 |
+| [FT02] | US06 | Eu, como administrador, desejo inserir tags nas receitas para facilitar o agrupamento dos ingredientes que o prato possui. | 10 | 2 | 3 | 15 |
+| [FT03] | US08 | Eu, como usuário, desejo filtrar receitas por categorias para encontrar os pratos de meu interesse mais eficientemente. | 10 | 2 | 3 | 15 |
+| [FT03] | US09 | Eu, como usuário, desejo filtrar receitas por tags para encontrar os pratos com ingredientes de meu interesse mais eficientemente. | 10 | 3 | 3 | 15 |
 | [FT05] | US13 | Eu, como administrador, desejo criar uma publicação no fórum para compartilhar ideias quaisquer. | 9 | 3 | 3 | 15 |
 | [FT05] | US14 | Eu, como usuário, desejo criar uma publicação no fórum para interagir com outras pessoas sobre assuntos gastronômicos. | 9 | 3 | 3 | 15 |
 | [FT05] | US16 | Eu, como administrador, desejo excluir um tópico para manter a consistência do conteúdo. | 9 | 3 | 3 | 15 |
