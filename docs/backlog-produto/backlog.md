@@ -49,15 +49,15 @@ _Aqui você encontra a lista de Histórias de Usuário sem priorização. Caso v
 
 | Id     | User Story                                                                                                                     | Feature |
 | ------ | ------------------------------------------------------------------------------------------------------------------------------ | ------- |
-| [US01] | Eu, como administrador, desejo criar receitas gastronômicas para publicá-las no site.                                          | [FT01]  |
-| [US02] | Eu, como administrador, desejo editar as receitas gastronômicas para corrigir ou atualizar a receita postada.                  | [FT01]  |
-| [US03] | Eu, como administrador, desejo deletar as receitas gastronômicas para excluir a receita do site.                               | [FT01]  |
+| [US01] | Eu, como administrador, desejo criar receitas gastronômicas para poder enriquecer o conteúdo do site aumentando a variedade de receitas culinárias. | [FT01]  |
+| [US02] | Eu, como administrador, desejo editar as receitas gastronômicas para ter mais flexibilidade sobre as receitas.                 | [FT01]  |
+| [US03] | Eu, como administrador, desejo deletar as receitas gastronômicas para ter mais controle sobre o conteúdo do site.              | [FT01]  |
 | [US04] | Eu, como administrador, desejo visualizar as receitas gastronômicas para consultá-las sempre que quiser.                       | [FT01]  |
-| [US05] | Eu, como administrador, desejo inserir categorias nas receitas, para organizá-las em um catálogo.                              | [FT02]  |
-| [US06] | Eu, como administrador, desejo inserir tags nas receitas, para definir quais ingredientes tal prato possui.                    | [FT02]  |
-| [US07] | Eu, como usuário, desejo buscar receitas por nome para obtê-las rapidamente.                                                   | [FT03]  |
-| [US08] | Eu, como usuário, desejo filtrar receitas por categorias, para encontrar os pratos de meu interesse mais eficientemente.       | [FT03]  |
-| [US09] | Eu, como usuário, desejo filtrar receitas por tags, para encontrar os pratos de meu interesse mais eficientemente.             | [FT03]  |
+| [US05] | Eu, como administrador, desejo inserir categorias nas receitas para organizar o conteúdo de forma estruturada.                 | [FT02]  |
+| [US06] | Eu, como administrador, desejo inserir tags nas receitas para facilitar o agrupamento dos ingredientes que o prato possui.     | [FT02]  |
+| [US07] | Eu, como usuário, desejo buscar receitas por nome para encontrar rapidamente receitas específicas e facilitar o acesso a pratos de meu interesse. | [FT03]  |
+| [US08] | Eu, como usuário, desejo filtrar receitas por categorias para encontrar os pratos de meu interesse mais eficientemente.        | [FT03]  |
+| [US09] | Eu, como usuário, desejo filtrar receitas por tags para encontrar os pratos com ingredientes de meu interesse mais eficientemente. | [FT03]  |
 | [US10] | Eu, como usuário, desejo adicionar receitas no meu livro de favoritos, para localizar minhas receitas preferidas.              | [FT04]  |
 | [US11] | Eu, como usuário, desejo excluir receitas do meu livro de favoritos, para retirar aquelas receitas que não são mais desejadas. | [FT04]  |
 | [US12] | Eu, como usuário, desejo ordenar receitas do meu livro de favoritos, para organizar as minhas receitas mais acessadas.         | [FT04]  |
@@ -72,8 +72,8 @@ _Aqui você encontra a lista de Histórias de Usuário sem priorização. Caso v
 | [US21] | Eu, como usuário, desejo escrever um comentário em uma publicação para obter ajuda a respeito do conteúdo de uma publicação.   | [FT07]  |
 | [US22] | Eu, como usuário, desejo excluir um comentário para situações de comentários equivocados.                                      | [FT07]  |
 | [US23] | Eu, como usuário, desejo editar um comentário para melhorar a clareza do meu comentário.                                       | [FT07]  |
-| [US24] | Eu, como usuário, desejo compartilhar uma receita com outras pessoas para que elas possam visualizá-la.                        | [FT08]  |
-| [US25] | Eu, como um usuário, quero exportar receitas em formato PDF para conseguir fazer a impressão ou download delas.                | [FT08]  |
+| [US24] | Eu, como usuário, desejo compartilhar uma receita com outras pessoas para trocar experiências culinárias com amigos e familiares de forma rápida e conveniente.                                                                                                                              | [FT08]  |
+| [US25] | Eu, como um usuário, quero exportar receitas em formato PDF para que eu consiga visualizar a receita offline e em outros dispositivos.   | [FT08]  |
 | [US26] | Eu, como usuário, desejo criar minha conta para ter acesso ao livro de favoritos.                                              | [FT09]  |
 | [US27] | Eu, como usuário, desejo poder editar minha conta de usuário para atualizar informações pessoais.                              | [FT09]  |
 | [US28] | Eu, como usuário, desejo fazer login na minha conta para acessar meu livro de receitas.                                        | [FT09]  |
