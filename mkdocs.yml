@@ -11,7 +11,6 @@ nav:
       - Backlog: backlog-produto/backlog.md
       - Priorização: backlog-produto/priorizacao-requisitos.md
       - MVP: backlog-produto/mvp.md
-      - MVP com Critérios de Aceitação: backlog-produto/criterios_aceitacao.md
       - Alinhamento: backlog-produto/alinhamento_backlog.md
       - DoR e DoD: backlog-produto/dor_dod.md
   - Entregas:

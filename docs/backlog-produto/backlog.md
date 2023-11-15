@@ -3,6 +3,7 @@
 |    Data    | Versão |             Descrição             |                       Autor(es)                        |
 | :--------: | :----: | :-------------------------------: | :----------------------------------------------------: |
 | 25/10/2023 |  0.1   | Criação e estruturação do backlog | Felipe Direito, </br> Felipe Hansen, </br> Luan Mateus |
+| 15/11/2023 |  0.2   | Criação dos Critérios de Aceitação do MVP | Felipe Direito |
 
 
 ## Backlog do Produto
