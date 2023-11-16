@@ -19,10 +19,33 @@
 
 **US03 -** Eu, como administrador, desejo deletar as receitas gastronômicas para ter mais controle sobre o conteúdo do site.
 
-1. 
-.
-.
-.
+1. Deve haver um mecanismo de autenticação seguro para garantir que apenas administradores autorizados possam acessar essa funcionalidade.
+
+2. Ao clicar para deletar uma receita, o sistema deve solicitar uma confirmação antes de realizar a exclusão.
+
+**US04** - Eu, como administrador, desejo visualizar as receitas gastronômicas para consultá-las sempre que quiser.
+
+1. Deve haver uma seção claramente identificada na interface do administrador para visualizar as receitas gastronômicas.
+
+2. Ao clicar em uma receita na lista, o sistema deve exibir detalhes completos da receita, incluindo ingredientes, instruções de preparo, e outras informações relevantes.
+
+**US02** - Eu, como administrador, desejo editar as receitas gastronômicas para ter mais flexibilidade sobre as receitas.
+
+1. Todos os campos importantes de uma receita, como ingredientes, instruções de preparo, tempo de cozimento, devem ser editáveis.
+
+2. Oferecer a opção de visualizar as alterações antes de salvá-las permanentemente
+
+**US01** - Eu, como administrador, desejo criar receitas gastronômicas para poder enriquecer o conteúdo do site aumentando a variedade de receitas culinárias.
+
+1. Definir campos essenciais, por exemplo, ( título, ingredientes e instruções) sendo obrigatórios para evitar receitas incompletas.
+
+2. Permitir o upload de imagens e vídeos para ilustrar a receita.
+
+3. Permitir a associação da receita a categorias específicas e adicionar tags relevantes para facilitar a busca e a organização.
+
+4. Oferecer uma pré-visualização para que os administradores possam revisar a aparência final da receita antes de publicá-la.
+
+5. Implementar autenticação segura para que apenas o administrador crie receitas
 
 **US05 -** Eu, como administrador, desejo inserir categorias nas receitas para organizar o conteúdo de forma estruturada.
 
