@@ -3,7 +3,6 @@
 A Definição de Pronto (DoR) é uma lista de critérios que uma tarefa deve atender antes de ser considerada pronta para ser incluída em um sprint ou iteração.
 
 - A seguir, apresentamos os pontos elencados pela equipe do projeto para compor a definição de preparado de um requisito:
-    - O requisito está representado dentro de tema, épico, capacidade e feature?
     - O requisito está representado na forma de história de usuário?
     - O requisito tem detalhes suficientes para entendimento de toda equipe, incluindo critérios de aceitação claros?
     - A equipe está preparada e possui conhecimento necessário para iniciar a sprint?
