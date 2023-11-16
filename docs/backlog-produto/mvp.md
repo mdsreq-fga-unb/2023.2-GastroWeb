@@ -61,6 +61,12 @@
 
 3. *(Talvez) Automatizar as tags com todos os ingredientes que forem descritos na receita.*
 
+**US07 -** Eu, como usuário, desejo buscar receitas por nome para encontrar rapidamente receitas específicas e facilitar o acesso a pratos de meu interesse.
+
+1. As receitas devem ser filtradas pelas palavaras que contém no título da receita.
+
+2. As receitas não devem ser pesquisadas com exatamente a mesma disposição das palavras da busca.
+
 **US08 -**  Eu, como usuário, desejo filtrar receitas por categorias para encontrar os pratos de meu interesse mais eficientemente.
 
 1. A pesquisa é feita apenas com as categorias pré-existentes. É uma busca direcionada.
@@ -69,6 +75,19 @@
 
 **US09 -** Eu, como usuário, desejo filtrar receitas por tags para encontrar os pratos com ingredientes de meu interesse mais eficientemente.
 
-1.  A pesquisa é feita apenas com as tags pré-existentes. É uma busca direcionada.
+1. A pesquisa é feita apenas com as tags pré-existentes. É uma busca direcionada.
 
 2. Não deve ser possível pesquisar receitas com uma tag não existente.
+
+**US24 -** Eu, como usuário, desejo compartilhar uma receita com outras pessoas para trocar experiências culinárias com amigos e familiares de forma rápida e conveniente.
+
+1. Deve poder copiar o link através de um botão intuitivo de compartilhamento.
+
+2. Quem acessar o link deve dar direto na mesma página, sem necessidade de login.
+
+
+**US25 -** Eu, como um usuário, quero exportar receitas em formato PDF para que eu consiga visualizar a receita offline e em outros dispositivos.
+
+1. Deve abrir um pdf através de um botão intuitivo de visualização de pdf.
+
+2. Deve ter a opção de baixar o pdf na mesma página.
