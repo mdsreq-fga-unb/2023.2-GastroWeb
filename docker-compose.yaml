@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  backend:
+    container_name: gastro-web
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    volumes: 
+      - ./src:/gastroweb
+    ports:
+      - 5000:5000
+    
