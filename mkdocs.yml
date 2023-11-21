@@ -13,6 +13,12 @@ nav:
       - MVP: backlog-produto/mvp.md
       - Alinhamento: backlog-produto/alinhamento_backlog.md
       - DoR e DoD: backlog-produto/dor_dod.md
+  - Estudo de Casos:
+      - PBB: estudo-caso/PBB.md
+      - BDD: estudo-caso/BDD.md
+      - USM: estudo-caso/USM.md
+  - Sprints:
+      - Sprint 1: sprints/sprint.md
   - Entregas:
       - Unidade 1: entregas/unidade-1.md
       - Unidade 2: entregas/unidade-2.md
