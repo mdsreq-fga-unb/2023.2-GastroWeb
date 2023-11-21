@@ -4,11 +4,11 @@ WORKDIR /gastroweb
 
 ENV TZ=America/Sao_Paulo
 
-COPY ./src/requirements.txt .
+COPY ./backend/requirements.txt .
 
 RUN pip install -r requirements.txt
 
-COPY ./src .
+COPY ./backend .
 
 EXPOSE 5000
 

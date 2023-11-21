@@ -7,7 +7,7 @@ services:
       context: ./
       dockerfile: ./Dockerfile
     volumes: 
-      - ./src:/gastroweb
+      - ./backend:/gastroweb
     ports:
       - 5000:5000
     
