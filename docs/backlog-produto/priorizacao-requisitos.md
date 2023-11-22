@@ -14,9 +14,10 @@ Segue abaixo a tabela completa de pontuação dos requisitos, ordenada da maior 
 | Feature | Id | Descrição | Valor de Negócio | Viabilidade | Complexidade | Total |
 | --- | --- | --- | --- | --- | --- | --- |
 | [FT01] | US03 | Eu, como administrador, desejo deletar as receitas gastronômicas para ter mais controle sobre o conteúdo do site. | 10 | 5 | 5 | 20 |
-| [FT01] | US04 | Eu, como administrador, desejo visualizar as receitas gastronômicas para consultá-las sempre que quiser. | 10 | 5 | 5 | 20 |
+| [FT01] | US04 | Eu, como usuário, desejo visualizar as receitas gastronômicas para consultá-las sempre que quiser. | 10 | 5 | 5 | 20 |
 | [FT01] | US02 | Eu, como administrador, desejo editar as receitas gastronômicas para ter mais flexibilidade sobre as receitas. | 10 | 5 | 4 | 19 |
 | [FT01] | US01 | Eu, como administrador, desejo criar receitas gastronômicas para poder enriquecer o conteúdo do site aumentando a variedade de receitas culinárias. | 10 | 5 | 3 | 18 |
+| [FT09] | US33 | Eu, como administrador, desejo fazer login com minha conta para acessar as funcionalidades de gerenciamento de receitas. | 10 | 4 | 3 | 17 |
 | [FT08] | US25 | Eu, como um usuário, quero exportar receitas em formato PDF para que eu consiga visualizar a receita offline e em outros dispositivos. | 10 | 3 | 4 | 17 |
 | [FT08] | US24 | Eu, como usuário, desejo compartilhar uma receita com outras pessoas para trocar experiências culinárias com amigos e familiares de forma rápida e conveniente | 9 | 3 | 4 | 16 |
 | [FT03] | US07 | Eu, como usuário, desejo buscar receitas por nome para encontrar rapidamente receitas específicas e facilitar o acesso a pratos de meu interesse. | 10 | 3 | 3 | 16 |

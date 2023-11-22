@@ -4,6 +4,7 @@
 | :--------: | :----: | :-------------------------------: | :----------------------------------------------------: |
 | 25/10/2023 |  0.1   | Criação e estruturação do backlog | Felipe Direito, </br> Felipe Hansen, </br> Luan Mateus |
 | 15/11/2023 |  0.2   | Criação dos Critérios de Aceitação do MVP | Felipe Direito |
+| 22/11/2023 |  0.3   | Ajuste de user stories | Felipe Hansen |
 
 
 ## Backlog do Produto
@@ -53,12 +54,12 @@ _Aqui você encontra a lista de Histórias de Usuário sem priorização. Caso v
 | [US01] | Eu, como administrador, desejo criar receitas gastronômicas para poder enriquecer o conteúdo do site aumentando a variedade de receitas culinárias. | [FT01]  |
 | [US02] | Eu, como administrador, desejo editar as receitas gastronômicas para ter mais flexibilidade sobre as receitas.                 | [FT01]  |
 | [US03] | Eu, como administrador, desejo deletar as receitas gastronômicas para ter mais controle sobre o conteúdo do site.              | [FT01]  |
-| [US04] | Eu, como administrador, desejo visualizar as receitas gastronômicas para consultá-las sempre que quiser.                       | [FT01]  |
 | [US05] | Eu, como administrador, desejo inserir categorias nas receitas para organizar o conteúdo de forma estruturada.                 | [FT02]  |
 | [US06] | Eu, como administrador, desejo inserir tags nas receitas para facilitar o agrupamento dos ingredientes que o prato possui.     | [FT02]  |
 | [US07] | Eu, como usuário, desejo buscar receitas por nome para encontrar rapidamente receitas específicas e facilitar o acesso a pratos de meu interesse. | [FT03]  |
 | [US08] | Eu, como usuário, desejo filtrar receitas por categorias para encontrar os pratos de meu interesse mais eficientemente.        | [FT03]  |
 | [US09] | Eu, como usuário, desejo filtrar receitas por tags para encontrar os pratos com ingredientes de meu interesse mais eficientemente. | [FT03]  |
+| [US04] | Eu, como usuário, desejo visualizar as receitas gastronômicas para consultá-las sempre que quiser.                             | [FT03]  |
 | [US10] | Eu, como usuário, desejo adicionar receitas no meu livro de favoritos, para localizar minhas receitas preferidas.              | [FT04]  |
 | [US11] | Eu, como usuário, desejo excluir receitas do meu livro de favoritos, para retirar aquelas receitas que não são mais desejadas. | [FT04]  |
 | [US12] | Eu, como usuário, desejo ordenar receitas do meu livro de favoritos, para organizar as minhas receitas mais acessadas.         | [FT04]  |
@@ -79,6 +80,7 @@ _Aqui você encontra a lista de Histórias de Usuário sem priorização. Caso v
 | [US27] | Eu, como usuário, desejo poder editar minha conta de usuário para atualizar informações pessoais.                              | [FT09]  |
 | [US28] | Eu, como usuário, desejo fazer login na minha conta para acessar meu livro de receitas.                                        | [FT09]  |
 | [US29] | Eu, como usuário, desejo excluir minha conta para apagar meus dados quando não quiser mais acessar o site.                     | [FT09]  |
+| [US33] | Eu, como administrador, desejo fazer login com minha conta para acessar as funcionalidades de gerenciamento de receitas.       | [FT09]  |
 | [US30] | Eu, como um usuário, quero acessar o histórico das receitas que visualizei anteriormente para acessá-las novamente.            | [FT10]  |
 | [US31] | Eu, como um usuário, quero me inscrever na newsletter para receber por e-mail as principais atualizações do site.              | [FT10]  |
 | [US32] | Eu, como um usuário, quero cancelar minha inscrição na newsletter para bloquear o envio de atualizações do site no meu e-mail. | [FT10]  |
