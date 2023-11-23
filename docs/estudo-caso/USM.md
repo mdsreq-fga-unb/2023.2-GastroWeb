@@ -10,10 +10,10 @@
 </p>
 
 <div style="text-align: center; margin: 3px">
-<img src="https://user-images.githubusercontent.com/89037018/284425968-57fed114-7ce1-4c08-98e7-a44901124420.jpg" alt="USM1" style="width: 50rem">
+<img src="https://user-images.githubusercontent.com/89037018/285074349-11d5c4ff-7b5b-4ae7-9fc0-8d4b53fd9f32.jpg" alt="USM1" style="width: 50rem">
 </div>
 <div style="text-align: center; margin: 3px">
-<img src="https://user-images.githubusercontent.com/89037018/284425973-0835efba-e20c-453a-8f4e-e5ea6575cc66.jpg" alt="USM2" style="width: 50rem">
+<img src="https://user-images.githubusercontent.com/89037018/285074351-8b44ff8e-7a15-456e-b351-8329ef872668.jpg" alt="USM2" style="width: 50rem">
 </div>
 
 ## Miro

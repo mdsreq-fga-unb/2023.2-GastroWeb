@@ -55,12 +55,14 @@
 1. As funcionalidades de criar, editar e deletar receitas devem estar restritas à interface do administrador.
 
 2. O sistema deve validar as credenciais inseridas e permitir o acesso apenas a administradores.
+   
+3. As credenciais devem ser criadas previamente, pela equipe de desenvolvimento, e passadas para o administrador.
 
 **US05 -** Eu, como administrador, desejo inserir categorias nas receitas para organizar o conteúdo de forma estruturada.
 
 1. As categorias dos pratos devem ser: Entrada, prato principal, sobremesa, lanche, café da manhã, Bolos e tortas, Eventos Festivos.
 
-2. Cada prato pode ter nenhuma, uma  ou muitas categorias diferentes.
+2. Cada prato pode ter nenhuma, uma ou muitas categorias diferentes.
 
 **US06 -** Eu, como administrador, desejo inserir tags nas receitas para facilitar o agrupamento dos ingredientes que o prato possui.
 
