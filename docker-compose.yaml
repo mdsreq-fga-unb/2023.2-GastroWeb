@@ -13,11 +13,8 @@ services:
     volumes:
           - pessoa_endereco_database:/var/lib/postgresql/data
 
-
-
-
   backend:
-    container_name: gastro-web
+    container_name: gastro-backend
     build:
       context: ./
       dockerfile: ./backend/docker/Dockerfile
@@ -28,6 +25,16 @@ services:
       - 5000:5000
     depends_on:
       - postgresql
+
+  frontend:
+    container_name: gastro-frontend
+    build:
+      context: ./
+      dockerfile: ./frontend/docker/Dockerfile
+    ports: 
+      - 9000:9000
+    depends_on:
+      - backend
 
 volumes:
     pessoa_endereco_database:
