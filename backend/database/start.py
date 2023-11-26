@@ -1,35 +1,14 @@
-from sqlalchemy import create_engine, select
-from sqlalchemy.orm import Session
-from models import *
+from asyncio import run
 
-engine = create_engine("sqlite://", echo=True)
-
-Base.metadata.create_all(engine)
-
-with Session(engine) as s:
-    feijoada = Receitas(
-        titulo = "Feijoao",
-        ingredientes = "Feijao e Alho",
-        instrucoes = "Cozinhar o feijão"
-    )
-
-    peixe = Receitas(
-        titulo = "peixe",
-        ingredientes = "Peixe, cebola",
-        instrucoes = "Cozinhar o peixe com cebola"
-    )
+from connection import engine
+from models import Base
 
 
+async def create_database():
+    async with engine.begin() as connection:
+        await connection.run_sync(Base.metadata.drop_all)
+        await connection.run_sync(Base.metadata.create_all)
 
-    s.add_all([feijoada, peixe])
 
-    s.commit()
-
-
-stmt = select(Receitas).where(Receitas.titulo.in_(["Feijoao", "peixe"]))
-
-for receita in s.scalars(stmt):
-    print("Titulo:", receita.titulo)
-    print("Ingredientes:", receita.ingredientes)
-    print("Instrucoes:", receita.instrucoes)
-    print("---")
+if __name__ == "__main__":
+    run(create_database())

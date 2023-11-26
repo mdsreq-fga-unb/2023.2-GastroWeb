@@ -3,16 +3,11 @@ from sqlalchemy import (
     Column,
     Integer,
     String,
-    ForeignKey,
-    Float,
-    UniqueConstraint,
-    DateTime,
 )
 
 from sqlalchemy.orm import Mapped, declarative_base, DeclarativeBase, mapped_column
 
-class Base(DeclarativeBase):
-    pass
+Base = declarative_base()
 
 class Receitas(Base):
     __tablename__ = "receitas"

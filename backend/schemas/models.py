@@ -6,5 +6,7 @@ class StandartOutput(BaseModel):
 class ReceitaBasica(BaseModel):
     titulo: str
     instrucoes: str
-    ingredientes: list
+    ingredientes: str
 
+class BuscaTitulo(BaseModel):
+    titulo: str

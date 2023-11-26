@@ -1,13 +1,33 @@
 version: '3.1'
 
 services:
+  postgresql:
+    container_name: postgresql
+    image: postgres:15
+    restart: always
+    environment:
+        POSTGRES_PASSWORD: ${PG_PASS}
+        POSTGRES_USER: ${PG_USER}
+        POSTGRES_DB: ${PG_DB}
+        TZ: UTC
+    volumes:
+          - pessoa_endereco_database:/var/lib/postgresql/data
+
+
+
+
   backend:
     container_name: gastro-web
     build:
       context: ./
-      dockerfile: ./Dockerfile
+      dockerfile: ./backend/docker/Dockerfile
     volumes: 
+      - ./backend/database:/backend/database 
       - ./backend:/gastroweb
     ports:
       - 5000:5000
-    
+    depends_on:
+      - postgresql
+
+volumes:
+    pessoa_endereco_database:
