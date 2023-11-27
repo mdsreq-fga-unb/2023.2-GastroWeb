@@ -17,3 +17,10 @@ class Receitas(Base):
     titulo = Column(String(100), nullable=False)
     ingredientes = Column(String(100), nullable=False)
     instrucoes = Column(String(100), nullable=False)
+
+class Fotos(Base):
+    __tablename__ = "fotos"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+
+    path = Column(String, nullable=False)

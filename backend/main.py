@@ -1,9 +1,16 @@
 from fastapi import FastAPI, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
 from views.recipes import recipes
+from database.start import create_database
+
+
 
 app = FastAPI()
 router = APIRouter()
+
+@app.on_event("startup")
+async def start():
+    await create_database()
 
 
 

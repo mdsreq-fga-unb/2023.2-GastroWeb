@@ -20,11 +20,15 @@ services:
       dockerfile: ./backend/docker/Dockerfile
     volumes: 
       - ./backend/database:/backend/database 
-      - ./backend:/gastroweb
     ports:
       - 5000:5000
     depends_on:
       - postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z postgresql 5432"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   frontend:
     container_name: gastro-frontend

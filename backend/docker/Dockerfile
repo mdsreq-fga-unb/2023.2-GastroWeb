@@ -15,8 +15,8 @@ RUN pip install -r requirements.txt
 
 COPY ./backend .
 
-EXPOSE 5000
-
 RUN chmod +x docker/start.sh
+
+EXPOSE 5000
 
 CMD ./docker/start.sh
