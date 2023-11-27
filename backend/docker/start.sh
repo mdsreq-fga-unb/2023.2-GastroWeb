@@ -9,3 +9,5 @@ echo "Database initilized"
 echo "Initializing app"
 
 python3 /backend/main.py
+
+python3 /backend/database/start.py

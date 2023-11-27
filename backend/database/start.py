@@ -1,7 +1,7 @@
 from asyncio import run
 
-from connection import engine
-from models import Base
+from database.connection import engine
+from database.models import Base
 
 
 async def create_database():
