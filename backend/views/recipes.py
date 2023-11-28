@@ -1,4 +1,4 @@
-from fastapi import  APIRouter, Request, UploadFile, File, HTTPException
+from fastapi import  APIRouter, Request, UploadFile, File, HTTPException, Query
 from schemas.models import ReceitaBasica, BuscaTitulo
 from database.connection import async_session
 from database.models import Receitas, Fotos
@@ -63,4 +63,14 @@ async def busca_titulo():
         result = await sessao.execute(select(Receitas))
         busca = result.scalars().all()
     
+    return busca
+
+@recipes.get("/buscareceitas")
+async def busca_titulo(titulo: str = Query(..., title="Title to search")):
+    async with async_session() as sessao:
+        
+        query = select(Receitas).where(Receitas.titulo.ilike(f"%{titulo}%"))
+        result = await sessao.execute(query)
+        busca = result.scalars().all()
+
     return busca
