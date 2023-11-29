@@ -3,6 +3,7 @@ from sqlalchemy import (
     Column,
     Integer,
     String,
+    Text
 )
 
 from sqlalchemy.orm import Mapped, declarative_base, DeclarativeBase, mapped_column
@@ -15,8 +16,8 @@ class Receitas(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
 
     titulo = Column(String(100), nullable=False)
-    ingredientes = Column(String(100), nullable=False)
-    instrucoes = Column(String(100), nullable=False)
+    ingredientes = Column(Text, nullable=False)
+    instrucoes = Column(Text, nullable=False)
 
 class Fotos(Base):
     __tablename__ = "fotos"

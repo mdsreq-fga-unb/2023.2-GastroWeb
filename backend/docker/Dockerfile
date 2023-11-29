@@ -19,4 +19,4 @@ RUN chmod +x docker/start.sh
 
 EXPOSE 5000
 
-CMD ./docker/start.sh
+CMD ["/bin/bash", "./docker/start.sh"]

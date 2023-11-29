@@ -19,7 +19,8 @@ services:
       context: ./
       dockerfile: ./backend/docker/Dockerfile
     volumes: 
-      - ./backend/database:/backend/database 
+      - ./backend/database:/backend/database
+      - ./backend:/backend
     ports:
       - 5000:5000
     depends_on:
@@ -35,6 +36,8 @@ services:
     build:
       context: ./
       dockerfile: ./frontend/docker/Dockerfile
+    volumes:
+      - ./frontend/src:/frontend/src
     ports: 
       - 9000:9000
     depends_on:
