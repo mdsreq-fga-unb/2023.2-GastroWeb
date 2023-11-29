@@ -1,5 +1,5 @@
-<template>
-  <router-view />
+<template lang="pug">
+router-view.fundo
 </template>
 
 <script>
@@ -9,3 +9,7 @@ export default defineComponent({
   name: 'App'
 })
 </script>
+<style lang="sass" scoped>
+.fundo
+  background-color: #EDB0A4
+</style>
