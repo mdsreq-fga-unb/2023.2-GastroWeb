@@ -1,7 +1,7 @@
 from fastapi import  APIRouter, Request, UploadFile, File, HTTPException, Query
 from schemas.models import ReceitaBasica, BuscaTitulo
 from database.connection import async_session
-from database.models import Receitas, Fotos
+from database.models import Receitas, Fotos, Ingrediente
 from sqlalchemy import select
 import os
 
@@ -17,10 +17,16 @@ async def criar_receita( recipe:ReceitaBasica, request : Request ):
     async with async_session() as sessao:
         nova_receita = Receitas(
             titulo=recipe.titulo,
-            ingredientes=recipe.ingredientes,
             instrucoes=recipe.instrucoes
         )
         sessao.add(nova_receita)
+        for ingrediente in recipe.ingredientes:
+                    sessao.add(
+                        Ingrediente(
+                            ingrediente=ingrediente.ingrediente,
+                            receitas=nova_receita
+                        )
+                    )
         await sessao.commit()
     return { "message" : "receita adicionada com sucesso!"}
 
