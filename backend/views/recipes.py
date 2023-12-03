@@ -1,5 +1,5 @@
 from fastapi import  APIRouter, Request, UploadFile, File, HTTPException, Query
-from schemas.models import ReceitaBasica, BuscaTitulo, IdReceita
+from schemas.models import ReceitaBasica, BuscaTitulo
 from database.connection import async_session
 from database.models import Receitas, Fotos, Ingrediente
 from sqlalchemy import select
