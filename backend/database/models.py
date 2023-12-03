@@ -21,6 +21,8 @@ class Receitas(Base):
     titulo = Column(String(100), nullable=False)
     instrucoes = Column(Text, nullable=False)
 
+    fotos = relationship("Fotos", back_populates="receita")
+
 
 class Ingrediente(Base):
     __tablename__ = "ingrediente"
@@ -42,8 +44,14 @@ class Ingrediente(Base):
 
 
 class Fotos(Base):
-    __tablename__ = "fotos"
+    __tablename__ = "foto"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
+    foto = Column(String, nullable=False)
 
-    path = Column(String, nullable=False)
+    id_receita = Column(Integer, ForeignKey("receitas.id"))
+    receita = relationship("Receitas", back_populates="fotos")
+
+
+
+    

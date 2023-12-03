@@ -8,6 +8,9 @@ class StandartOutput(BaseModel):
 class Ingredientes(BaseModel):
     ingrediente: str
 
+class Fotos(BaseModel):
+    fotos: str
+
 class ReceitaBasica(BaseModel):
     titulo: str
     instrucoes: str

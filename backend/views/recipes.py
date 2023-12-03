@@ -1,9 +1,10 @@
 from fastapi import  APIRouter, Request, UploadFile, File, HTTPException, Query
-from schemas.models import ReceitaBasica, BuscaTitulo
+from schemas.models import ReceitaBasica, BuscaTitulo, IdReceita
 from database.connection import async_session
 from database.models import Receitas, Fotos, Ingrediente
 from sqlalchemy import select
 import os
+from typing import List
 
 recipes = APIRouter()
 
@@ -27,6 +28,7 @@ async def criar_receita( recipe:ReceitaBasica, request : Request ):
                             receitas=nova_receita
                         )
                     )
+                    
         await sessao.commit()
     return { "message" : "receita adicionada com sucesso!"}
 
@@ -41,12 +43,45 @@ async def postar_foto( file: UploadFile = File(...) ):
                 image_file.write(file.file.read())
 
             # Save the file path to the database
-            new_photo = Fotos(path=file_path)
+            new_photo = Fotos(
+                path=file_path
+                )
 
             sessao.add(new_photo)
             await sessao.commit()
 
             return {"message": "File uploaded successfully"}
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=str(e))
+
+
+@recipes.post("/fotos")
+async def postar_fotos(id:int, files: List[UploadFile] = File(...)):
+
+    async with async_session() as sessao:
+        try:
+            os.makedirs("uploads", exist_ok=True)
+
+            # Lista para armazenar os caminhos dos arquivos
+            file_paths = []
+
+            for file in files:
+                file_path = os.path.join("uploads", file.filename)
+                with open(file_path, "wb") as image_file:
+                    image_file.write(file.file.read())
+                file_paths.append(file_path)
+
+            # Salvar os caminhos dos arquivos no banco de dados
+            for file_path in file_paths:
+                new_photo = Fotos(
+                    foto=file_path,
+                    id_receita=id
+                    )
+                sessao.add(new_photo)
+
+            await sessao.commit()
+
+            return {"message": "Files uploaded successfully"}
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
 
