@@ -10,7 +10,7 @@ q-page
       placeholder="Pesquise uma receita"
       v-model="texto"
     )
-    //- q-btn Buscar
+    q-btn(@click="mudarPagina" color="white" text-color="black").btn Criar Receita
   
 </template>
 
@@ -23,6 +23,13 @@ export default {
   data(){
     return{
     }
+  },
+  methods:{
+    mudarPagina(){
+      this.$router.push({
+          path: '/criarreceita'
+      })
+    }
   }
 }
 </script>
@@ -30,4 +37,7 @@ export default {
 .busca
   display: flex
   width: 100%
+
+.btn
+  margin: 15px
 </style>
