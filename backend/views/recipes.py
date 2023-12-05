@@ -2,7 +2,7 @@ from fastapi import  APIRouter, Request, UploadFile, File, HTTPException, Query,
 from fastapi.responses import JSONResponse
 from schemas.models import ReceitaBasica, Ingredientes
 from database.connection import async_session
-from database.models import Receitas, Fotos, Ingrediente, CategoriaEReceita, CategoriasEnum, Categorias
+from database.models import Receitas, Fotos, Ingrediente, CategoriaEReceita, CategoriasEnum, Categorias, TagsEnum, Tags, TagsEReceita
 from sqlalchemy import select, join
 import os
 from typing import List
@@ -17,7 +17,8 @@ async def criar_receita(
     instrucoes: str = Form(...),
     ingredientes: List[str] = Form(...),
     files: List[UploadFile] = File(...),
-    categorias: List[CategoriasEnum] = Form(...) # Entrada reestruturada!
+    categorias: List[CategoriasEnum] = Form(...), # Entrada reestruturada!
+    tags: List[TagsEnum] = Form(...)
 ):
     async with async_session() as sessao:
         try:
@@ -51,6 +52,22 @@ async def criar_receita(
 
                 assoc_categoria_receita = CategoriaEReceita(id_receita=nova_receita.id, id_categoria=categoria_id)
                 sessao.add(assoc_categoria_receita)
+
+            for tags_enum in tags:
+                tag = await sessao.execute(select(Tags).where(Tags.tag == tags_enum))
+                tag = tag.scalar_one_or_none()
+
+                if tag is None:
+                    nova_tag = Tags(tag=tags_enum)
+                    sessao.add(nova_tag)
+                    await sessao.commit()
+                    await sessao.refresh(nova_tag)
+                    tag_id = nova_tag.id
+                else:
+                    tag_id = tag.id
+
+                assoc_tag_receita = TagsEReceita(id_receita=nova_receita.id, id_tag=tag_id)
+                sessao.add(assoc_tag_receita)
                   
             os.makedirs("uploads", exist_ok=True)
 
@@ -81,6 +98,10 @@ async def popula_bd():
                 for categoria_enum in CategoriasEnum:
                     categoria_db = Categorias(categoria=categoria_enum)
                     sessao.add(categoria_db)
+        if not (await sessao.execute(select(Tags).limit(1))).first():
+                for tag_enum in TagsEnum:
+                    tag_db = Tags(tag=tag_enum)
+                    sessao.add(tag_db)
                 await sessao.commit() 
 
 
