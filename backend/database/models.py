@@ -66,11 +66,49 @@ class Fotos(Base):
 
 
 class CategoriasEnum(enum.Enum):
-    CAFE_DA_MANHA = "Café da manhã"
-    JANTAR = "Jantar"
-    ALMOCO = "Almoço"
-    DOCES = "Doces e Sobremesas"
-    LANCHE = "Lanche"
+    CAFE_DA_MANHA = "CAFE_DA_MANHA"
+    JANTAR = "JANTAR"
+    ALMOCO = "ALMOCO"
+    DOCES = "DOCES"
+    LANCHE = "LANCHE"
+
+
+
+class TagsEnum(enum.Enum):
+    LACTOSE = "LACTOSE"
+    OLEAGINOSAS = "OLEAGINOSAS"
+    PORCO = "PORCO"
+    CARNE = "CARNE"
+    GLUTEN = "GLUTEN"
+    FRUTOSDOMAR = "FRUTOSDOMAR"
+
+class Tags(Base):
+    __tablename__ = "tag"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    tag = Column(Enum(TagsEnum), nullable=False)
+
+class TagsEReceita(Base):
+    __tablename__ = "tagsereceitas"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    id_receita = Column(Integer, ForeignKey("receitas.id"), nullable=True)
+    id_tag = Column(Integer, ForeignKey("tag.id"), nullable=False)
+
+    receita = relationship(
+        "Receitas", backref=backref("tags_assoc", cascade="all, delete-orphan")
+    )
+    tags = relationship(
+        "Tags", backref=backref("receita_assoc", cascade="all, delete-orphan")
+    )
+
+    __table_args__ = (
+        UniqueConstraint(
+            "id_receita", "id_tag", name="u_receita_tag"
+        ),
+    )
+
+
 
 class Categorias(Base):
     __tablename__= "categorias"

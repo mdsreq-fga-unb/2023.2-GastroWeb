@@ -29,8 +29,9 @@ async def test_criar_receita_duas_categorias():
     ingredientes = ["Primeiro ingrediente", "Segundo ingrediente"]
     files = []  
     categorias = ["JANTAR", "ALMOCO"]
+    tags = ["PORCO", "CARNE", "OLEAGINOSAS"]
 
-    result = await criar_receita(titulo, instrucoes, ingredientes, files, categorias)
+    result = await criar_receita(titulo, instrucoes, ingredientes, files, categorias, tags)
 
     assert "message" in result
     assert "receita adicionada com sucesso!" in result["message"]
