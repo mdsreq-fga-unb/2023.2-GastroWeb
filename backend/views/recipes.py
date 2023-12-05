@@ -2,7 +2,7 @@ from fastapi import  APIRouter, Request, UploadFile, File, HTTPException, Query,
 from fastapi.responses import JSONResponse
 from schemas.models import ReceitaBasica, Ingredientes
 from database.connection import async_session
-from database.models import Receitas, Fotos, Ingrediente
+from database.models import Receitas, Fotos, Ingrediente, CategoriaEReceita, CategoriasEnum, Categorias
 from sqlalchemy import select, join
 import os
 from typing import List
@@ -16,7 +16,8 @@ async def criar_receita(
     titulo: str = Form(...),
     instrucoes: str = Form(...),
     ingredientes: List[str] = Form(...),
-    files: List[UploadFile] = File(...)
+    files: List[UploadFile] = File(...),
+    categorias: List[CategoriasEnum] = Form(...) # Entrada reestruturada!
 ):
     async with async_session() as sessao:
         try:
@@ -34,6 +35,23 @@ async def criar_receita(
                 )
                 sessao.add(novo_ingrediente)
 
+
+            for categoria_enum in categorias:
+                categoria = await sessao.execute(select(Categorias).where(Categorias.categoria == categoria_enum))
+                categoria = categoria.scalar_one_or_none()
+
+                if categoria is None:
+                    nova_categoria = Categorias(categoria=categoria_enum)
+                    sessao.add(nova_categoria)
+                    await sessao.commit()
+                    await sessao.refresh(nova_categoria)
+                    categoria_id = nova_categoria.id
+                else:
+                    categoria_id = categoria.id
+
+                assoc_categoria_receita = CategoriaEReceita(id_receita=nova_receita.id, id_categoria=categoria_id)
+                sessao.add(assoc_categoria_receita)
+                  
             os.makedirs("uploads", exist_ok=True)
 
             file_paths = []
@@ -50,13 +68,22 @@ async def criar_receita(
                     receita=nova_receita
                     )
                 sessao.add(nova_foto)
-
+            
+            
             await sessao.commit()
             return { "message" : "receita adicionada com sucesso!"}
         except Exception as e:
             return{"error": str(e)}
 
-        
+async def popula_bd():
+    async with async_session() as sessao:
+        if not (await sessao.execute(select(Categorias).limit(1))).first():
+                for categoria_enum in CategoriasEnum:
+                    categoria_db = Categorias(categoria=categoria_enum)
+                    sessao.add(categoria_db)
+                await sessao.commit() 
+
+
 
 @recipes.post("/fotos")
 async def postar_fotos(id_receita:int, files: List[UploadFile] = File(...)):

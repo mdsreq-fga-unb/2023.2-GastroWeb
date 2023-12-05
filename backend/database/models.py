@@ -5,8 +5,11 @@ from sqlalchemy import (
     String,
     Text,
     ForeignKey,
-    UniqueConstraint
+    UniqueConstraint,
+    Enum
 )
+
+import enum
 
 from sqlalchemy.orm import Mapped, declarative_base, mapped_column, relationship, backref, DeclarativeBase
 from sqlalchemy.sql import func
@@ -60,3 +63,40 @@ class Fotos(Base):
         ),
     )
     
+
+
+class CategoriasEnum(enum.Enum):
+    CAFE_DA_MANHA = "Café da manhã"
+    JANTAR = "Jantar"
+    ALMOCO = "Almoço"
+    DOCES = "Doces e Sobremesas"
+    LANCHE = "Lanche"
+
+class Categorias(Base):
+    __tablename__= "categorias"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    categoria = Column(Enum(CategoriasEnum), nullable=False)
+
+
+class CategoriaEReceita(Base):
+    __tablename__ = "categoriasereceitas"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    id_receita= Column(Integer, ForeignKey("receitas.id"), nullable=False)
+    id_categoria = Column(Integer, ForeignKey("categorias.id"), nullable=False)
+
+    receita = relationship(
+        "Receitas", backref=backref("categoria_assoc", cascade="all, delete-orphan")
+    )
+    categoria = relationship(
+        "Categorias", backref=backref("receita_assoc", cascade="all, delete-orphan")
+    )
+
+    __table_args__ = (
+        UniqueConstraint(
+            "id_receita", "id_categoria", name="u_receita_categoria"
+        ),
+    )
+
+

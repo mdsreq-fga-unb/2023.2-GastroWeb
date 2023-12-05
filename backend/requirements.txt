@@ -6,3 +6,5 @@ SQLAlchemy
 asyncpg
 APScheduler==3.10.3
 python-multipart
+pytest
+pytest-asyncio
