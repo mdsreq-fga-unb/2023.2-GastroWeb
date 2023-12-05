@@ -21,7 +21,6 @@ class Receitas(Base):
     titulo = Column(String(100), nullable=False)
     instrucoes = Column(Text, nullable=False)
 
-    fotos = relationship("Fotos", back_populates="receita")
 
 
 class Ingrediente(Base):
@@ -30,7 +29,7 @@ class Ingrediente(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     id_receitas = Column(Integer, ForeignKey("receitas.id"), nullable=False)
 
-    receitas = relationship(
+    receita = relationship(
         "Receitas", backref=backref("ingredientes", cascade="all, delete-orphan")
     )
 
@@ -47,11 +46,17 @@ class Fotos(Base):
     __tablename__ = "foto"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
+    id_receita = Column(Integer, ForeignKey("receitas.id"), nullable=False)
+
+    receita = relationship(
+        "Receitas", backref=backref("fotos", cascade="all, delete-orphan")
+    )
+
     foto = Column(String, nullable=False)
 
-    id_receita = Column(Integer, ForeignKey("receitas.id"))
-    receita = relationship("Receitas", back_populates="fotos")
-
-
-
+    __table_args__ = (
+        UniqueConstraint(
+            "foto", "id_receita", name="u_foto_receitas"
+        ),
+    )
     
