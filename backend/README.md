@@ -17,7 +17,7 @@ git checkout dev
 Você precisa ter o docker baixado!
 
 ```
-sudo docker-compose up
+sudo docker-compose up --build
 ```
 
 ### 4. Caso precise subir o banco de dados manualmente
