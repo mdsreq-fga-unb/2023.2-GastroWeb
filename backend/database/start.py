@@ -12,8 +12,6 @@ async def create_database():
         #await connection.run_sync(Base.metadata.drop_all)
         await connection.run_sync(Base.metadata.create_all)
 
-        await popula_bd()
-
 
 if __name__ == "__main__":
     run(create_database())
