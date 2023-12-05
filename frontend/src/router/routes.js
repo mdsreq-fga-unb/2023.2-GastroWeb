@@ -1,4 +1,3 @@
-
 const routes = [
   // {
   //   path: '/erro',
@@ -11,7 +10,18 @@ const routes = [
     path: '/',
     component: () => import('src/layouts/Principal.vue'),
     children: [
-      { path: '', name: 'pg_busca', component: () => import('src/pages/BuscaReceita.vue') }
+      { path: 'busca', name: 'pg_busca', component: () => import('src/pages/BuscaReceita.vue') }
+    ]
+  },
+  {
+    path: '/login',
+    component: () => import('src/layouts/Fundo.vue'),
+    children: [
+      {
+        path: '',
+        name: 'pg_login',
+        component: () => import('src/pages/TelaLogin.vue')
+      }
     ]
   }
 
