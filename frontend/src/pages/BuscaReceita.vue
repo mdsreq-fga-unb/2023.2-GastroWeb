@@ -27,7 +27,7 @@ export default {
   methods:{
     mudarPagina(){
       this.$router.push({
-          path: '/criarreceita'
+        path: '/criarreceita'
       })
     }
   }
