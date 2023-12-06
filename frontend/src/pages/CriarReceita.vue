@@ -43,25 +43,24 @@ q-page
       ).q-pb-md
     div.column
       span Fotos:
-      div(v-for="(foto, index) in aux.fotos")
-        q-uploader(
-          field-name="arquivo"
-          :url="salvarFotoUrl"
-          style="max-width: 354px;"
-          color="white"
-          text-color="black"
-          flat
-          accept=".jpg, .png, .jpeg, .pdf, image/*"
-          max-files-size="50000000"
-          max-file="1"
-        ).q-ma-sm
-      q-btn(rounded flat color="white" no-caps @click="addFoto").btn Adicionar mais imagens
-    q-btn(rounded flat color="white" no-caps @click="criarReceita").btn Cadastrar Receita
+      q-uploader(
+        field-name="aux.files"
+        :url="cadastrarReceita"
+        style="max-width: 354px;"
+        color="white"
+        text-color="black"
+        flat
+        accept=".jpg, .png, .jpeg, .pdf, image/*"
+        max-files-size="50000000"
+        max-file="1"
+        multiple
+      ).q-ma-sm
+    q-btn(rounded flat color="white" no-caps @click="cadastrarReceita").btn Cadastrar Receita
   
 </template>
 
 <script>
-
+import { createRecipe } from '../services/recipe'
 
 export default {
   name: 'CriarReceita',
@@ -72,29 +71,49 @@ export default {
         titulo: '',
         ingredientes: [],
         instrucoes: '',
-        fotos: []
+        categorias: ['JANTAR'],
+        tags: ['PORCO'],
+        files: ['aaaaa']
       }
     }
   },
   methods:{
-    mudarPagina(){
-      this.$router.push({
-        path: '/criarreceita'
-      })
-    },
     voltarPagina(){
       this.$router.push({
-        path: '/'
+        path: '/administrador'
       })
     },
     addIngrediente(){
       this.aux.ingredientes.push('')
     },
     addFoto(){
-      this.aux.fotos.push('')
+      this.aux.files.push('')
     },
     verificarReceita(){
       return 'receita'
+    },
+    cadastrarReceita(){
+      console.log(this.aux)
+      createRecipe({
+        ingredientes: this.aux.ingredientes,
+        titulo: this.aux.titulo,
+        tags: this.aux.tags,
+        categorias: this.aux.categorias,
+        files: this.aux.files,
+        instrucoes: this.aux.instrucoes
+      }).then(({ data }) => {
+        this.triggerMensagem('positove', 'Receita cadastrada.')
+        this.voltarPagina()
+      }).catch(error => {
+        console.log(error)
+        this.triggerMensagem('negative', 'Não foi possível cadastrar receita.')
+      })
+    },
+    triggerMensagem (type, menssage) {
+      this.$q.notify({
+        type: type,
+        message: menssage
+      })
     }
   }
 }

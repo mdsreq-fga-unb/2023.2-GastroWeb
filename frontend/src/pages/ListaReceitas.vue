@@ -1,9 +1,10 @@
 <template lang="pug">
 q-page
-  li(@click="voltarPagina").row.secao-voltar
+  section.q-pa-xl.column
+    li(@click="voltarPagina").row.secao-voltar
       q-icon(name="mdi-arrow-left-circle").q-mt-xs.icone-triangulo
       a.botao-voltar Voltar
-
+    span Aqui lista as receitas de acordo com a busca
 </template>
 
 <script>
