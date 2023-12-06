@@ -11,7 +11,7 @@ import json
 recipes = APIRouter()
 
  
-@recipes.post("/criarReceitas")
+@recipes.post("/criar_receitas")
 async def criar_receita( 
     titulo: str = Form(...),
     instrucoes: str = Form(...),
@@ -146,7 +146,7 @@ async def read_photos():
     return photos
 
 
-@recipes.get("/getreceitas")
+@recipes.get("/getallreceitas")
 async def busca_titulo():
     async with async_session() as sessao:
 
@@ -155,7 +155,7 @@ async def busca_titulo():
     
     return busca
 
-@recipes.get("/buscareceitas")
+@recipes.get("/buscaportitulo")
 async def busca_titulo(titulo: str = Query(..., title="Title to search")):
     async with async_session() as sessao:
         
