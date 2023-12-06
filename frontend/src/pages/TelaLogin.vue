@@ -31,12 +31,12 @@
 
 
 export default {
-    name: 'TelaLogin',
-    components: {},
-    data() {
-        return {
-        }
+  name: 'TelaLogin',
+  components: {},
+  data() {
+    return{
     }
+  }
 }
 </script>
 <style scoped>
