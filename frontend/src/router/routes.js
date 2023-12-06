@@ -12,7 +12,9 @@ const routes = [
     children: [
       { path: '', name: 'pg_busca', component: () => import('src/pages/BuscaReceita.vue') },
       { path: '/receitas', name: 'pg_receitas', component: () => import('src/pages/ListaReceitas.vue') },
-      { path: '/criarreceita', name: 'pg_criar_receita', component: () => import('src/pages/CriarReceita.vue') }
+      { path: '/criarreceita', name: 'pg_criar_receita', component: () => import('src/pages/CriarReceita.vue') },
+      { path: '/exibirreceita', name: 'pg_receita', component: () => import('src/pages/TelaReceita.vue') }
+
     ]
   },
   {
