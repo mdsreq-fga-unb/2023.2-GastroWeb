@@ -1,5 +1,5 @@
 import pytest
-from views.recipes import criar_receita
+from backend.views.post_recipes import criar_receita
 from database.models import CategoriasEnum
 from typing import List
 import asyncio

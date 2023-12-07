@@ -2,7 +2,7 @@ from asyncio import run
 
 from database.connection import engine
 from database.models import Base
-from views.recipes import popula_bd
+from views.post_recipes import popula_bd
 
 from database.models import *
 

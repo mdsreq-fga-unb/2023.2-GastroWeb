@@ -1,8 +1,9 @@
 from fastapi import FastAPI, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
-from views.recipes import recipes
+from views.post_recipes import recipes
 from database.start import create_database
-from views.recipes import popula_bd
+from views.post_recipes import popula_bd
+from views.get_recipes import get_recipes
 
 
 
@@ -27,12 +28,13 @@ app.add_middleware(
 )
 
 
-@app.get("/")
+""" @app.get("/")
 def inicio():
     return {"message" : "ola mundo"}
-
+ """
 
 app.include_router(recipes)
+app.include_router(get_recipes)
 
 if __name__ == "__main__":
     import os
