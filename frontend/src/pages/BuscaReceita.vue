@@ -8,27 +8,42 @@ q-page
       outlined
       borderless
       placeholder="Pesquise uma receita"
-      v-model="texto"
+      v-model="busca.titulo"
     )
-    q-btn(@click="buscar" color="white" text-color="black" no-caps).btn Buscar
+    q-btn(@click="buscarPorTitulo" color="white" text-color="black" no-caps :disable="busca.titulo === ''").btn Buscar
   
 </template>
 
 <script>
-
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'BuscaReceita',
   components: {},
   data(){
     return{
+      busca: {
+        titulo: '',
+        tags: [],
+        categorias: []
+      }
     }
   },
   methods:{
-    buscar(){
-      this.$router.push({
-        path: '/receitas'
-      })
+    buscarPorTitulo(){
+      const query = {
+        titulo: this.busca.titulo
+      }
+      const path = '/receitas'
+      this.$router.push({ path, query })
+    },
+    buscarPorTagsCategorias(){
+      const query = {
+        tags: this.busca.tags,
+        tribunal: this.busca.categorias
+      }
+      const path = '/receitas'
+      this.$router.push({ path, query })
     }
   }
 }

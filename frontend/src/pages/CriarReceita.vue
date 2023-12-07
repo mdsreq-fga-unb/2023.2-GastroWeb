@@ -73,7 +73,7 @@ export default {
         instrucoes: '',
         categorias: ['JANTAR'],
         tags: ['PORCO'],
-        files: ['aaaaa']
+        files: []
       }
     }
   },
@@ -101,8 +101,8 @@ export default {
         categorias: this.aux.categorias,
         files: this.aux.files,
         instrucoes: this.aux.instrucoes
-      }).then(({ data }) => {
-        this.triggerMensagem('positove', 'Receita cadastrada.')
+      }).then(() => {
+        this.triggerMensagem('positive', 'Receita cadastrada.')
         this.voltarPagina()
       }).catch(error => {
         console.log(error)

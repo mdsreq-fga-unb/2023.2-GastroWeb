@@ -40,7 +40,23 @@ export default {
   components: {},
   data() {
     return {
+      receita: {}
     }
+  },
+  methods: {
+    buscaReceitaPorId(){
+      this.receita = {
+        titulo:"add",
+        ingredientes:["ssssssss"],
+        instrucoes:"aaaaaaas",
+        categorias:["JANTAR"],
+        tags:["PORCO"],
+        files:[]
+      }
+    }
+  },
+  mounted(){
+    this.buscaReceitaPorId()
   }
 }
 </script>

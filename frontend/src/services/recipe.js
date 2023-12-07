@@ -11,11 +11,15 @@ export const createRecipe =
       tags,
       files
     }
-    return api.post('/criarReceitas', body)
+    return api.post('/criar_receitas', body)
   }
 
-
 export const listAllRecipe = async () =>
-  api.get('/getreceitas')
+  api.get('/get_all_receitas')
+
+export const searchByName = async ( params ) => {
+  return api.get('/busca_por_titulo', { params })
+}
+
 
 

@@ -1,6 +1,7 @@
 <template lang="pug">
 q-page
-  section.q-pa-xl.row.column
+  section.q-pa-xl.column
+    span Página de Administrador
     q-btn(@click="mudarPagina" color="white" text-color="black").btn Criar Receita
     span Lista de receitas embaixo
     div(v-for="(receita, index) in listaReceita")
