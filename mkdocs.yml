@@ -18,6 +18,8 @@ nav:
       - BDD: estudo-caso/BDD.md
       - USM: estudo-caso/USM.md
       - UC:  estudo-caso/UC.md
+  - Design:
+      - Padrões de Interface: design/padroes-interface.md
   - Sprints:
       - Sprint 1: sprints/sprint.md
   - Entregas:
