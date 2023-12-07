@@ -1,24 +1,20 @@
 from fastapi import  APIRouter, Query
 from database.connection import async_session
-from database.models import Receitas, Fotos, Ingrediente, CategoriaEReceita, TagsEReceita
+from database.models import Receitas, Fotos, Ingrediente, CategoriaEReceita, TagsEReceita, Categorias, CategoriasEnum, Tags, TagsEnum
 from sqlalchemy import select
 from sqlalchemy.orm import joinedload
+from typing import List
 
 get_recipes = APIRouter(tags=["get"])
-
-@get_recipes.get("/busca_categoria_e_tag")
-async def get_categorias_e_tags():
-    return {"message":"Deu certo"}
-
 
 
 @get_recipes.get("/get_receita_por_id")
 async def get_receitas_completas(
     receita_id: int
 ):
-    async with async_session() as session:
+    async with async_session() as sessao:
         categorias_associadas = (
-            await session.execute(
+            await sessao.execute(
                 select(CategoriaEReceita)
                 .options(joinedload(CategoriaEReceita.categoria))
                 .where(CategoriaEReceita.id_receita == receita_id)
@@ -33,7 +29,7 @@ async def get_receitas_completas(
 
 
         tags_associadas = (
-            await session.execute(
+            await sessao.execute(
                 select(TagsEReceita)
                 .options(joinedload(TagsEReceita.tags))
                 .where(TagsEReceita.id_receita == receita_id)
@@ -51,7 +47,7 @@ async def get_receitas_completas(
             .join(Receitas)
             .filter(Receitas.id == receita_id)
         )
-        result = await session.execute(stmt)
+        result = await sessao.execute(stmt)
         ingredientes = result.scalars().all()
         ingrediente_ordenado = [ingrediente.ingrediente for ingrediente in ingredientes]
 
@@ -60,13 +56,13 @@ async def get_receitas_completas(
             .join(Receitas)
             .filter(Receitas.id == receita_id)
         )
-        result_fotos = await session.execute(fotin)
+        result_fotos = await sessao.execute(fotin)
         fotos = result_fotos.scalars().all()
         fotos_ordenadas = [foto.foto for foto in fotos]
 
         # Consulta a tabela Receitas para obter as informações da receita
         receita = (
-            await session.execute(
+            await sessao.execute(
                 select(Receitas)
                 .where(Receitas.id == receita_id)
             )
@@ -83,14 +79,63 @@ async def get_receitas_completas(
             
         }
 
+@get_recipes.get("/busca_categoria_e_tag")
+async def get_categorias_e_tags(
+    categoria: str | None = None,
+    tag: str | None = None
+):
+    async with async_session() as sessao:
+        procura = select(Receitas)
 
-@get_recipes.get("/get_all_fotos")
-async def read_photos():
-    async with async_session() as session:
-        result = await session.execute(select(Fotos))
-        photos = result.scalars().all()
+        if tag and categoria:
 
-    return photos
+            subquery_tags = (
+                select(TagsEReceita.id_receita)
+                .join(Tags)
+                .where(Tags.tag == tag)
+            ).alias("subquery_tags")
+            subquery_categoria = (
+                select(CategoriaEReceita.id_receita)
+                .join(Categorias)
+                .where(Categorias.categoria == categoria)
+            ).alias("subquery_categoria")
+
+            procura = procura.join(subquery_tags, Receitas.id == subquery_tags.c.id_receita)
+            procura = procura.join(subquery_categoria, Receitas.id == subquery_categoria.c.id_receita)
+
+        else:
+
+            if tag:
+                subquery_tags = (
+                    select(TagsEReceita.id_receita)
+                    .join(Tags)
+                    .where(Tags.tag == tag)
+                ).alias("subquery_tags")
+
+                procura = procura.join(subquery_tags, Receitas.id == subquery_tags.c.id_receita)
+
+            elif categoria:
+                subquery_categoria = (
+                    select(CategoriaEReceita.id_receita)
+                    .join(Categorias)
+                    .where(Categorias.categoria == categoria)
+                ).alias("subquery_categoria")
+
+                procura = procura.join(subquery_categoria, Receitas.id == subquery_categoria.c.id_receita)
+
+
+        procura = procura.options(joinedload(Receitas.fotos))
+
+        result = await sessao.execute(procura)
+        receitas = result.unique().scalars().all()
+
+        resposta = []
+        for receita in receitas:
+            fotos_da_receita = receita.fotos[0].foto if receita.fotos else None
+            resposta.append({"id": receita.id, "titulo": receita.titulo, "instrucoes": receita.instrucoes, "fotos": fotos_da_receita})
+        resposta.append({"categoria": categoria, "tag":tag})
+        
+    return resposta
 
 
 @get_recipes.get("/busca_por_titulo")
@@ -98,10 +143,24 @@ async def busca_titulo(titulo: str = Query(..., title="Title to search")):
     async with async_session() as sessao:
         
         query = select(Receitas).where(Receitas.titulo.ilike(f"%{titulo}%"))
-        result = await sessao.execute(query)
-        busca = result.scalars().all()
+        query = query.options(joinedload(Receitas.fotos))
 
-    return busca
+        result = await sessao.execute(query)
+        busca = result.unique().scalars().all()
+        
+    resposta = []
+    for receita in busca:
+        fotos_da_receita = receita.fotos[0].foto if receita.fotos else None
+        resposta.append({
+            "id": receita.id,
+            "titulo": receita.titulo,
+            "instrucoes": receita.instrucoes,
+            "fotos": fotos_da_receita
+        })
+
+    resposta.append({"pesquisa":titulo})
+
+    return resposta
 
 
 @get_recipes.get("/get_all_receitas")
