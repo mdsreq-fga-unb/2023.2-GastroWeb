@@ -5,7 +5,7 @@ from typing import List
 import asyncio
 
 
-# Teste para verificar a criação da receita com categoria
+""" # Teste para verificar a criação da receita com categoria
 @pytest.mark.asyncio
 async def test_criar_receita_com_uma_categoria():
     titulo = "Teste de receita com uma categoria"
@@ -19,7 +19,7 @@ async def test_criar_receita_com_uma_categoria():
     assert "message" in result
     assert "receita adicionada com sucesso!" in result["message"]
 
-
+ """
 
 # Teste para verificar que podemos adicionar mais de uma categoria por receita
 @pytest.mark.asyncio

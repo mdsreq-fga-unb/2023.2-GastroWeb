@@ -4,13 +4,14 @@ from schemas.models import ReceitaBasica, Ingredientes
 from database.connection import async_session
 from database.models import Receitas, Fotos, Ingrediente, CategoriaEReceita, CategoriasEnum, Categorias, TagsEnum, Tags, TagsEReceita
 from sqlalchemy import select, join
+from sqlalchemy.orm import joinedload
 import os
 from typing import List
 import json
 
 recipes = APIRouter()
 
- 
+
 @recipes.post("/criar_receitas")
 async def criar_receita( 
     titulo: str = Form(...),
@@ -106,7 +107,78 @@ async def popula_bd():
 
 
 
-@recipes.post("/fotos")
+@recipes.get("/get_receita_por_id")
+async def get_receitas_completas(
+    receita_id: int
+):
+    async with async_session() as session:
+        categorias_associadas = (
+            await session.execute(
+                select(CategoriaEReceita)
+                .options(joinedload(CategoriaEReceita.categoria))
+                .where(CategoriaEReceita.id_receita == receita_id)
+            )
+        ).scalars().all()
+
+        if not categorias_associadas:
+            return {"message": "Receita não encontrada ou sem categoria."}
+
+        # Extrai as categorias associadas
+        categorias = [categoria.categoria.categoria for categoria in categorias_associadas]
+
+
+        tags_associadas = (
+            await session.execute(
+                select(TagsEReceita)
+                .options(joinedload(TagsEReceita.tags))
+                .where(TagsEReceita.id_receita == receita_id)
+            )
+        ).scalars().all()
+
+        if not tags_associadas:
+            return {"message": "Receita não encontrada ou sem tags"}
+
+        # Extrai as categorias associadas
+        tag = [tags.tags.tag for tags in tags_associadas]
+        
+        stmt = (
+            select(Ingrediente)
+            .join(Receitas)
+            .filter(Receitas.id == receita_id)
+        )
+        result = await session.execute(stmt)
+        ingredientes = result.scalars().all()
+        ingrediente_ordenado = [ingrediente.ingrediente for ingrediente in ingredientes]
+
+        fotin = (
+            select(Fotos)
+            .join(Receitas)
+            .filter(Receitas.id == receita_id)
+        )
+        result_fotos = await session.execute(fotin)
+        fotos = result_fotos.scalars().all()
+        fotos_ordenadas = [foto.foto for foto in fotos]
+
+        # Consulta a tabela Receitas para obter as informações da receita
+        receita = (
+            await session.execute(
+                select(Receitas)
+                .where(Receitas.id == receita_id)
+            )
+        ).scalar()
+
+        return {
+            "id_receita": receita.id,
+            "titulo": receita.titulo,
+            "ingredientes": ingrediente_ordenado,
+            "instrucoes": receita.instrucoes,
+            "categorias": categorias,
+            "tags": tag,
+            "fotos": fotos_ordenadas
+            
+        }
+
+@recipes.post("/postar_fotos")
 async def postar_fotos(id_receita:int, files: List[UploadFile] = File(...)):
 
     async with async_session() as sessao:
@@ -137,7 +209,7 @@ async def postar_fotos(id_receita:int, files: List[UploadFile] = File(...)):
             raise HTTPException(status_code=500, detail=str(e))
 
 
-@recipes.get("/getfotos")
+@recipes.get("/get_all_fotos")
 async def read_photos():
     async with async_session() as session:
         result = await session.execute(select(Fotos))
@@ -155,7 +227,7 @@ async def busca_titulo():
     
     return busca
 
-@recipes.get("/buscaportitulo")
+@recipes.get("/busca_por_titulo")
 async def busca_titulo(titulo: str = Query(..., title="Title to search")):
     async with async_session() as sessao:
         
@@ -195,3 +267,4 @@ async def listar_ingredientes(receita_id: int):
         ingredientes = result.scalars().all()
 
         return ingredientes
+    
