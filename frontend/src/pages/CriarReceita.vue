@@ -43,20 +43,10 @@ q-page
       ).q-pb-md
     div.column
       span Fotos:
-      q-uploader(
-        field-name="aux.files"
-        :url="cadastrarReceita"
-        style="max-width: 354px;"
-        color="white"
-        text-color="black"
-        flat
-        accept=".jpg, .png, .jpeg, .pdf, image/*"
-        max-files-size="50000000"
-        max-file="1"
-        multiple
-      ).q-ma-sm
-    q-btn(rounded flat color="white" no-caps @click="cadastrarReceita").btn Cadastrar Receita
-  
+      div(v-for="(file, index) in aux.files")
+        input(type="file" :id="`fileInput${index + 1}`" accept="image/*")
+      q-btn(rounded flat color="white" no-caps @click="addFoto").btn Adicionar Foto 
+      q-btn(rounded flat color="white" no-caps @click="cadastrarReceita").btn Salvar Receita 
 </template>
 
 <script>
@@ -93,15 +83,19 @@ export default {
       return 'receita'
     },
     cadastrarReceita(){
-      console.log(this.aux)
-      createRecipe({
-        ingredientes: this.aux.ingredientes,
-        titulo: this.aux.titulo,
-        tags: this.aux.tags,
-        categorias: this.aux.categorias,
-        files: this.aux.files,
-        instrucoes: this.aux.instrucoes
-      }).then(() => {
+      let formData = new FormData()
+      formData.append('titulo', this.aux.titulo)
+      formData.append('ingredientes', this.transformarLista(this.aux.ingredientes))
+      formData.append('instrucoes', this.aux.instrucoes)
+      formData.append('categorias', this.transformarLista(this.aux.categorias))
+      formData.append('tags', this.transformarLista(this.aux.tags))
+      for (let i = 0; i < this.aux.files.length; i++) {
+        const fileInput = document.getElementById(`fileInput${i + 1}`)
+        formData.append('files', fileInput.files[0])
+        console.log(fileInput.file)
+      }
+      console.log(formData)
+      createRecipe(formData).then(() => {
         this.triggerMensagem('positive', 'Receita cadastrada.')
         this.voltarPagina()
       }).catch(error => {
@@ -114,6 +108,9 @@ export default {
         type: type,
         message: menssage
       })
+    },
+    transformarLista(lista){
+      return lista.join(',')
     }
   }
 }

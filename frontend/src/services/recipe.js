@@ -1,18 +1,9 @@
 import { api } from 'src/boot/axios'
 const urlBackend = ''
 
-export const createRecipe = 
-  async ({ titulo, ingredientes, instrucoes, categorias, tags, files }) => {
-    const body = {
-      titulo,
-      ingredientes,
-      instrucoes,
-      categorias,
-      tags,
-      files
-    }
-    return api.post('/criar_receitas', body)
-  }
+export const createRecipe = async (body) => {
+  return api.post('/criar_receitas', body)
+}
 
 export const listAllRecipe = async () =>
   api.get('/get_all_receitas')
