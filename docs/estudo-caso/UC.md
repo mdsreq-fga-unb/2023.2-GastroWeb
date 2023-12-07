@@ -35,25 +35,29 @@ Este caso de uso permite ao usuário pesquisar informações detalhadas sobre ac
 
 2. O usuário seleciona entre "Buscar Acomodações" e "Buscar Atividades".
 
-3. O usuário define critérios de busca, como preço, localização e tipo.
+3. O usuário define critérios de busca: preço, localização e tipo.
 
-4. O aplicativo apresenta uma lista de resultados que correspondem aos critérios definidos.
+4. O aplicativo apresenta uma lista de resultados que correspondem aos critérios definidos. (FA1)
 
-5. O usuário pode visualizar detalhes, como descrição, fotos e avaliações.
+5. O usuário pode visualizar detalhes: descrição, fotos e avaliações. (FA2)
 
-6. Se desejar, o usuário pode selecionar "Ver Detalhes e Disponibilidade de Reserva."
+6. O usuário pode selecionar "Ver Detalhes e Disponibilidade de Reserva."
 
 **Fluxos Alternativos:**
 
-- Se não houver resultados que correspondam aos critérios de busca, o aplicativo notifica o usuário e sugere ajustes nos parâmetros de pesquisa.
+A1. Resultado de busca não encontrado (entra no passo 4. do fluxo básico)
 
-- Se o usuário decidir não visualizar detalhes e disponibilidade de reserva, o caso de uso é encerrado.
+1. O aplicativo notifica o usuário e sugere ajustes nos parâmetros de pesquisa
+
+A2. Não visualizar detalhes (entra no passo 5. do fluxo básico)
+
+1. Se o usuário decidir não visualizar detalhes e disponibilidade de reserva, o caso de uso é encerrado.
 
 **Requisitos Especiais:**
 
-- O sistema deve ter uma funcionalidade de busca eficiente que retorne resultados precisos.
+1. O sistema deve retornar os resultados de acordo com os filtros selecionados pelo usuário.
 
-- As avaliações de outras atividades do usuário podem influenciar a ordem ou destaque dos resultados.
+2. As avaliações de outras atividades do usuário podem influenciar a ordem ou destaque dos resultados.
 
 **Pré-condições:**
 
@@ -79,11 +83,13 @@ Este caso de uso estende o caso de uso "Pesquisar Informações Detalhadas" e pe
 
 2. O usuário define critérios de busca para acomodações.
 
-3. O aplicativo apresenta uma lista de acomodações que correspondem aos critérios definidos.
+3. O aplicativo apresenta uma lista de acomodações que correspondem aos critérios definidos. (FA1)
 
 **Fluxos Alternativos:**
 
-- Se não houver resultados que correspondam aos critérios de busca, o aplicativo notifica o usuário e sugere ajustes nos parâmetros de pesquisa.
+A1. Busca sem resultados (entra no passo 3. do fluxo básico)
+
+1. O aplicativo notifica o usuário e sugere ajustes nos parâmetros de pesquisa.
 
 **Requisitos Especiais:**
 
@@ -91,7 +97,7 @@ Este caso de uso estende o caso de uso "Pesquisar Informações Detalhadas" e pe
 
 **Pré-condições:**
 
-- O usuário está autenticado no aplicativo.
+- O usuário precisa ter executado o caso "Pesquisar informações detalhadas".
 
 **Pontos de Extensão:**
 
@@ -113,11 +119,13 @@ Este caso de uso estende o caso de uso "Pesquisar Informações Detalhadas" e pe
 
 2. O usuário define critérios de busca para atividades.
 
-3. O aplicativo apresenta uma lista de atividades que correspondem aos critérios definidos.
+3. O aplicativo apresenta uma lista de atividades que correspondem aos critérios definidos. (FA1)
 
 **Fluxos Alternativos:**
 
-- Se não houver resultados que correspondam aos critérios de busca, o aplicativo notifica o usuário e sugere ajustes nos parâmetros de pesquisa.
+A1. Busca sem resultados (entra no passo 3. do fluxo básico)
+
+1. O aplicativo notifica o usuário e sugere ajustes nos parâmetros de pesquisa.
 
 **Requisitos Especiais:**
 
@@ -125,7 +133,7 @@ Este caso de uso estende o caso de uso "Pesquisar Informações Detalhadas" e pe
 
 **Pré-condições:**
 
-- O usuário está autenticado no aplicativo.
+- O usuário precisa ter executado o caso "Pesquisar informações detalhadas".
 
 **Pontos de Extensão:**
 
