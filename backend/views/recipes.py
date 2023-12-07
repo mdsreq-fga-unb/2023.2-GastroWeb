@@ -218,7 +218,7 @@ async def read_photos():
     return photos
 
 
-@recipes.get("/getallreceitas")
+@recipes.get("/get_all_receitas")
 async def busca_titulo():
     async with async_session() as sessao:
 
