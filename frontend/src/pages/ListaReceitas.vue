@@ -4,15 +4,15 @@ q-page
     li(@click="voltarPagina").row.secao-voltar
       q-icon(name="mdi-arrow-left-circle").q-mt-xs.icone-triangulo
       a.botao-voltar Voltar
-    span Aqui lista as receitas de acordo com a busca
+    CardReceita
 </template>
 
 <script>
-
+import CardReceita from '../components/CardReceita.vue'
 
 export default {
   name: 'ListaReceitas',
-  components: {},
+  components: { CardReceita },
   data(){
     return{
     }
