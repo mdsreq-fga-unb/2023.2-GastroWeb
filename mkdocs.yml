@@ -17,6 +17,7 @@ nav:
       - PBB: estudo-caso/PBB.md
       - BDD: estudo-caso/BDD.md
       - USM: estudo-caso/USM.md
+      - UC:  estudo-caso/UC.md
   - Sprints:
       - Sprint 1: sprints/sprint.md
   - Entregas:
