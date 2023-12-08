@@ -16,6 +16,27 @@ q-page
         borderless
         placeholder="Digite o título da receita"
       )
+    div.row.checkbox
+      div.column
+        span Categorias
+        div.caixa-branca.column
+          q-checkbox(
+            v-for="val in categorias"
+            size="xs"
+            v-model="aux.categorias"
+            :val="val"
+            :label="val"
+          )
+      div.column 
+        span Tags
+        div.caixa-branca.column
+          q-checkbox(
+            v-for="val in tags"
+            size="xs"
+            v-model="aux.tags"
+            :val="val"
+            :label="val"
+          )
     div.column
       span Ingredientes:
       div(v-for="(ingrediente, index) in aux.ingredientes")
@@ -26,7 +47,7 @@ q-page
           color="grey"
           outlined
           borderless
-          placeholder="Digite o ingrediente"
+          placeholder="Digite a porção e o ingrediente"
         ).q-pb-sm
       q-btn(rounded flat color="white" no-caps @click="addIngrediente").btn Adicionar Ingrediente
     div.column
@@ -38,7 +59,7 @@ q-page
         color="grey"
         outlined
         borderless
-        placeholder="Detalhe o mode de preparo"
+        placeholder="Detalhe o modo de preparo"
         type="textarea"
       ).q-pb-md
     div.column
@@ -61,10 +82,25 @@ export default {
         titulo: '',
         ingredientes: [],
         instrucoes: '',
-        categorias: ['JANTAR'],
-        tags: ['PORCO'],
+        categorias: [],
+        tags: [],
         files: []
-      }
+      },
+      tags: [
+        'LACTOSE',
+        'OLEAGINOSAS',
+        'PORCO',
+        'CARNE',
+        'GLUTEN',
+        'FRUTOSDOMAR'
+      ],
+      categorias: [
+        'CAFE_DA_MANHA',
+        'JANTAR',
+        'ALMOCO',
+        'DOCES',
+        'LANCHE'
+      ]
     }
   },
   methods:{
@@ -115,7 +151,7 @@ export default {
   }
 }
 </script>
-<style lang="sass">
+<style lang="sass" scoped>
 .busca
   display: flex
   width: 100%
@@ -144,6 +180,14 @@ export default {
 
 .pagina
   gap: 20px
-  // display: flex
-  // align-items: center
+
+.caixa-branca
+  background-color: white
+  border-radius: 20px
+  padding: 20px
+  height: 250px
+  width: 200px
+
+.checkbox
+  gap: 30px
 </style>

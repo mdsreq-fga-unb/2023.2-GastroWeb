@@ -4,7 +4,7 @@
       <div class="card">
         <div class="card-content">
           <div class="image-column">
-            <img :src="foto" alt="Imagem Receita" />
+            <img :src="`/backend/${foto}`" alt="Imagem Receita" />
           </div>
           <div class="text-column">
             <h4>{{ titulo }}</h4>
@@ -14,7 +14,6 @@
       </div>
     </div>
   </div>
-  <br>
 </template>
 
 <script>
@@ -30,6 +29,9 @@ export default {
   data() {
     return {
     }
+  },
+  mounted(){
+    // console.log(this.fotos)
   }
 }
 </script>
@@ -39,11 +41,12 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 12px;
 }
 
 .card {
   width: 800px;
-  height: 400px;
+  height: 300px;
   border-radius: 25px;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

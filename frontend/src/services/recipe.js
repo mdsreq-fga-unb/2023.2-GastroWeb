@@ -12,5 +12,13 @@ export const searchByName = async ( params ) => {
   return api.get('/busca_por_titulo', { params })
 }
 
+export const searchByTagCategory = async ( {tag, categoria} ) => {
+  const params = {
+    tag,
+    categoria
+  }
+  return api.get('/busca_categoria_e_tag', { params })
+}
+
 
 
