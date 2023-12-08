@@ -133,9 +133,9 @@ async def get_categorias_e_tags(
         for receita in receitas:
             fotos_da_receita = receita.fotos[0].foto if receita.fotos else None
             resposta.append({"id": receita.id, "titulo": receita.titulo, "instrucoes": receita.instrucoes, "fotos": fotos_da_receita})
-        resposta.append({"categoria": categoria, "tag":tag})
         
-    return resposta
+        
+    return {"categoria":categoria, "tag":tag}, resposta
 
 
 @get_recipes.get("/busca_por_titulo")
@@ -158,19 +158,32 @@ async def busca_titulo(titulo: str = Query(..., title="Title to search")):
             "fotos": fotos_da_receita
         })
 
-    resposta.append({"pesquisa":titulo})
-
-    return resposta
+    return {"Pesquisa": titulo}, resposta
 
 
 @get_recipes.get("/get_all_receitas")
 async def busca_titulo():
     async with async_session() as sessao:
 
-        result = await sessao.execute(select(Receitas))
-        busca = result.scalars().all()
+        query = select(Receitas)
+        query = query.options(joinedload(Receitas.fotos))
+
+        result = await sessao.execute(query)
+
+        busca = result.unique().scalars().all()
+
+        resposta = []
+
+        for receita in busca:
+            foto_da_receita = receita.fotos[0].foto if receita.fotos else None
+            resposta.append({
+                "id": receita.id,
+                "titulo": receita.titulo,
+                "instrucoes": receita.instrucoes,
+                "foto": foto_da_receita
+            })
     
-    return busca
+    return resposta
 
 
 """ @recipes.get("/obter_fotos_por_receita")
