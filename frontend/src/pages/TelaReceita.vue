@@ -46,11 +46,11 @@ export default {
   methods: {
     buscaReceitaPorId(){
       this.receita = {
-        titulo:"add",
-        ingredientes:["ssssssss"],
-        instrucoes:"aaaaaaas",
-        categorias:["JANTAR"],
-        tags:["PORCO"],
+        titulo:'add',
+        ingredientes:['ssssssss'],
+        instrucoes:'aaaaaaas',
+        categorias:['JANTAR'],
+        tags:['PORCO'],
         files:[]
       }
     }
