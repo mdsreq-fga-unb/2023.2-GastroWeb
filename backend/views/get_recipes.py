@@ -1,4 +1,5 @@
 from fastapi import  APIRouter, Query, Depends
+from fastapi.responses import FileResponse
 from database.connection import async_session
 from database.models import Receitas, Fotos, Ingrediente, CategoriaEReceita, TagsEReceita, Categorias, CategoriasEnum, Tags, TagsEnum
 from sqlalchemy import select
@@ -148,10 +149,11 @@ async def busca_titulo(titulo: str = Query(..., title="Title to search")):
 
         result = await sessao.execute(query)
         busca = result.unique().scalars().all()
-        
+    
+    base_url = "http://localhost:5000"
     resposta = []
     for receita in busca:
-        fotos_da_receita = receita.fotos[0].foto if receita.fotos else None
+        fotos_da_receita = f"{base_url}/backend/{receita.fotos[0].foto}" if receita.fotos else None
         resposta.append({
             "id": receita.id,
             "titulo": receita.titulo,
@@ -161,6 +163,15 @@ async def busca_titulo(titulo: str = Query(..., title="Title to search")):
 
     return {"Pesquisa": titulo}, resposta
 
+
+@get_recipes.get("/images/{image_name}")
+async def get_image(image_name: str):
+    image_path = f"uploads/{image_name}"  # Adjust the path accordingly
+    try:
+        return FileResponse(path=image_path, media_type="image/png")
+    except Exception as e:
+        print(f"Error retrieving image: {e}")
+        raise
 
 @get_recipes.get("/get_all_receitas")
 async def busca_titulo():
