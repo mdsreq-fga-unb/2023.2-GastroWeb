@@ -27,7 +27,7 @@ export default {
     },
     login(){
       this.$router.push({
-        path: '/administrador'
+        path: '/login'
       })
     }
   }

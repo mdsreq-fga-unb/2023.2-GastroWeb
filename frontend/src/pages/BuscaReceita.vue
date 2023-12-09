@@ -72,6 +72,7 @@ export default {
   },
   methods:{
     ...mapActions('busca', ['setParametrosBusca']),
+    ...mapActions('login', ['setLogin']),
     buscarPorTitulo(){
       this.setParametrosBusca({
         titulo: this.busca.titulo || ''
@@ -108,7 +109,10 @@ export default {
       tags: [],
       categorias: [],
       id: 0
-    })
+    }),
+    this.setLogin(false)
+    localStorage.removeItem('token')
+
   }
 }
 </script>

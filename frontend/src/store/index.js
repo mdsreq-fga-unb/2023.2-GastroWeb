@@ -1,12 +1,14 @@
 
 import busca from './busca'
+import login from './login'
 
 import { createStore } from 'vuex'
 
 export default function (/* { ssrContext } */) {
   const Store = createStore({
     modules: {
-      busca
+      busca,
+      login
     },
 
     // enable strict mode (adds overhead!)
