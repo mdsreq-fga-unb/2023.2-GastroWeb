@@ -21,29 +21,10 @@ class ReceitaBasica(BaseModel):
 class BuscaTitulo(BaseModel):
     titulo: str
 
-""" 
-class CategoriasEnum(str, Enum):
-    CAFE_DA_MANHA = "CAFE_DA_MANHA"
-    JANTAR = "JANTAR"
-    ALMOCO = "ALMOCO"
-    DOCES = "DOCES"
-    LANCHE = "LANCHE"
+class User(BaseModel):
+    username: str
+    disabled: bool | None = None
 
 
-
-class TagsEnum(str, Enum):
-    LACTOSE = "LACTOSE"
-    OLEAGINOSAS = "OLEAGINOSAS"
-    PORCO = "PORCO"
-    CARNE = "CARNE"
-    GLUTEN = "GLUTEN"
-    FRUTOSDOMAR = "FRUTOSDOMAR"
-
-
-class ReceitaPorJSON(BaseModel):
-    titulo: str
-    instrucoes: str
-    Ingredientes: List[str]
-    categorias: List[str]
-    tags: List[str]
- """
+class UserInDB(User):
+    hashed_password: str

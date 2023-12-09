@@ -1,11 +1,11 @@
-from fastapi import  APIRouter, Query
+from fastapi import  APIRouter, Query, Depends
 from database.connection import async_session
 from database.models import Receitas, Fotos, Ingrediente, CategoriaEReceita, TagsEReceita, Categorias, CategoriasEnum, Tags, TagsEnum
 from sqlalchemy import select
 from sqlalchemy.orm import joinedload
 from typing import List
 
-get_recipes = APIRouter(tags=["get"])
+get_recipes = APIRouter(tags=["Get"]) #dependencies=[Depends(auth_user.get_current_active_user)] -> para ativar a autenticação
 
 
 @get_recipes.get("/get_receita_por_id")

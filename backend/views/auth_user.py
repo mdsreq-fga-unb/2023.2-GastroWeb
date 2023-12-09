@@ -1,17 +1,14 @@
 from typing import Annotated
-
+from schemas.models import User, UserInDB
 from fastapi import Depends, FastAPI, HTTPException, status, APIRouter
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from pydantic import BaseModel
 
-get_users = APIRouter(tags=["get"])
-post_user = APIRouter(tags=["post"])
+post_user = APIRouter(tags=["Atenticação"])
 
 fake_users_db = {
-    "user_admin": {
-        "username": "user_admin",
-        "full_name": "Usuario Administrador",
-        "email": "user_admin@example.com",
+    "admin": {
+        "username": "admin",
         "hashed_password": "fakehashed1234",
         "disabled": False,
     },
@@ -26,16 +23,6 @@ def fake_hash_password(password: str):
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
-
-class User(BaseModel):
-    username: str
-    email: str | None = None
-    full_name: str | None = None
-    disabled: bool | None = None
-
-
-class UserInDB(User):
-    hashed_password: str
 
 
 def get_user(db, username: str):
@@ -83,8 +70,9 @@ async def login(form_data: Annotated[OAuth2PasswordRequestForm, Depends()]):
     return {"access_token": user.username, "token_type": "bearer"}
 
 
-@get_users.get("/users/me")
+""" @get_users.get("/users/me")
 async def read_users_me(
     current_user: Annotated[User, Depends(get_current_active_user)]
 ):
     return current_user
+ """

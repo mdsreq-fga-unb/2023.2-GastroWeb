@@ -1,12 +1,13 @@
-from fastapi import  APIRouter, UploadFile, File, HTTPException, Form
+from fastapi import  APIRouter, UploadFile, File, HTTPException, Form, Depends
 from schemas.models import ReceitaBasica, Ingredientes
 from database.connection import async_session
 from database.models import Receitas, Fotos, Ingrediente, CategoriaEReceita, CategoriasEnum, Categorias, TagsEnum, Tags, TagsEReceita
 from sqlalchemy import select
 import os
 from typing import List
+from views import auth_user
 
-recipes = APIRouter(tags=["post"])
+recipes = APIRouter(tags=["Post"]) #dependencies=[Depends(auth_user.get_current_active_user)] -> para ativar a autenticação
 
 
 @recipes.post("/criar_receitas")
