@@ -4,6 +4,7 @@ from database.models import Receitas, Fotos, Ingrediente, CategoriaEReceita, Tag
 from sqlalchemy import select
 from sqlalchemy.orm import joinedload
 from typing import List
+from views import auth_user
 
 get_recipes = APIRouter(tags=["Get"]) #dependencies=[Depends(auth_user.get_current_active_user)] -> para ativar a autenticação
 
