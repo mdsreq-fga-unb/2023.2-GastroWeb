@@ -12,7 +12,13 @@ q-page
     div
       span Receitas:
       div(v-for="(receita, index) in listaReceita")
-        CardReceita(:id="receita.id" :titulo="receita.titulo" :instrucoes="receita.instrucoes" :foto="receita.fotos" @click="irParaReceita(receita.id)").cursor-pointer
+        CardReceita(
+          :id="receita.id"
+          :titulo="receita.titulo"
+          :instrucoes="receita.instrucoes"
+          :foto="transformarPath(receita.fotos)"
+          @click="irParaReceita(receita.id)"
+        ).cursor-pointer
 </template>
 
 <script>
@@ -26,8 +32,7 @@ export default {
   data() {
     return {
       listaReceita: [],
-      loading: false,
-      foto: 'uploads/testeunb.jpeg'
+      loading: false
     }
   },
   computed: {
@@ -64,7 +69,7 @@ export default {
         this.loading = false
       }).catch(error => {
         console.log(error)
-        this.triggerMensagem('negative', 'Não foi possível cadastrar receita.')
+        this.triggerMensagem('negative', 'Não foi possível obter receita.')
       }) 
     },
     transformarLista(lista){
@@ -82,6 +87,12 @@ export default {
       }
       const path = '/exibirreceita'
       this.$router.push({ path, query })
+    },
+    transformarPath(uploads) {
+      const backendURL = 'http://localhost:5000'
+      const nomeArquivo = uploads.substring(uploads.lastIndexOf('/') + 1)
+
+      return `${backendURL}/images/${nomeArquivo}`
     }
   },
   watch: {

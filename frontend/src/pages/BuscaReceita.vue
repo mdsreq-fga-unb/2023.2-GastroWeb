@@ -34,7 +34,9 @@ q-page
             :label="val"
           )
       q-btn(@click="buscarPorTagsCategorias" color="black" text-color="white" no-caps :disable="!(selecionados.tags.length > 0 ||  selecionados.categorias.length > 0)").btn Buscar
-    span(@click="buscaCheckbox=!buscaCheckbox").cursor-pointer.q-pt-lg Pesquisa Avançada
+    div.q-pt-lg 
+      span(v-if="!buscaCheckbox" @click="buscaCheckbox=!buscaCheckbox").cursor-pointer Pesquisa por Tag e Categoria
+      span(v-else @click="buscaCheckbox=!buscaCheckbox").cursor-pointer Pesquisa por Título
 </template>
 
 <script>

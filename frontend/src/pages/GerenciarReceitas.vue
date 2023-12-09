@@ -4,9 +4,9 @@ q-page
     div.caixa-branca.column
       h4 Página de Administrador
       q-btn(@click="mudarPagina" color="black" text-color="white" no-caps).btn Criar Receita
-    span.q-pt-lg Editar Receitas Existentes:
+    h4.q-pt-lg Editar Receitas Existentes:
     div(v-for="(receita, index) in listaReceita")
-      CardReceita(:id="receita.id" :titulo="receita.titulo" :instrucoes="receita.instrucoes" :foto="foto" @click="irParaReceita(receita.id)")
+      CardReceita(:id="receita.id" :titulo="receita.titulo" :instrucoes="receita.instrucoes" :foto="transformarPath(receita.foto)" @click="irParaReceita(receita.id)")
 </template>
 
 <script>
@@ -44,6 +44,12 @@ export default {
         type: type,
         message: menssage
       })
+    },
+    transformarPath(uploads) {
+      const backendURL = 'http://localhost:5000'
+      const nomeArquivo = uploads.substring(uploads.lastIndexOf('/') + 1)
+
+      return `${backendURL}/images/${nomeArquivo}`
     }
   },
   mounted() {
