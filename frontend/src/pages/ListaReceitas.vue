@@ -44,7 +44,7 @@ export default {
       searchByName({
         titulo: this.parametrosBusca.titulo
       }).then(({ data }) => {
-        this.listaReceita = data
+        this.listaReceita = data[1]
         this.triggerMensagem('positive', 'Receitas encontradas.')
         this.loading = false
       }).catch(error => {
@@ -59,7 +59,7 @@ export default {
         categoria: this.transformarLista(this.parametrosBusca.categorias),
         tag: this.transformarLista(this.parametrosBusca.tags)
       }).then(({ data }) => {
-        this.listaReceita = data
+        this.listaReceita = data[1]
         this.triggerMensagem('positive', 'Receitas encontradas.')
         this.loading = false
       }).catch(error => {
