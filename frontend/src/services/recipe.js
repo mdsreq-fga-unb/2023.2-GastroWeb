@@ -20,5 +20,9 @@ export const searchByTagCategory = async ( {tag, categoria} ) => {
   return api.get('/busca_categoria_e_tag', { params })
 }
 
+export const searchById = async ( params ) => {
+  return api.get('/get_receita_por_id', { params })
+}
+
 
 

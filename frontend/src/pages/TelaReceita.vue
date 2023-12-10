@@ -4,27 +4,13 @@
       <div class="card">
         <div class="card-content">
           <div class="text-column">
-            <h4>Panquecas Veganas com Mel e Frutas</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-              voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h4>{{ titulo }}</h4>
+            <p>{{ instrucoes }}</p>
             <h4>INGREDIENTES</h4>
-            <p>- 1 xícara de farinha de trigo;
-              - 2 colheres de sopa de fermento em pó;
-              - 1 xícara de leite vegetal;
-              - 2 colheres de sopa de óleo vegetal;
-              - 1 xícara de frango vegano desfiado;
-              - 1 colher de sopa de extrato de tomate;
-              - 1 dente de alho picado;
-              - 2 colheres de sopa de cebola picada;
-              - 1 xícara de mussarela vegana ralada;
-              orégano à gosto.</p>
+            <p>{{ ingredientes }}</p>
           </div>
           <div class="image-column">
-            <img src="../assets/TestImage2.png" alt="Imagem Receita 1" />
-            <img src="../assets/TestImage.png" alt="Imagem Receita 2" />
+            <img :src="`/backend/${foto}`" alt="Imagem Receita" />
           </div>
         </div>
       </div>
@@ -33,29 +19,52 @@
 </template>
 
 <script>
+import { searchById } from 'src/services/recipe'
+import { mapGetters } from 'vuex'
 
 
 export default {
   name: 'TelaReceita',
   components: {},
+  props: {
+    titulo: String,
+    id: Number,
+    instrucoes: String,
+    ingredientes: String,
+    foto: String
+  },
   data() {
     return {
       receita: {}
     }
   },
+  computed: {
+    ...mapGetters('busca', ['parametrosBusca'])
+  },
   methods: {
-    buscaReceitaPorId(){
-      this.receita = {
-        titulo:'add',
-        ingredientes:['ssssssss'],
-        instrucoes:'aaaaaaas',
-        categorias:['JANTAR'],
-        tags:['PORCO'],
-        files:[]
-      }
+    buscaReceitaPorId() {
+      console.log(this.parametrosBusca.id)
+      searchById({
+        id: this.parametrosBusca.id
+      }).then(({ data }) => {
+        this.receita = data
+        this.triggerMensagem('positive', 'Receita encontrada.')
+        this.loading = false
+      }).catch(error => {
+        console.log(error)
+        this.triggerMensagem('negative', 'Não foi possível encontrar receita.')
+      })
+      // this.receita = {
+      //   titulo:'add',
+      //   ingredientes:['ssssssss'],
+      //   instrucoes:'aaaaaaas',
+      //   categorias:['JANTAR'],
+      //   tags:['PORCO'],
+      //   files:[]
+      // }
     }
   },
-  mounted(){
+  mounted() {
     this.buscaReceitaPorId()
   }
 }

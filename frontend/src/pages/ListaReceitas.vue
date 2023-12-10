@@ -26,8 +26,7 @@ export default {
   data() {
     return {
       listaReceita: [],
-      loading: false,
-      foto: 'uploads/testeunb.jpeg'
+      loading: false
     }
   },
   computed: {
