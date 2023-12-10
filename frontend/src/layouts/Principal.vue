@@ -25,7 +25,6 @@ export default {
   methods: {
     ...mapActions('busca', ['setParametrosBusca']),
     carregarPagina() {
-      console.log(this.tags, this.categorias)
       this.setParametrosBusca({
         titulo: this.titulo || '',
         tags: this.arrayfy(this.tags),

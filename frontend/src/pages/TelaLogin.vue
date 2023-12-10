@@ -14,12 +14,12 @@
                             <p id="logintext">Faça seu login</p>
                         </div>
 
-                        <form action="">
-                            <input type="text" placeholder="usuário">
-                            <input type="password" placeholder="senha">
+                        <!-- <form action=""> -->
+                        <input type="text" placeholder="usuário" v-model="info.usuario">
+                        <input type="password" placeholder="senha" v-model="info.senha">
 
-                            <button class="btn-dark">Entrar</button>
-                        </form>
+                        <button @click="fazerLogin" class="btn-dark">Entrar</button>
+                        <!-- </form> -->
                     </div>
                 </div>
             </div>
@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import { login } from '../services/login'
+import { mapActions } from 'vuex'
 
 
 export default {
@@ -35,6 +37,43 @@ export default {
   components: {},
   data() {
     return{
+      info: {
+        usuario: '',
+        senha: ''
+      }
+    }
+  },
+  methods: {
+    ...mapActions('login', ['setLogin', 'setLoading']),
+    fazerLogin(){
+      const dados = new URLSearchParams()
+      dados.append('grant_type', '')
+      dados.append('username', this.info.usuario)
+      dados.append('password', this.info.senha)
+      dados.append('scope', '')
+      dados.append('client_id', '')
+      dados.append('client_secret', '')
+      login(dados).then(async (data) => {
+        this.setLogin(true)
+        await this.sleep(1000)
+        this.triggerMensagem('positive', 'Login realizado.')
+        localStorage.setItem('token', data.token_type)
+        this.$router.push({
+          path: '/administrador'
+        })
+      }).catch(error => {
+        console.log(error)
+        this.triggerMensagem('negative', 'Erro ao fazer login.')
+      })
+    },
+    triggerMensagem(type, menssage) {
+      this.$q.notify({
+        type: type,
+        message: menssage
+      })
+    },
+    sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms))
     }
   }
 }
@@ -95,6 +134,7 @@ p {
     border-color: #343a40;
     border-radius: 25px;
     height: 45px;
+    width: 130px;
     margin-top: 10px;
 }
 

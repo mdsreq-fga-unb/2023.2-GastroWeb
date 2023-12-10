@@ -12,7 +12,13 @@ q-page
     div
       span Receitas:
       div(v-for="(receita, index) in listaReceita")
-        CardReceita(:id="receita.id" :titulo="receita.titulo" :instrucoes="receita.instrucoes" :foto="receita.fotos" @click="irParaReceita(receita.id)").cursor-pointer
+        CardReceita(
+          :id="receita.id"
+          :titulo="receita.titulo"
+          :instrucoes="receita.instrucoes"
+          :foto="transformarPath(receita.fotos)"
+          @click="irParaReceita(receita.id)"
+        ).cursor-pointer
 </template>
 
 <script>
@@ -43,7 +49,7 @@ export default {
       searchByName({
         titulo: this.parametrosBusca.titulo
       }).then(({ data }) => {
-        this.listaReceita = data
+        this.listaReceita = data[1]
         this.triggerMensagem('positive', 'Receitas encontradas.')
         this.loading = false
       }).catch(error => {
@@ -58,12 +64,12 @@ export default {
         categoria: this.transformarLista(this.parametrosBusca.categorias),
         tag: this.transformarLista(this.parametrosBusca.tags)
       }).then(({ data }) => {
-        this.listaReceita = data
+        this.listaReceita = data[1]
         this.triggerMensagem('positive', 'Receitas encontradas.')
         this.loading = false
       }).catch(error => {
         console.log(error)
-        this.triggerMensagem('negative', 'Não foi possível cadastrar receita.')
+        this.triggerMensagem('negative', 'Não foi possível obter receita.')
       }) 
     },
     transformarLista(lista){
@@ -81,6 +87,12 @@ export default {
       }
       const path = '/exibirreceita'
       this.$router.push({ path, query })
+    },
+    transformarPath(uploads) {
+      const backendURL = 'http://localhost:5000'
+      const nomeArquivo = uploads.substring(uploads.lastIndexOf('/') + 1)
+
+      return `${backendURL}/images/${nomeArquivo}`
     }
   },
   watch: {

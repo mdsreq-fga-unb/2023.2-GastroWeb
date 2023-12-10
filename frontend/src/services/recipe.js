@@ -1,5 +1,4 @@
 import { api } from 'src/boot/axios'
-const urlBackend = ''
 
 export const createRecipe = async (body) => {
   return api.post('/criar_receitas', body)

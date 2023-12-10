@@ -3,8 +3,8 @@
     <div class="row">
       <div class="card">
         <div class="card-content">
-          <div class="image-column">
-            <img :src="`/backend/${foto}`" alt="Imagem Receita" />
+          <div class="image-column, image-container">
+            <img :src="foto" alt="Imagem Receita" class="inner-image"/>
           </div>
           <div class="text-column">
             <h4>{{ titulo }}</h4>
@@ -31,7 +31,6 @@ export default {
     }
   },
   mounted(){
-    // console.log(this.fotos)
   }
 }
 </script>
@@ -66,18 +65,23 @@ export default {
   padding: 0 20px;
 }
 
-.image-column {
-  flex: 1;
+.image-container {
+  width: 300px; 
+  height: 200px; 
+  overflow: hidden; 
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin: 0px 20px;
+  margin: 0px 10px;
 }
 
-/* Estilos para a imagem, ajuste conforme necessário */
-.image-column img {
-  max-width: 100%;
+.inner-image {
+  max-width: 100%; 
+  max-height: 100%; 
+  width: auto;
   height: auto;
-  margin: 22px 0;
+  display: block; 
+  margin: 0 auto; 
 }
 
 h4 {

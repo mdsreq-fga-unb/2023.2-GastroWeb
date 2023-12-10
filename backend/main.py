@@ -6,6 +6,8 @@ from views.auth_user import post_user
 from database.start import create_database
 from views.post_recipes import popula_bd
 from views.get_recipes import get_recipes
+from views.update_recipes import update_recipes
+from views.delete_recipes import delete_recipes
 from typing import Annotated
 
 
@@ -39,6 +41,8 @@ def inicio():
 app.include_router(post_user)
 app.include_router(recipes)
 app.include_router(get_recipes)
+app.include_router(update_recipes)
+app.include_router(delete_recipes)
 
 
 if __name__ == "__main__":
