@@ -11,11 +11,15 @@ Acesse o link do vídeo, caso não funcione, clicando <a href="https://youtu.be/
 No intuito de aprimorar a qualidade e confiabilidade do diagrama de casos de uso elaborado pela facção Insurgentes, estabelecemos alguns critérios que julgamos significativos para uma boa representação do sistema em questão. Esses critérios foram embasados em nossa compreensão da disciplina e das características da modelagem UML se tratando de casos de uso.
 </div>
 
+</br>
+
 <div style="text-align: center; margin: 3px">
 Tabela 1 - Ver e Val - Casos de Uso
-<img src="https://github.com/mdsreq-fga-unb/2023.2-GastroWeb/blob/GitPages/docs/images/ver_e_val_insurgentes_esp.png?raw=true" alt="UC" style="width: 50rem">
+<img src="https://github.com/mdsreq-fga-unb/2023.2-GastroWeb/blob/GitPages/docs/images/verival_UC_INSU.png?raw=true" alt="UC" style="width: 50rem">
 Fonte: Facção Tanás, 2023.
 </div>
+
+</br>
 
 <div style="text-align: justify">
 
