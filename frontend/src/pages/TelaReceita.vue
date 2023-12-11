@@ -1,27 +1,50 @@
 <template>
-  <div class="container">
-    <div class="card">
-      <div class="text-column">
-        <div class="recipe-info">
-          <h4>{{ receita.titulo }}</h4>
-          <p>{{ receita.instrucoes }}</p>
+  <div class="column">
+    <div class="secao-voltar canto-esquerdo" @click="voltarBusca">
+      <q-icon class="q-mt-xs icone-triangulo" name="mdi-arrow-left-circle" ></q-icon>
+      <a class="botao-voltar"> Voltar</a>
+    </div>
+    <div class="container">
+      <div class="card">
+        <div class="text-column justify-between column">
+          <div>
+            <div class="q-pl-md">
+              <h4>{{ receita.titulo }}</h4>
+            </div>
+            <div class="ingredientes">
+              <h6>INGREDIENTES</h6>
+              <ul v-for="(ingrediente, index) in listaIngrediente" :key="index" style="padding-left: 60px">
+                <li>
+                  {{ ingrediente }}
+                </li>
+              </ul>
+              <div>
+                <h6>MODO DE PREPARO:</h6>
+                <p>{{ receita.instrucoes }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-end">
+            <div @click="compartilhar" class="row q-ml-lg q-mb-lg cursor-pointer">
+              <q-icon class="icone-filtro.self-center" name="mdi-content-copy" size="20px"
+              ></q-icon>
+              <span class="q-pl-sm">Copiar link</span>
+            </div>
+            <div @click="salvarPDF" class="row q-ml-lg q-mb-lg cursor-pointer">
+              <q-icon class="icone-filtro.self-center" name="mdi-file-pdf-box" size="20px"
+              ></q-icon>
+              <span class="q-pl-sm">Salvar PDF</span>
+            </div>
+          </div>
         </div>
-        <div class="ingredientes">
-          <h4>INGREDIENTES</h4>
-          <ul>
-            <li v-for="(ingrediente, index) in receita.ingredientes" :key="index">
-              {{ ingrediente }}
-            </li>
-          </ul>
+        <div class="image-column">
+          <template v-if="receita.fotos && receita.fotos.length">
+            <img v-for="(foto, index) in receita.fotos" :src="transformarPath(foto)" :key="index" alt="Imagem Receita" />
+          </template>
+          <template v-else>
+            <p>Carregando...</p>
+          </template>
         </div>
-      </div>
-      <div class="image-column">
-        <template v-if="receita.fotos && receita.fotos.length">
-          <img v-for="(foto, index) in receita.fotos" :src="transformarPath(foto)" :key="index" alt="Imagem Receita" />
-        </template>
-        <template v-else>
-          <p>Carregando...</p>
-        </template>
       </div>
     </div>
   </div>
@@ -29,6 +52,7 @@
 
 <script>
 import { searchById } from 'src/services/recipe'
+import { mapGetters } from 'vuex'
 
 
 export default {
@@ -42,19 +66,23 @@ export default {
   components: {},
   data() {
     return {
-      receita: {}
+      receita: {},
+      listaIngrediente: []
     }
+  },
+  computed:{
+    ...mapGetters('busca', ['parametrosBusca'])
   },
   methods: {
     buscaReceitaPorId(receitaId) {
       searchById({ receita_id: receitaId })
         .then(({ data }) => {
           this.receita = data
-          console.log(data)
-          console.log(data.foto)
+          this.transformToList()
         })
         .catch(error => {
           console.error('Erro ao buscar receita por ID:', error)
+          this.triggerMensagem('positive', 'Erro ao buscar receita.')
         })
     },
     transformarPath(uploads) {
@@ -62,6 +90,53 @@ export default {
       const nomeArquivo = uploads.substring(uploads.lastIndexOf('/') + 1)
 
       return `${backendURL}/images/${nomeArquivo}`
+    },
+    transformToList() {
+      if (!(this.receita.ingredientes === undefined)){ 
+        if(this.receita.ingredientes[0].trim() === '') {
+          
+          this.listaIngrediente = []
+        }else{
+          const lista = this.receita.ingredientes[0].split(',')
+  
+          this.listaIngrediente = lista.map(item => item.trim())
+        }
+      }
+    },
+    compartilhar(){
+      navigator.clipboard.writeText(window.location.href)
+      this.triggerMensagem('positive', 'Link copiado.')
+    },
+    triggerMensagem (type, menssage) {
+      this.$q.notify({
+        type: type,
+        message: menssage
+      })
+    },
+    salvarPDF() {
+      const conteudo = this.$refs.conteudoParaImprimir
+      window.print()
+    },
+    voltarBusca(){
+      const query = {
+        ...this.parametrosBusca,
+        id: 0
+      }
+      console.log(this.parametrosBusca)
+      if(this.parametrosBusca.titulo === '' || this.parametrosBusca.tags === [] || this.parametrosBusca.categorias === []){
+        this.$router.push({
+          path: '/'
+        })
+      }else{
+        const path = '/receitas'
+        this.$router.push({ path, query })
+      }
+    }
+  },
+  watch: {
+    'parametrosBusca.id'() {
+      const idDaReceita = this.$route.query.id
+      this.buscaReceitaPorId(idDaReceita)
     }
   },
   mounted() {
@@ -71,11 +146,17 @@ export default {
 }
 </script>
 <style scoped>
+.ingredientes{
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 200;
+}
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .card {
@@ -86,6 +167,7 @@ export default {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   overflow: hidden;
+  margin: 70px;
 }
 
 .card-content {
@@ -115,10 +197,10 @@ export default {
   height: auto;
 }
 
-h4 {
+h6 {
   color: #222;
   font-family: Roboto;
-  font-size: 30px;
+  font-size: 23px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -141,5 +223,30 @@ img {
   height: calc(50% - 15px);
   object-fit: cover;
   margin-bottom: 15px;
+}
+
+.secao-voltar {
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.botao-voltar {
+  font-weight: 700;
+  color: white;
+  font-size: 15px;
+  height: 20px;
+  text-decoration: none;
+}
+
+.icone-triangulo {
+  color: white;
+  size: 50px;
+}
+
+.canto-esquerdo {
+  display: flex;
+  justify-content: flex-start;
+  padding: 48px 0px 0px 48px;
 }
 </style>

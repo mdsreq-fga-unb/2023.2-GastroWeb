@@ -17,24 +17,28 @@ q-page
       div.row.checkbox
         div.column
           span Categorias
-          q-checkbox(
+          q-radio(
             v-for="val in categorias"
             size="xs"
             v-model="selecionados.categorias"
             :val="val"
-            :label="val"
+            :label="value[val]"
+            color="grey"
           )
         div.column 
           span Tags
-          q-checkbox(
+          q-radio(
             v-for="val in tags"
             size="xs"
             v-model="selecionados.tags"
             :val="val"
-            :label="val"
+            :label="value[val]"
+            color="grey"
           )
       q-btn(@click="buscarPorTagsCategorias" color="black" text-color="white" no-caps :disable="!(selecionados.tags.length > 0 ||  selecionados.categorias.length > 0)").btn Buscar
-    span(@click="buscaCheckbox=!buscaCheckbox").cursor-pointer.q-pt-lg Pesquisa Avançada
+    div.q-pt-lg 
+      span(v-if="!buscaCheckbox" @click="buscaCheckbox=!buscaCheckbox").cursor-pointer Pesquisa por Tag e Categoria
+      span(v-else @click="buscaCheckbox=!buscaCheckbox").cursor-pointer Pesquisa por Título
 </template>
 
 <script>
@@ -67,7 +71,20 @@ export default {
         'ALMOCO',
         'DOCES',
         'LANCHE'
-      ]
+      ],
+      value: {
+        CAFE_DA_MANHA: 'Café da manhã',
+        JANTAR: 'Jantar',
+        ALMOCO: 'Almoço',
+        DOCES: 'Doces',
+        LANCHE: 'Lanche',
+        LACTOSE: 'Lactose',
+        OLEAGINOSAS: 'Oleaginosas',
+        PORCO: 'Porco',
+        CARNE: 'Carne',
+        GLUTEN: 'Glúten',
+        FRUTOSDOMAR: 'Frutos do mar'
+      }
     }
   },
   methods:{

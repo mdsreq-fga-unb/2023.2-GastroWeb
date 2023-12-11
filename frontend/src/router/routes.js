@@ -19,7 +19,8 @@ const routes = [
       { path: '', name: 'pg_busca', component: () => import('src/pages/BuscaReceita.vue'), props: true },
       { path: '/receitas', name: 'pg_receitas', component: () => import('src/pages/ListaReceitas.vue'), props: true },
       { path: '/criarreceita', name: 'pg_criar_receita', component: () => import('src/pages/CriarReceita.vue'), meta: { requiresAuth: true } },
-      { path: '/administrador', name: 'pg_usuario', component: () => import('src/pages/GerenciarReceitas.vue'), props: true,meta: { requiresAuth: true } },
+      { path: '/editarreceita', name: 'pg_editar_receita', component: () => import('src/pages/EditarReceita.vue'), props: true, meta: { requiresAuth: true } },
+      { path: '/administrador', name: 'pg_usuario', component: () => import('src/pages/GerenciarReceitas.vue'), props: true, meta: { requiresAuth: true } },
       { path: '/exibirreceita', name: 'pg_receita', component: () => import('src/pages/TelaReceita.vue'), props: true }
 
     ]

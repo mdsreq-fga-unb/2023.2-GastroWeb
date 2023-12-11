@@ -5,6 +5,13 @@ export const createRecipe = async (body) => {
   return api.post('/criar_receitas', body)
 }
 
+export const editRecipe = async (id, body) => {
+  return api.put(`/update_receita_por_id/${id}`, body)
+}
+
+export const deleteRecipe = async (id) => {
+  return api.delete(`/delete_receita_por_id/${id}`)
+}
 export const listAllRecipe = async () =>
   api.get('/get_all_receitas')
 

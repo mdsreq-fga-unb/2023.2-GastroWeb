@@ -5,13 +5,22 @@ q-page
       h4 Página de Administrador
       q-btn(@click="mudarPagina" color="black" text-color="white" no-caps).btn Criar Receita
     h4.q-pt-lg Editar Receitas Existentes:
-    div(v-for="(receita, index) in listaReceita")
-      CardReceita(:id="receita.id" :titulo="receita.titulo" :instrucoes="receita.instrucoes" :foto="transformarPath(receita.foto)" @click="irParaReceita(receita.id)")
+    div.column.items-center
+      div(v-for="(receita, index) in listaReceita").row
+        CardReceita(:id="receita.id" :titulo="receita.titulo" :instrucoes="receita.instrucoes" :foto="transformarPath(receita.foto)")
+        div.column.justify-center.botoes-editar.cursor-pointer
+          div(@click="irPaginaEditarReceita(receita.id)").row
+            q-icon(name="mdi-pencil").q-mt-xs.icone-triangulo
+            span Editar
+          div(@click="deletarReceita(receita.id)").row
+            q-icon(name="mdi-trash-can-outline").q-mt-xs.icone-triangulo
+            span Excluir
 </template>
 
 <script>
 import CardReceita from '../components/CardReceita.vue'
-import { listAllRecipe } from '../services/recipe'
+import { listAllRecipe, deleteRecipe } from '../services/recipe'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'GerenciarReceitas',
@@ -22,6 +31,7 @@ export default {
     }
   },
   methods: {
+    ...mapActions('busca', ['setParametrosBusca']),
     mudarPagina() {
       this.$router.push({
         path: '/criarreceita'
@@ -42,10 +52,29 @@ export default {
         message: menssage
       })
     },
+    irPaginaEditarReceita(id){
+      this.setParametrosBusca({
+        id: id
+      })
+      const query = {
+        id: id
+      }
+      const path = '/editarreceita'
+      this.$router.push({ path, query })
+    },
+    deletarReceita(id){
+      const idNumber = id
+      deleteRecipe(idNumber).then(() => {
+        this.triggerMensagem('positive', 'Receita deletada.')
+        this.buscarReceitas()
+      }).catch(error => {
+        console.log(error)
+        this.triggerMensagem('negative', 'Não foi possível deletar receita.')
+      })
+    },
     transformarPath(uploads) {
       const backendURL = 'http://localhost:5000'
       const nomeArquivo = uploads.substring(uploads.lastIndexOf('/') + 1)
-
       return `${backendURL}/images/${nomeArquivo}`
     }
   },
@@ -69,4 +98,8 @@ export default {
   padding: 10px
   align-items: center
   justify-content: center
+
+.botoes-editar
+  gap: 50px
+  padding-left: 15px
 </style>
