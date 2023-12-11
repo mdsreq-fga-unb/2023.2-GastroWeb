@@ -1,10 +1,11 @@
-#Lições Aprendidas
+# Lições Aprendidas
 
 |    Data    | Versão |              Descrição              |                                Autor(es)                                 |
 | :--------: | :----: | :---------------------------------: | :----------------------------------------------------------------------: |
 | 24/09/2023 |  0.1   | Criação e estruturação do documento |Luan Mateus|
 | 25/10/2023 |  0.2   | Inserção das Lições Aprendidas na Missão 2 |Luan Mateus|
 | 20/11/2023 |  0.3   | Inserção das Lições Aprendidas na Missão 3 |Luan Mateus|
+| 11/12/2023 |  0.4   | Inserção das Lições Aprendidas na Missão 4 |Lucas Andrade|
 
 ## Unidade 1
 
