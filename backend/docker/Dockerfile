@@ -17,6 +17,6 @@ COPY ./backend .
 
 RUN chmod +x docker/start.sh
 
-EXPOSE 3000
+EXPOSE $PORT
 
-CMD ["/bin/bash", "./docker/start.sh"]
+CMD ["/bin/bash", "./docker/start.sh", "--host", "0.0.0.0", "--port", "$PORT"]
