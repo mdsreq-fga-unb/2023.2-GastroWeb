@@ -63,3 +63,4 @@ psql -U admin -d fastapi
 ```
 SELECT * FROM receitas;
 ```
+
