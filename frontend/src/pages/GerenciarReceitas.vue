@@ -6,10 +6,10 @@ q-page
       q-btn(@click="mudarPagina" color="black" text-color="white" no-caps).btn Criar Receita
     h4.q-pt-lg Editar Receitas Existentes:
     div.column.items-center
-      div(v-for="(receita, index) in listaReceita").row
+      div(v-for="(receita, index) in listaReceita").column
         CardReceita(:id="receita.id" :titulo="receita.titulo" :instrucoes="receita.instrucoes" :foto="transformarPath(receita.foto)")
         div.column.justify-center.botoes-editar.cursor-pointer
-          div(@click="irPaginaEditarReceita(receita.id)").row
+          div(@click="irPaginaEditarReceita(receita.id)").row.edit
             q-icon(name="mdi-pencil").q-mt-xs.icone-triangulo
             span Editar
           div(@click="deletarReceita(receita.id)").row
@@ -88,6 +88,8 @@ export default {
   display: flex
   width: 100%
 
+.edit
+  margin-left: 15px
 .btn
   margin: 15px
   width: 300px
@@ -100,6 +102,7 @@ export default {
   justify-content: center
 
 .botoes-editar
-  gap: 50px
-  padding-left: 15px
+  display: flex
+  flex-direction: row-reverse
+  justify-content: flex-start
 </style>

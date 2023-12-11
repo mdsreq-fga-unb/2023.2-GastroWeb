@@ -1,7 +1,7 @@
 <template>
   <div class="column">
     <div class="secao-voltar canto-esquerdo" @click="voltarBusca">
-      <q-icon class="q-mt-xs icone-triangulo" name="mdi-arrow-left-circle" ></q-icon>
+      <q-icon class="q-mt-xs icone-triangulo" name="mdi-arrow-left-circle"></q-icon>
       <a class="botao-voltar"> Voltar</a>
     </div>
     <div class="container">
@@ -26,13 +26,11 @@
           </div>
           <div class="row justify-end">
             <div @click="compartilhar" class="row q-ml-lg q-mb-lg cursor-pointer">
-              <q-icon class="icone-filtro.self-center" name="mdi-content-copy" size="20px"
-              ></q-icon>
+              <q-icon class="icone-filtro.self-center" name="mdi-content-copy" size="20px"></q-icon>
               <span class="q-pl-sm">Copiar link</span>
             </div>
             <div @click="salvarPDF" class="row q-ml-lg q-mb-lg cursor-pointer">
-              <q-icon class="icone-filtro.self-center" name="mdi-file-pdf-box" size="20px"
-              ></q-icon>
+              <q-icon class="icone-filtro.self-center" name="mdi-file-pdf-box" size="20px"></q-icon>
               <span class="q-pl-sm">Salvar PDF</span>
             </div>
           </div>
@@ -70,7 +68,7 @@ export default {
       listaIngrediente: []
     }
   },
-  computed:{
+  computed: {
     ...mapGetters('busca', ['parametrosBusca'])
   },
   methods: {
@@ -92,22 +90,22 @@ export default {
       return `${backendURL}/images/${nomeArquivo}`
     },
     transformToList() {
-      if (!(this.receita.ingredientes === undefined)){ 
-        if(this.receita.ingredientes[0].trim() === '') {
-          
+      if (!(this.receita.ingredientes === undefined)) {
+        if (this.receita.ingredientes[0].trim() === '') {
+
           this.listaIngrediente = []
-        }else{
+        } else {
           const lista = this.receita.ingredientes[0].split(',')
-  
+
           this.listaIngrediente = lista.map(item => item.trim())
         }
       }
     },
-    compartilhar(){
+    compartilhar() {
       navigator.clipboard.writeText(window.location.href)
       this.triggerMensagem('positive', 'Link copiado.')
     },
-    triggerMensagem (type, menssage) {
+    triggerMensagem(type, menssage) {
       this.$q.notify({
         type: type,
         message: menssage
@@ -117,17 +115,17 @@ export default {
       const conteudo = this.$refs.conteudoParaImprimir
       window.print()
     },
-    voltarBusca(){
+    voltarBusca() {
       const query = {
         ...this.parametrosBusca,
         id: 0
       }
       console.log(this.parametrosBusca)
-      if(this.parametrosBusca.titulo === '' || this.parametrosBusca.tags === [] || this.parametrosBusca.categorias === []){
+      if (this.parametrosBusca.titulo === '' || this.parametrosBusca.tags === [] || this.parametrosBusca.categorias === []) {
         this.$router.push({
           path: '/'
         })
-      }else{
+      } else {
         const path = '/receitas'
         this.$router.push({ path, query })
       }
@@ -146,7 +144,7 @@ export default {
 }
 </script>
 <style scoped>
-.ingredientes{
+.ingredientes {
   font-family: Roboto;
   font-size: 20px;
   font-style: normal;

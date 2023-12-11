@@ -3,7 +3,7 @@ q-page
   section.q-pa-xl.column
     div(v-if="!buscaCheckbox").column.caixa-branca
       q-input(
-        bg-color="white"
+        bg-color="#D9D9D9"
         rounded
         color="grey"
         outlined
@@ -12,7 +12,8 @@ q-page
         v-model="busca.titulo"
         @keyup.enter="buscarPorTitulo"
       ).busca
-      q-btn(@click="buscarPorTitulo" color="black" text-color="white" no-caps :disable="busca.titulo === ''").btn Buscar
+      div.btn-container
+        q-btn(@click="buscarPorTitulo" color="black" text-color="white" no-caps :disable="busca.titulo === ''").btn Buscar
     div(v-else).column.caixa-branca
       div.row.checkbox
         div.column
@@ -36,9 +37,17 @@ q-page
             color="grey"
           )
       q-btn(@click="buscarPorTagsCategorias" color="black" text-color="white" no-caps :disable="!(selecionados.tags.length > 0 ||  selecionados.categorias.length > 0)").btn Buscar
-    div.q-pt-lg 
-      span(v-if="!buscaCheckbox" @click="buscaCheckbox=!buscaCheckbox").cursor-pointer Pesquisa por Tag e Categoria
-      span(v-else @click="buscaCheckbox=!buscaCheckbox").cursor-pointer Pesquisa por Título
+    div.q-pt-lg
+      span(
+        v-if="!buscaCheckbox"
+        @click="buscaCheckbox=!buscaCheckbox"
+        class="custom-span"
+      ).cursor-pointer Pesquisa por Tag e Categoria
+      span(
+        v-else
+        @click="buscaCheckbox=!buscaCheckbox"
+        class="custom-span"
+      ).cursor-pointer Pesquisa por Título
 </template>
 
 <script>
@@ -132,11 +141,17 @@ export default {
 <style lang="sass" scoped>
 .busca
   display: flex
-  width: 100%
+  width: 702px
+
+.btn-container
+  display: flex
+  justify-content: center
+  margin-top: 20px
 
 .btn
   margin: 15px
   width: 200px
+  border-radius: 50px
   
 
 .checkbox
@@ -150,4 +165,22 @@ export default {
   height: 310px
   align-items: center
   justify-content: center
+
+.q-pt-lg
+  display: flex
+  justify-content: center
+
+.custom-span
+  display: inline-block
+  padding: 8px 16px
+  border: 1px solid #A15D4F
+  background-color: #A15D4F
+  color: #fff
+  border-radius: 50px
+  cursor: pointer
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s
+
+.custom-span:hover
+  background-color: #A15D4F
+  border-color: #A15D4F
 </style>
