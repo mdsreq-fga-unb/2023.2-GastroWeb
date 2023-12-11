@@ -67,32 +67,43 @@ export default {
         categorias: []
       },
       tags: [
-        'LACTOSE',
         'OLEAGINOSAS',
         'PORCO',
         'CARNE',
-        'GLUTEN',
-        'FRUTOSDOMAR'
+        'LEITE',
+        'TRIGO',
+        'FRANGO',
+        'PEIXE',
+        'QUEIJOS',
+        'COGUMELOS'
       ],
       categorias: [
         'CAFE_DA_MANHA',
-        'JANTAR',
-        'ALMOCO',
-        'DOCES',
-        'LANCHE'
+        'ENTRADA',
+        'PRATOPRINCIPAL',
+        'SOBREMESA',
+        'LANCHE',
+        'EVENTOSFESTIVOS',
+        'BOLOS'
       ],
+
       value: {
         CAFE_DA_MANHA: 'Café da manhã',
-        JANTAR: 'Jantar',
-        ALMOCO: 'Almoço',
-        DOCES: 'Doces',
+        ENTRADA: 'Entrada',
+        TRIGO: 'Farinha de trigo',
+        BOLOS: 'Bolos e Tortas',
         LANCHE: 'Lanche',
-        LACTOSE: 'Lactose',
+        LEITE: 'Leite',
         OLEAGINOSAS: 'Oleaginosas',
         PORCO: 'Porco',
         CARNE: 'Carne',
-        GLUTEN: 'Glúten',
-        FRUTOSDOMAR: 'Frutos do mar'
+        EVENTOSFESTIVOS: 'Eventos Festivos',
+        QUEIJOS: 'Queijos',
+        PEIXE: 'Peixes e Frutos do Mar',
+        SOBREMESA: 'Sobremesa',
+        PRATOPRINCIPAL: 'Prato Principal',
+        COGUMELOS: 'Cogumelos',
+        FRANGO: 'Frango'
       }
     }
   },
