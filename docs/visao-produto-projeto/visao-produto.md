@@ -49,14 +49,10 @@
 
 ## Tecnologias Utilizadas
 
-- **Backend**: Utilizaremos Python e o framework Django com Django Rest Framework para criar um backend seguro e eficiente.
-- **Frontend**: Usaremos JavaScript com Vue.js para uma interface de usuário dinâmica e amigável.
-- **Banco de Dados**: Armazenaremos dados com segurança e escalabilidade no PostgreSQL.
-- **Hospedagem de Vídeos**: Vídeos serão hospedados no YouTube pela confiabilidade e alcance.
-- **Hospedagem de Imagens**: Integraremos serviços como Imgur ou ImgBB para armazenar e exibir imagens.
+- **Backend**: Utilização da linguagem Python, o framework FastAPI para o desenvolvimento de APIs e o SQLAlchemy para uma integração simples com o banco de dados.
+- **Frontend**: Optamos por JavaScript, empregando o framework Vue.js juntamente com as tecnologias HTML e CSS para criar interfaces leves e esteticamente agradáveis de forma ágil.
+- **Banco de Dados**: Armazenamento seguro e escalável no PostgreSQL.
 - **Controle de Versão**: Git para controle de versão.
-- **Análise de Dados**: Adotaremos o Matomo para oferecer uma visão valiosa do desempenho da plataforma à nossa cliente, permitindo uma análise aprofundada.
-- **Integração com Redes Sociais**: Implementaremos APIs de redes sociais para facilitar a interação dos usuários.
-- **DevOps**: Usaremos Docker para garantir ambientes de desenvolvimento consistentes, Shell Script para automação de tarefas e um Makefile para facilitar o gerenciamento de comandos e processos de desenvolvimento e implantação
+- **DevOps**: Adotamos o Docker para garantir ambientes de desenvolvimento consistentes e o uso de Shell Script pata automatizar tarefas, aprimorando a eficiência operacional.
 
 **Nota Importante**: As tecnologias mencionadas são escolhas iniciais, sujeitas a revisões durante o desenvolvimento do projeto, para se adequarem às necessidades emergentes.
