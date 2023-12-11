@@ -66,21 +66,26 @@ class Fotos(Base):
 
 
 class CategoriasEnum(enum.Enum):
+    ENTRADA = "ENTRADA"
+    PRATOPRINCIPAL = "PRATOPRINCIPAL"
+    SOBREMESA = "SOBREMESA"
+    EVENTOSFESTIVOS = "EVENTOSFESTIVOS"
     CAFE_DA_MANHA = "CAFE_DA_MANHA"
-    JANTAR = "JANTAR"
-    ALMOCO = "ALMOCO"
-    DOCES = "DOCES"
+    BOLOS = "BOLOS"
     LANCHE = "LANCHE"
 
 
 
 class TagsEnum(enum.Enum):
-    LACTOSE = "LACTOSE"
+    LEITE = "LEITE"
+    TRIGO = "TRIGO"
+    FRANGO = "FRANGO"
+    PEIXE = "PEIXE"
+    QUEIJOS = "QUEIJOS"
+    COGUMELOS = "COGUMELOS"
     OLEAGINOSAS = "OLEAGINOSAS"
     PORCO = "PORCO"
     CARNE = "CARNE"
-    GLUTEN = "GLUTEN"
-    FRUTOSDOMAR = "FRUTOSDOMAR"
 
 class Tags(Base):
     __tablename__ = "tag"
