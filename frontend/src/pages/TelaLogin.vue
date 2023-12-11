@@ -16,7 +16,7 @@
 
                         <!-- <form action=""> -->
                         <input type="text" placeholder="usuário" v-model="info.usuario">
-                        <input type="password" placeholder="senha" v-model="info.senha">
+                        <input type="password" placeholder="senha" v-model="info.senha" @keyup.enter="fazerLogin">
 
                         <button @click="fazerLogin" class="btn-dark">Entrar</button>
                         <!-- </form> -->

@@ -4,13 +4,8 @@ q-page
     li(@click="voltarPagina").row.secao-voltar
       q-icon(name="mdi-arrow-left-circle").q-mt-xs.icone-triangulo
       a.botao-voltar Voltar
-    //- q-spinner-oval(
-    //-   v-if="loading"
-    //-   color="grey"
-    //-   size="3em"
-    //- )
-    div
-      span Receitas:
+    div(v-if="listaReceita.length > 0")
+      h4 Receitas:
       div(v-for="(receita, index) in listaReceita")
         CardReceita(
           :id="receita.id"
@@ -19,12 +14,14 @@ q-page
           :foto="transformarPath(receita.fotos)"
           @click="irParaReceita(receita.id)"
         ).cursor-pointer
+    div(v-else).justify-center.row
+      h4 Nenhuma receita encontrada
 </template>
 
 <script>
 import CardReceita from '../components/CardReceita.vue'
 import { searchByName, searchByTagCategory } from '../services/recipe'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'ListaReceitas',
@@ -39,6 +36,7 @@ export default {
     ...mapGetters('busca', ['parametrosBusca'])
   },
   methods: {
+    ...mapActions('busca', ['setParametrosBusca']),
     voltarPagina() {
       this.$router.push({
         path: '/'
@@ -46,16 +44,18 @@ export default {
     },
     obterReceitasPorTitulo() {
       console.log(this.parametrosBusca.titulo)
-      searchByName({
-        titulo: this.parametrosBusca.titulo
-      }).then(({ data }) => {
-        this.listaReceita = data[1]
-        this.triggerMensagem('positive', 'Receitas encontradas.')
-        this.loading = false
-      }).catch(error => {
-        console.log(error)
-        this.triggerMensagem('negative', 'Não foi possível cadastrar receita.')
-      }) 
+      if(this.parametrosBusca.titulo){
+        searchByName({
+          titulo: this.parametrosBusca.titulo
+        }).then(({ data }) => {
+          this.listaReceita = data[1]
+          this.triggerMensagem('positive', 'Receitas encontradas.')
+          this.loading = false
+        }).catch(error => {
+          console.log(error)
+          this.triggerMensagem('negative', 'Não foi possível obter receitas.')
+        }) 
+      }
     },
     obterReceitasPorTagCategoria() {
       console.log(this.parametrosBusca.tags)
@@ -69,7 +69,7 @@ export default {
         this.loading = false
       }).catch(error => {
         console.log(error)
-        this.triggerMensagem('negative', 'Não foi possível obter receita.')
+        this.triggerMensagem('negative', 'Não foi possível obter receitas.')
       }) 
     },
     transformarLista(lista){
@@ -87,6 +87,10 @@ export default {
       }
       const path = '/exibirreceita'
       this.$router.push({ path, query })
+      this.setParametrosBusca({
+        ...this.parametrosBusca,
+        id: id
+      })
     },
     transformarPath(uploads) {
       const backendURL = 'http://localhost:5000'

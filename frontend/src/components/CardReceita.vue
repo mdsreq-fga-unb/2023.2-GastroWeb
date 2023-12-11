@@ -1,5 +1,5 @@
 <template>
-  <div class="card" @click="$emit('click', id)">
+  <div class="card">
     <div class="card-content">
       <div class="image-container">
         <img :src="foto" alt="Imagem Receita" class="recipe-image" />
@@ -30,17 +30,21 @@ export default {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
   background-color: #fff;
 }
 
 .card-content {
   display: flex;
+  height: 270px;
+  width: 800px;
 }
 
 .image-container {
   width: 40%;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .recipe-image {

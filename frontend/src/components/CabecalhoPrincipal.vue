@@ -2,8 +2,12 @@
 q-header.header.justify-between
   section.section-left.items-center.justify-center.alinhamento
     img(src="~assets/logo.png" @click="paginaInicial").size-logo.cursor-pointer
-  div(v-if="!(nomePagina === 'pg_criar_receita' || nomePagina === 'pg_usuario')" @click="login").row.q-pr-md.items-center.cursor-pointer
-    q-avatar(text-color="white" icon="mdi-login" @click="login")
+  div(v-if="!(nomePagina === 'pg_receita')").row
+    div(v-if="!(nomePagina === 'pg_criar_receita' || nomePagina === 'pg_usuario')" @click="login").row.q-pr-md.items-center.cursor-pointer
+      q-avatar(text-color="white" icon="mdi-login" @click="login")
+      span Administrador
+    dev(v-else @click="paginaInicial").row.q-pr-md.items-center.cursor-pointer
+      span Sair
 </template>
 
 <script>

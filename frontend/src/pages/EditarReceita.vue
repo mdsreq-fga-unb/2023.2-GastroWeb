@@ -41,10 +41,10 @@ q-page
           )
     div.column
       span Ingredientes:
-      div(v-for="(ingrediente, index) in aux.ingredientes")
+      div(v-for="(ingrediente, index) in listaIngrediente")
         q-input(
           bg-color="white"
-          v-model="aux.ingredientes[index]"
+          v-model="listaIngrediente[index]"
           rounded
           color="grey"
           outlined
@@ -64,30 +64,28 @@ q-page
         placeholder="Detalhe o modo de preparo"
         type="textarea"
       ).q-pb-md
-    div.column
-      span Fotos:
-      div(v-for="(file, index) in aux.files")
-        input(type="file" :id="`fileInput${index + 1}`" accept="image/*")
-      q-btn(rounded flat color="white" no-caps @click="addFoto").btn Adicionar Foto 
-      q-btn(rounded flat color="white" no-caps @click="cadastrarReceita").btn Salvar Receita 
+    q-btn(rounded flat color="white" no-caps @click="cadastrarReceita").btn Salvar Receita 
 </template>
 
 <script>
-import { createRecipe } from '../services/recipe'
+import { editRecipe, searchById } from '../services/recipe'
+import { mapGetters } from 'vuex'
+
 
 export default {
-  name: 'CriarReceita',
+  name: 'EditarReceita',
   components: {},
   data(){
     return{
       aux:{
         titulo: '',
-        ingredientes: [],
+        ingredientes: '',
         instrucoes: '',
         categorias: [],
         tags: [],
         files: []
       },
+      listaIngrediente: [],
       tags: [
         'LACTOSE',
         'OLEAGINOSAS',
@@ -118,6 +116,9 @@ export default {
       }
     }
   },
+  computed:{
+    ...mapGetters('busca', ['parametrosBusca'])
+  },
   methods:{
     voltarPagina(){
       this.$router.push({
@@ -125,7 +126,7 @@ export default {
       })
     },
     addIngrediente(){
-      this.aux.ingredientes.push('')
+      this.listaIngrediente.push('')
     },
     addFoto(){
       this.aux.files.push('')
@@ -136,17 +137,17 @@ export default {
     cadastrarReceita(){
       let formData = new FormData()
       formData.append('titulo', this.aux.titulo)
-      formData.append('ingredientes', this.transformarLista(this.aux.ingredientes))
+      formData.append('ingredientes', this.transformarLista(this.listaIngrediente))
       formData.append('instrucoes', this.aux.instrucoes)
       formData.append('categorias', this.aux.categorias)
       formData.append('tags', this.aux.tags)
-      for (let i = 0; i < this.aux.files.length; i++) {
-        const fileInput = document.getElementById(`fileInput${i + 1}`)
-        formData.append('files', fileInput.files[0])
-        console.log(fileInput.file)
-      }
+
       console.log(formData)
-      createRecipe(formData).then(() => {
+      const idNumber = parseInt(this.parametrosBusca.id)
+      editRecipe(
+        idNumber,
+        formData
+        ).then(() => {
         this.triggerMensagem('positive', 'Receita cadastrada.')
         this.voltarPagina()
       }).catch(error => {
@@ -162,7 +163,44 @@ export default {
     },
     transformarLista(lista){
       return lista.join(',')
+    },
+    buscaReceitaPorId(){
+      console.log(this.parametrosBusca.id)
+      if(this.parametrosBusca.id != 0){
+        searchById({
+          receita_id: this.parametrosBusca.id
+        }).then(({ data }) => {
+          this.aux = data
+          console.log(this.aux)
+          this.triggerMensagem('positive', 'Receita encontrada.')
+          this.loading = false
+          this.transformToList() 
+        }).catch(error => {
+          console.log(error)
+          this.triggerMensagem('negative', 'Não foi possível obter receita.')
+        }) 
+      }
+    },
+    transformToList() {
+      if (!(this.aux.ingredientes === undefined)){ 
+        if(this.aux.ingredientes[0].trim() === '') {
+          
+          this.listaIngrediente = []
+        }else{
+          const lista = this.aux.ingredientes[0].split(',')
+  
+          this.listaIngrediente = lista.map(item => item.trim())
+        }
+      }
     }
+  },
+  watch: {
+    'parametrosBusca.id'() {
+      this.buscaReceitaPorId()
+    }
+  },
+  mounted() {
+    this.buscaReceitaPorId()
   }
 }
 </script>
