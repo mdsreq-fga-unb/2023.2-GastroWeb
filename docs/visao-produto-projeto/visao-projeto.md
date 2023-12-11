@@ -37,8 +37,6 @@
 | **Sprint Planning** - Distribuição de atividades (issues) para os membros da equipe. Definição das entregas a serem feitas | Equipe do Projeto,<br> PO                       | 14 dias     | Backlog da sprint                                                                                  |
 | **Sprint Review** - Reunião de validação das atividades entregues                                                          | Equipe do Projeto,<br> PO,<br>Cliente              | 14 dias     | Feedback da cliente, incremento do produto, backlog do produto atualizado                          |
 | **Sprint Retrospective** - Levantamento de pontos de melhoria da sprint                                                    | Equipe do Projeto,<br> PO                       | 14 dias     | Melhorias e lições aprendidas                                                                      |
-| **Daily Scrum**  - Conversa informal sobre o andamento das atividades                                                      | Equipe do Projeto                       | Diária        | Resumo da reunião                                                                                  |
-| **Situação do Projeto**                                                                                                    | Equipe do Projeto,<br> George Marsicano | Semanal       | Feedback do Comando Estelar |
 
 ## Gerenciamento de Riscos
 
