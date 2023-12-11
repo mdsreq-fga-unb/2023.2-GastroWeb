@@ -37,7 +37,6 @@ export default {
 .card-content {
   display: flex;
 }
-
 .image-container {
   width: 40%;
   overflow: hidden;
