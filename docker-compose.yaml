@@ -22,7 +22,7 @@ services:
       - ./backend/database:/backend/database
       - ./backend:/backend
     ports:
-      - 5000:5000
+      - 3000:3000
     depends_on:
       - postgresql
     healthcheck:
