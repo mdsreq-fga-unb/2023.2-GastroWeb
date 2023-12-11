@@ -15,6 +15,14 @@ q-page
           div(@click="deletarReceita(receita.id)").row
             q-icon(name="mdi-trash-can-outline").q-mt-xs.icone-triangulo
             span Excluir
+            div(v-if="showDeleteConfirmation")
+    q-dialog(title="Confirmar exclusão" v-model="showDeleteConfirmation")
+      q-card
+        q-card-section
+          | Tem certeza de que deseja excluir esta receita?
+        q-card-actions.align-end
+          q-btn(label="Cancelar" color="secondary" @click="cancelarExclusao")
+          q-btn(label="Excluir" color="negative" @click="confirmarExclusao")
 </template>
 
 <script>
@@ -27,7 +35,9 @@ export default {
   components: { CardReceita },
   data() {
     return {
-      listaReceita: []
+      listaReceita: [],
+      showDeleteConfirmation: false,
+      receitaParaExcluir: null
     }
   },
   methods: {
@@ -62,15 +72,28 @@ export default {
       const path = '/editarreceita'
       this.$router.push({ path, query })
     },
-    deletarReceita(id){
-      const idNumber = id
-      deleteRecipe(idNumber).then(() => {
-        this.triggerMensagem('positive', 'Receita deletada.')
-        this.buscarReceitas()
-      }).catch(error => {
-        console.log(error)
-        this.triggerMensagem('negative', 'Não foi possível deletar receita.')
-      })
+    deletarReceita(id) {
+      this.receitaParaExcluir = id
+      this.showDeleteConfirmation = true
+    },
+    cancelarExclusao() {
+      this.receitaParaExcluir = null
+      this.showDeleteConfirmation = false
+    },
+    confirmarExclusao() {
+      if (this.receitaParaExcluir !== null) {
+        const idNumber = this.receitaParaExcluir
+        deleteRecipe(idNumber).then(() => {
+          this.triggerMensagem('positive', 'Receita deletada.')
+          this.buscarReceitas()
+        }).catch(error => {
+          console.log(error)
+          this.triggerMensagem('negative', 'Não foi possível deletar receita.')
+        }).finally(() => {
+          this.receitaParaExcluir = null
+          this.showDeleteConfirmation = false
+        })
+      }
     },
     transformarPath(uploads) {
       const backendURL = 'http://localhost:5000'

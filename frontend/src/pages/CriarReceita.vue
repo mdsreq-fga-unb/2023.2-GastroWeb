@@ -6,7 +6,7 @@ q-page
         q-icon(name="mdi-arrow-left-circle").q-mt-xs.icone-triangulo
         a.botao-voltar Voltar
     div.column
-      span Título
+      label(for="titulo") Título *
       q-input(
         bg-color="white"
         v-model="aux.titulo"
@@ -15,10 +15,12 @@ q-page
         outlined
         borderless
         placeholder="Digite o título da receita"
+        :rules="[val => !!val || 'Campo obrigatório']"
+        id="titulo"
       )
     div.row.checkbox
       div.column
-        span Categorias
+      label Categorias *
         div.caixa-branca.column
           q-radio(
             v-for="val in categorias"
@@ -29,7 +31,7 @@ q-page
             color="grey"
           )
       div.column 
-        span Tags
+        label Tags *
         div.caixa-branca.column
           q-radio(
             v-for="val in tags"
@@ -40,7 +42,7 @@ q-page
             color="grey"
           )
     div.column
-      span Ingredientes:
+      label Ingredientes *
       div(v-for="(ingrediente, index) in aux.ingredientes")
         q-input(
           bg-color="white"
@@ -53,7 +55,7 @@ q-page
         ).q-pb-sm
       q-btn(rounded flat color="white" no-caps @click="addIngrediente").btn Adicionar Ingrediente
     div.column
-      span Modo de Preparo:
+      label Modo de Preparo *
       q-input(
         bg-color="white"
         v-model="aux.instrucoes"
@@ -65,11 +67,13 @@ q-page
         type="textarea"
       ).q-pb-md
     div.column
-      span Fotos:
+      label Fotos *
       div(v-for="(file, index) in aux.files")
         input(type="file" :id="`fileInput${index + 1}`" accept="image/*")
       q-btn(rounded flat color="white" no-caps @click="addFoto").btn Adicionar Foto 
-      q-btn(rounded flat color="white" no-caps @click="cadastrarReceita").btn Salvar Receita 
+      q-btn(rounded flat color="white" no-caps @click="cadastrarReceita" :disable="!validarCampos()").btn Salvar Receita 
+
+      span(style="color: red; margin-top: 5px;" v-if="!validarCampos()") Preencha todos os campos obrigatórios!
 </template>
 
 <script>
@@ -124,6 +128,16 @@ export default {
         path: '/administrador'
       })
     },
+    validarCampos() {
+      return (
+        this.aux.titulo &&
+        this.aux.ingredientes.every(ingrediente => ingrediente) &&
+        this.aux.instrucoes &&
+        this.aux.categorias.length > 0 &&
+        this.aux.tags.length > 0 &&
+        this.aux.files.length > 0
+      )
+    },
     addIngrediente(){
       this.aux.ingredientes.push('')
     },
@@ -134,25 +148,26 @@ export default {
       return 'receita'
     },
     cadastrarReceita(){
-      let formData = new FormData()
-      formData.append('titulo', this.aux.titulo)
-      formData.append('ingredientes', this.transformarLista(this.aux.ingredientes))
-      formData.append('instrucoes', this.aux.instrucoes)
-      formData.append('categorias', this.aux.categorias)
-      formData.append('tags', this.aux.tags)
-      for (let i = 0; i < this.aux.files.length; i++) {
-        const fileInput = document.getElementById(`fileInput${i + 1}`)
-        formData.append('files', fileInput.files[0])
-        console.log(fileInput.file)
+      if (this.validarCampos()) {
+        let formData = new FormData()
+        formData.append('titulo', this.aux.titulo)
+        formData.append('ingredientes', this.transformarLista(this.aux.ingredientes))
+        formData.append('instrucoes', this.aux.instrucoes)
+        formData.append('categorias', this.aux.categorias)
+        formData.append('tags', this.aux.tags)
+        for (let i = 0; i < this.aux.files.length; i++) {
+          const fileInput = document.getElementById(`fileInput${i + 1}`)
+          formData.append('files', fileInput.files[0])
+          console.log(fileInput.file)
+        }
+        console.log(formData)
+        createRecipe(formData).then(() => {
+          this.triggerMensagem('positive', 'Receita cadastrada.')
+          this.voltarPagina()
+        })
+      } else {
+        this.triggerMensagem('negative', 'Preencha todos os campos obrigatórios')
       }
-      console.log(formData)
-      createRecipe(formData).then(() => {
-        this.triggerMensagem('positive', 'Receita cadastrada.')
-        this.voltarPagina()
-      }).catch(error => {
-        console.log(error)
-        this.triggerMensagem('negative', 'Não foi possível cadastrar receita.')
-      })
     },
     triggerMensagem (type, menssage) {
       this.$q.notify({

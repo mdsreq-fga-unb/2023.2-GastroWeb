@@ -15,7 +15,7 @@ q-page
           @click="irParaReceita(receita.id)"
         ).cursor-pointer
     div(v-else).justify-center.row
-      h4 Nenhuma receita encontrada
+      h4 A receita que está procurando não foi encontrada.
 </template>
 
 <script>
