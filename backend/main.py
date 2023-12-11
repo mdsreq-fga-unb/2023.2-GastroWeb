@@ -48,5 +48,5 @@ app.include_router(delete_recipes)
 if __name__ == "__main__":
     import os
     import uvicorn
-
-    uvicorn.run("main:app", host="0.0.0.0", port=5000, reload=True, workers=1)
+    port = int(os.environ.get("PORT", 3000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True, workers=1)
