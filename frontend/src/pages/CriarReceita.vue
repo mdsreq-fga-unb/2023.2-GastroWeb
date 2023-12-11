@@ -211,8 +211,8 @@ export default {
   background-color: white
   border-radius: 20px
   padding: 20px
-  height: 250px
-  width: 200px
+  height: 310px
+  width: 320px
 
 .checkbox
   gap: 30px
