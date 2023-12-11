@@ -17,7 +17,7 @@ git checkout dev
 Você precisa ter o docker baixado!
 
 ```
-sudo docker-compose up
+sudo docker-compose up --build
 ```
 
 ### 4. Caso precise subir o banco de dados manualmente
@@ -25,7 +25,7 @@ sudo docker-compose up
 - 1. Entre no container do backend
 
 ```
-sudo docker exec -it gastro-web bash
+sudo docker exec -it gastro-backend bash
 ```
 
 - 2. Execute 
@@ -43,7 +43,7 @@ python3 database/start.py
 
 1. Entrar no container
 ```
-sudo docker exec -it gastro-web bash
+sudo docker exec -it postgresql bash
 ```
 
 2. Entrar no sql
@@ -63,3 +63,4 @@ psql -U admin -d fastapi
 ```
 SELECT * FROM receitas;
 ```
+

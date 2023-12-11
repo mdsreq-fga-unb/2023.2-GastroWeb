@@ -1,3 +1,12 @@
 uvicorn==0.22.0
 fastapi==0.95.2
 pydantic
+python-decouple
+SQLAlchemy
+asyncpg
+APScheduler==3.10.3
+python-multipart
+pytest
+pytest-asyncio
+psycopg2-binary
+python-jose

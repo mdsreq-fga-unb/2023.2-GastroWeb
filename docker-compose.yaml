@@ -1,13 +1,47 @@
 version: '3.1'
 
 services:
+  postgresql:
+    container_name: postgresql
+    image: postgres:15
+    restart: always
+    environment:
+        POSTGRES_PASSWORD: ${PG_PASS}
+        POSTGRES_USER: ${PG_USER}
+        POSTGRES_DB: ${PG_DB}
+        TZ: UTC
+    volumes:
+          - pessoa_endereco_database:/var/lib/postgresql/data
+
   backend:
-    container_name: gastro-web
+    container_name: gastro-backend
     build:
       context: ./
-      dockerfile: ./Dockerfile
+      dockerfile: ./backend/docker/Dockerfile
     volumes: 
-      - ./backend:/gastroweb
+      - ./backend/database:/backend/database
+      - ./backend:/backend
     ports:
       - 5000:5000
-    
+    depends_on:
+      - postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z postgresql 5432"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  frontend:
+    container_name: gastro-frontend
+    build:
+      context: ./
+      dockerfile: ./frontend/docker/Dockerfile
+    volumes:
+      - ./frontend/src:/frontend/src
+    ports: 
+      - 9000:9000
+    depends_on:
+      - backend
+
+volumes:
+    pessoa_endereco_database:
