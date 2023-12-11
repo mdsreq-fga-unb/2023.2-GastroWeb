@@ -25,7 +25,7 @@ const routes = [
     ]
   },
   {
-    path: '/login',
+    path: '/login', 
     component: () => import('src/layouts/Fundo.vue'),
     children: [
       {

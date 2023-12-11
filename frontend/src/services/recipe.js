@@ -1,4 +1,5 @@
 import { api } from 'src/boot/axios'
+const urlBackend = ''
 
 export const createRecipe = async (body) => {
   return api.post('/criar_receitas', body)
@@ -22,6 +23,3 @@ export const searchByTagCategory = async ( {tag, categoria} ) => {
 export const searchById = async ( params ) => {
   return api.get('/get_receita_por_id', { params })
 }
-
-
-

@@ -34,9 +34,7 @@ q-page
             :label="val"
           )
       q-btn(@click="buscarPorTagsCategorias" color="black" text-color="white" no-caps :disable="!(selecionados.tags.length > 0 ||  selecionados.categorias.length > 0)").btn Buscar
-    div.q-pt-lg 
-      span(v-if="!buscaCheckbox" @click="buscaCheckbox=!buscaCheckbox").cursor-pointer Pesquisa por Tag e Categoria
-      span(v-else @click="buscaCheckbox=!buscaCheckbox").cursor-pointer Pesquisa por Título
+    span(@click="buscaCheckbox=!buscaCheckbox").cursor-pointer.q-pt-lg Pesquisa Avançada
 </template>
 
 <script>
@@ -74,7 +72,6 @@ export default {
   },
   methods:{
     ...mapActions('busca', ['setParametrosBusca']),
-    ...mapActions('login', ['setLogin']),
     buscarPorTitulo(){
       this.setParametrosBusca({
         titulo: this.busca.titulo || ''
@@ -111,10 +108,7 @@ export default {
       tags: [],
       categorias: [],
       id: 0
-    }),
-    this.setLogin(false)
-    localStorage.removeItem('token')
-
+    })
   }
 }
 </script>

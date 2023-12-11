@@ -1,18 +1,27 @@
 <template>
   <div class="container">
-    <div class="row">
-      <div class="card">
-        <div class="card-content">
-          <div class="text-column">
-            <h4>{{ titulo }}</h4>
-            <p>{{ instrucoes }}</p>
-            <h4>INGREDIENTES</h4>
-            <p>{{ ingredientes }}</p>
-          </div>
-          <div class="image-column">
-            <img :src="`/backend/${foto}`" alt="Imagem Receita" />
-          </div>
+    <div class="card">
+      <div class="text-column">
+        <div class="recipe-info">
+          <h4>{{ receita.titulo }}</h4>
+          <p>{{ receita.instrucoes }}</p>
         </div>
+        <div class="ingredientes">
+          <h4>INGREDIENTES</h4>
+          <ul>
+            <li v-for="(ingrediente, index) in receita.ingredientes" :key="index">
+              {{ ingrediente }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="image-column">
+        <template v-if="receita.fotos && receita.fotos.length">
+          <img v-for="(foto, index) in receita.fotos" :src="transformarPath(foto)" :key="index" alt="Imagem Receita" />
+        </template>
+        <template v-else>
+          <p>Carregando...</p>
+        </template>
       </div>
     </div>
   </div>
@@ -20,52 +29,44 @@
 
 <script>
 import { searchById } from 'src/services/recipe'
-import { mapGetters } from 'vuex'
 
 
 export default {
   name: 'TelaReceita',
-  components: {},
   props: {
     titulo: String,
-    id: Number,
-    instrucoes: String,
     ingredientes: String,
+    instrucoes: String,
     foto: String
   },
+  components: {},
   data() {
     return {
       receita: {}
     }
   },
-  computed: {
-    ...mapGetters('busca', ['parametrosBusca'])
-  },
   methods: {
-    buscaReceitaPorId() {
-      console.log(this.parametrosBusca.id)
-      searchById({
-        id: this.parametrosBusca.id
-      }).then(({ data }) => {
-        this.receita = data
-        this.triggerMensagem('positive', 'Receita encontrada.')
-        this.loading = false
-      }).catch(error => {
-        console.log(error)
-        this.triggerMensagem('negative', 'Não foi possível encontrar receita.')
-      })
-      // this.receita = {
-      //   titulo:'add',
-      //   ingredientes:['ssssssss'],
-      //   instrucoes:'aaaaaaas',
-      //   categorias:['JANTAR'],
-      //   tags:['PORCO'],
-      //   files:[]
-      // }
+    buscaReceitaPorId(receitaId) {
+      searchById({ receita_id: receitaId })
+        .then(({ data }) => {
+          this.receita = data
+          console.log(data)
+          console.log(data.foto)
+        })
+        .catch(error => {
+          console.error('Erro ao buscar receita por ID:', error)
+        })
+    },
+    transformarPath(uploads) {
+      const backendURL = 'http://localhost:5000'
+      const nomeArquivo = uploads.substring(uploads.lastIndexOf('/') + 1)
+
+      return `${backendURL}/images/${nomeArquivo}`
     }
   },
   mounted() {
-    this.buscaReceitaPorId()
+    const idDaReceita = this.$route.query.id
+    this.buscaReceitaPorId(idDaReceita)
   }
 }
 </script>
@@ -78,12 +79,13 @@ export default {
 }
 
 .card {
-  width: 1026px;
-  height: 750px;
+  width: 100%;
+  max-width: 1026px;
   border-radius: 25px;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
+  overflow: hidden;
 }
 
 .card-content {
@@ -95,13 +97,19 @@ export default {
 .text-column {
   flex: 1;
   padding-right: 20px;
+  box-sizing: border-box;
 }
 
 .image-column {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* Estilos para a imagem, ajuste conforme necessário */
 .image-column img {
   max-width: 100%;
   height: auto;
@@ -135,5 +143,3 @@ img {
   margin-bottom: 15px;
 }
 </style>
-
-    

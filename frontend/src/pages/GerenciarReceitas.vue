@@ -18,8 +18,7 @@ export default {
   components: { CardReceita },
   data() {
     return {
-      listaReceita: [],
-      foto: 'uploads/testeunb.jpeg'
+      listaReceita: []
     }
   },
   methods: {
@@ -31,12 +30,10 @@ export default {
     buscarReceitas() {
       listAllRecipe().then(({ data }) => {
         this.listaReceita = data
-        // this.loading = false
         this.triggerMensagem('positive', 'Todas receitas listadas.')
       }).catch((error) => {
         console.log(error)
         this.triggerMensagem('negative', 'Não foi possível obter a receitas')
-        // this.loading = true
       })
     },
     triggerMensagem(type, menssage) {
