@@ -25,7 +25,7 @@ Fonte: Facção Tanás, 2023.
 
 <div style="text-align: center; margin: 3px">
 Tabela 1 - Especificação - Pesquisar Informações Detalhadas
-<img src="https://github.com/mdsreq-fga-unb/2023.2-GastroWeb/blob/GitPages/docs/images/UC1.png?raw=true" alt="UC" style="width: 50rem">
+<img src="https://github.com/mdsreq-fga-unb/2023.2-GastroWeb/blob/GitPages/docs/images/C1.png?raw=true" alt="UC" style="width: 50rem">
 Fonte: Facção Tanás, 2023.
 </div>
 
@@ -35,7 +35,7 @@ Fonte: Facção Tanás, 2023.
 
 <div style="text-align: center; margin: 3px">
 Tabela 2 - Especificação - Buscar Acomodações
-<img src="https://github.com/mdsreq-fga-unb/2023.2-GastroWeb/blob/GitPages/docs/images/UC2.png?raw=true" alt="UC" style="width: 50rem">
+<img src="https://github.com/mdsreq-fga-unb/2023.2-GastroWeb/blob/GitPages/docs/images/C2.png?raw=true" alt="UC" style="width: 50rem">
 Fonte: Facção Tanás, 2023.
 </div>
 
@@ -45,6 +45,6 @@ Fonte: Facção Tanás, 2023.
 
 <div style="text-align: center; margin: 3px">
 Tabela 3 - Especificação - Buscar Atividades
-<img src="https://github.com/mdsreq-fga-unb/2023.2-GastroWeb/blob/GitPages/docs/images/UC3.png?raw=true" alt="UC" style="width: 50rem">
+<img src="https://github.com/mdsreq-fga-unb/2023.2-GastroWeb/blob/GitPages/docs/images/C3.png?raw=true" alt="UC" style="width: 50rem">
 Fonte: Facção Tanás, 2023.
 </div>
