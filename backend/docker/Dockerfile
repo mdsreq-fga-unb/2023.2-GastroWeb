@@ -21,4 +21,4 @@ EXPOSE 3000
 
 ENV PORT 3000
 
-CMD ["/bin/bash", "./docker/start.sh", "--host", "0.0.0.0", "--port", "$PORT"]
+CMD ["/bin/bash", "./docker/start.sh"]

@@ -14,4 +14,4 @@ EXPOSE 9000
 
 ENV PORT 9000
 
-CMD ["quasar", "dev", "--host", "0.0.0.0", "--port", "$PORT"]
+CMD ["quasar", "dev"]

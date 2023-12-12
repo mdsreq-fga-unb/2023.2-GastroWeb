@@ -22,7 +22,7 @@ services:
       - ./backend/database:/backend/database
       - ./backend:/backend
     ports:
-      - "${PORT}:3000"
+      - "${PORT_BACKEND}:3000"
     depends_on:
       - postgresql
     healthcheck:
@@ -39,7 +39,7 @@ services:
     volumes:
       - ./frontend/src:/frontend/src
     ports: 
-      - "${PORT}:9000"
+      - "${PORT_FRONTEND}:9000"
     depends_on:
       - backend
 
