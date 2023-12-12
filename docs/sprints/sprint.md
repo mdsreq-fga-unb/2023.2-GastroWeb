@@ -23,7 +23,7 @@
 </div>
 
 <div style="text-align: center; margin: 3px">
-<img src="https://user-images.githubusercontent.com/89037018/284427636-5a8668a8-a514-4518-bbc0-2c1bd277704b.jpg" alt="5" style="width: 50rem">
+<img src="https://user-images.githubusercontent.com/89037018/289745259-1afe4752-7d00-49b1-83c0-22b27b9326fd.jpg" alt="5" style="width: 50rem">
 </div>
 
 <div style="text-align: center; margin: 3px">
@@ -31,7 +31,7 @@
 </div>
 
 <div style="text-align: center; margin: 3px">
-<img src="https://user-images.githubusercontent.com/89037018/288726435-1c47b3fe-49b1-4894-a647-1551a3cd9c79.jpg" alt="7" style="width: 50rem">
+<img src="https://user-images.githubusercontent.com/89037018/289745075-418d734e-c907-4a3e-ad96-ea0b6726b462.jpg" alt="7" style="width: 50rem">
 </div>
 
 ## Miro

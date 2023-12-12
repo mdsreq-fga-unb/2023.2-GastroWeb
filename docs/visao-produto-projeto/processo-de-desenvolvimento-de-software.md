@@ -4,6 +4,7 @@
 | :--------: | :----: | :------------------------------------------------: | :----------------------------------------------------------------------: |
 | 26/09/2023 |  0.1   |        Criação e estruturação do documento         | Felipe Direito, </br> Luan Mateus |
 | 24/10/2023 |  0.2   |        Atualização de Metodologia         | Luan Mateus |
+| 11/12/2023 |  0.3   |        Inserção de Práticas do XP         | Luan Mateus |
 
 ## GUPTA
 
@@ -86,6 +87,24 @@ Como pretendemos aplicar cada uma delas:
 | Representação |  Mapas mentais, Wireframes e talvez alguns diagramas de casos de uso   |        Miro, Papel e draw.io         | Representações gráficas dos requisitos | Está presente na execução da Sprint, a fim de que os resultados sejam apresentados na cerimônia de Review tanto para a equipe de desenvolvimento quanto para o cliente. |
 | Verificação e Validação |  Análise da estrutura das US's, Revisão por pares utilizando Checklist   |        Google Sheets e Google Docs         | Lista com o que precisa ser alterado | Planning, Execução da Sprint e Review |
 | Organização e Atualização |  Product Backlog   |        Google Sheets         | Backlog (sempre atualizado) | Está presente no desenvolvimento do Backlog e nas Plannings |
+
+## Práticas Utilizadas do XP
+
+- Programação em Pares
+- Refatoração
+- Código Coletivo
+- Ritmo Sustentável
+
+### Documentação de Pair Programming
+
+| Duplas | O que foi feito? | Data |
+| --- | --- | --- |
+| Felipe Direito e Felipe Hansen | - Resolução de Erros de Integração de FrontEnd com BackEnd | 05/12/2023 |
+| Felipe Hansen e Luan Mateus | - Desenvolvimento FrontEnd: Inserção de Cards na Página de Receitas | 06/12/2023 |
+| Felipe Direito e Felipe Hansen | - Resolução de Erros de Integração de FrontEnd com BackEnd | 07/12/2023 |
+| Felipe Direito e Luan Mateus | - Resolução de Erros na chamada de API. | 08/12/2023 |
+| Felipe Hansen e Luan Mateus | - Desenvolvimento FrontEnd: Correção de Exibição de Fotos na Página de Receita | 10/12/2023 |
+
 
 ## Referências Bibliográficas
 

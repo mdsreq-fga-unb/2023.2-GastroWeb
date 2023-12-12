@@ -13,6 +13,7 @@ nav:
       - MVP: backlog-produto/mvp.md
       - Alinhamento: backlog-produto/alinhamento_backlog.md
       - DoR e DoD: backlog-produto/dor_dod.md
+      - DoD do MVP: backlog-produto/dod_mvp.md
   - Estudo de Casos:
       - PBB: estudo-caso/PBB.md
       - BDD: estudo-caso/BDD.md

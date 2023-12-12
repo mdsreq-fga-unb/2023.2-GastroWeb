@@ -35,17 +35,33 @@ A fonte selecionada para compor o projeto está de acordo com o guia de estilo d
 ### Tela principal
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/89037018/288731479-7412f60f-b46d-4c8b-84f5-49a823011e5b.png"/>
+<img src="https://user-images.githubusercontent.com/89037018/289745473-bb808ce2-ab16-4705-8273-de7c65151fa0.png"/>
 </p>
 
-### Tela Criar Receita
+<p align="center">
+<img src="https://user-images.githubusercontent.com/89037018/289745486-cfd0c7ac-952b-4743-9102-8c014df9183c.png"/>
+</p>
+
+### Tela Listar Receitas
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/89037018/288731460-5e1979f2-7d67-45d9-a2c7-c4738568f525.png"/>
+<img src="https://user-images.githubusercontent.com/89037018/289746336-3b19159a-a2b8-4a97-bbc9-2510959e4da1.png"/>
 </p>
 
 ### Tela Exibir Receita
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/89037018/288731507-d634a65e-f08c-4055-a852-3f46ccc445a8.png"/>
+</p>
+
+### Tela Página de Usuário
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/89037018/289746342-964fa855-450d-465c-9f37-49b0fbe06a3a.png"/>
+</p>
+
+### Tela Criar Receita
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/89037018/289746351-4374cab9-9494-401f-8e8b-ca109d50540f.png"/>
 </p>
