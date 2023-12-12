@@ -84,7 +84,7 @@ export default {
         })
     },
     transformarPath(uploads) {
-      const backendURL = 'http://localhost:5000'
+      const backendURL = 'http://localhost:3000'
       const nomeArquivo = uploads.substring(uploads.lastIndexOf('/') + 1)
 
       return `${backendURL}/images/${nomeArquivo}`

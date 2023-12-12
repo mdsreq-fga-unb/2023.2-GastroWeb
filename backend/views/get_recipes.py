@@ -150,7 +150,7 @@ async def busca_titulo(titulo: str = Query(..., title="Title to search")):
         result = await sessao.execute(query)
         busca = result.unique().scalars().all()
     
-    base_url = "http://localhost:5000"
+    base_url = "http://localhost:3000"
     resposta = []
     for receita in busca:
         fotos_da_receita = f"{base_url}/backend/{receita.fotos[0].foto}" if receita.fotos else None
