@@ -4,18 +4,24 @@ q-page
     li(@click="voltarPagina").row.secao-voltar
       q-icon(name="mdi-arrow-left-circle").q-mt-xs.icone-triangulo
       a.botao-voltar Voltar
-    div(v-if="listaReceita.length > 0")
-      h4 Receitas:
-      div(v-for="(receita, index) in listaReceita")
-        CardReceita(
-          :id="receita.id"
-          :titulo="receita.titulo"
-          :instrucoes="receita.instrucoes"
-          :foto="transformarPath(receita.fotos)"
-          @click="irParaReceita(receita.id)"
-        ).cursor-pointer
-    div(v-else).justify-center.row
-      h4 Nenhuma receita encontrada
+    q-spinner-oval(
+      v-if="loading"
+      color="primary"
+      size="5em"
+    ).self-center.q-mt-lg.full-width
+    div(v-else)
+      div(v-if="listaReceita.length > 0")
+        h4 Receitas:
+        div(v-for="(receita, index) in listaReceita")
+          CardReceita(
+            :id="receita.id"
+            :titulo="receita.titulo"
+            :instrucoes="receita.instrucoes"
+            :foto="transformarPath(receita.fotos)"
+            @click="irParaReceita(receita.id)"
+          ).cursor-pointer
+      div(v-else).justify-center.row
+        h4 A receita que está procurando não foi encontrada
 </template>
 
 <script>
@@ -29,7 +35,7 @@ export default {
   data() {
     return {
       listaReceita: [],
-      loading: false
+      loading: true
     }
   },
   computed: {
@@ -43,6 +49,7 @@ export default {
       })
     },
     obterReceitasPorTitulo() {
+      this.loading = true
       console.log(this.parametrosBusca.titulo)
       if(this.parametrosBusca.titulo){
         searchByName({
@@ -50,14 +57,15 @@ export default {
         }).then(({ data }) => {
           this.listaReceita = data[1]
           this.triggerMensagem('positive', 'Receitas encontradas.')
-          this.loading = false
         }).catch(error => {
           console.log(error)
           this.triggerMensagem('negative', 'Não foi possível obter receitas.')
         }) 
+        this.loading = false
       }
     },
     obterReceitasPorTagCategoria() {
+      this.loading = true
       console.log(this.parametrosBusca.tags)
       console.log(this.parametrosBusca.categorias)
       searchByTagCategory({
@@ -66,11 +74,11 @@ export default {
       }).then(({ data }) => {
         this.listaReceita = data[1]
         this.triggerMensagem('positive', 'Receitas encontradas.')
-        this.loading = false
       }).catch(error => {
         console.log(error)
         this.triggerMensagem('negative', 'Não foi possível obter receitas.')
       }) 
+      this.loading = false
     },
     transformarLista(lista){
       return lista.join(',')
@@ -93,9 +101,12 @@ export default {
       })
     },
     transformarPath(uploads) {
-      const backendURL = 'http://localhost:3000'
-      const nomeArquivo = uploads.substring(uploads.lastIndexOf('/') + 1)
-
+      const backendURL = 'https://gastroweb.onrender.com'
+      let nomeArquivo = ''
+      if(uploads != null){
+        nomeArquivo = uploads.substring(uploads.lastIndexOf('/') + 1)
+        console.log(`${backendURL}/images/${nomeArquivo}`)
+      }
       return `${backendURL}/images/${nomeArquivo}`
     }
   },

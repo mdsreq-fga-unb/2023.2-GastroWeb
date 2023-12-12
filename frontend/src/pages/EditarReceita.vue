@@ -158,7 +158,7 @@ export default {
       editRecipe(
         idNumber,
         formData
-        ).then(() => {
+      ).then(() => {
         this.triggerMensagem('positive', 'Receita cadastrada.')
         this.voltarPagina()
       }).catch(error => {

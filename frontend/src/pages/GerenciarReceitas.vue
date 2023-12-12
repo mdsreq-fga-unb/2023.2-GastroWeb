@@ -4,8 +4,13 @@ q-page
     div.caixa-branca.column
       h4 Página de Administrador
       q-btn(@click="mudarPagina" color="black" text-color="white" no-caps).btn Criar Receita
-    h4.q-pt-lg Editar Receitas Existentes:
-    div.column.items-center
+    h4.q-pt-lg Editar Receitas Exstentes:
+    q-spinner-oval(
+      v-if="loading"
+      color="primary"
+      size="5em"
+    ).self-center.q-mt-lg.full-width
+    div(v-else).column.items-center
       div(v-for="(receita, index) in listaReceita").column
         CardReceita(:id="receita.id" :titulo="receita.titulo" :instrucoes="receita.instrucoes" :foto="transformarPath(receita.foto)")
         div.column.justify-center.botoes-editar.cursor-pointer
@@ -27,7 +32,8 @@ export default {
   components: { CardReceita },
   data() {
     return {
-      listaReceita: []
+      listaReceita: [],
+      loading: true
     }
   },
   methods: {
@@ -38,6 +44,7 @@ export default {
       })
     },
     buscarReceitas() {
+      this.loading = true
       listAllRecipe().then(({ data }) => {
         this.listaReceita = data
         this.triggerMensagem('positive', 'Todas receitas listadas.')
@@ -45,6 +52,7 @@ export default {
         console.log(error)
         this.triggerMensagem('negative', 'Não foi possível obter a receitas')
       })
+      this.loading = false
     },
     triggerMensagem(type, menssage) {
       this.$q.notify({
@@ -72,9 +80,13 @@ export default {
         this.triggerMensagem('negative', 'Não foi possível deletar receita.')
       })
     },
-    transformarPath(uploads) {
-      const backendURL = 'http://localhost:3000'
-      const nomeArquivo = uploads.substring(uploads.lastIndexOf('/') + 1)
+    transformarPath(uploads = '') {
+      const backendURL = 'https://gastroweb.onrender.com'
+      let nomeArquivo = ''
+      if(uploads != null){
+        nomeArquivo = uploads.substring(uploads.lastIndexOf('/') + 1)
+        console.log(`${backendURL}/images/${nomeArquivo}`)
+      }
       return `${backendURL}/images/${nomeArquivo}`
     }
   },

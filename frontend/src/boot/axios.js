@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { boot } from 'quasar/wrappers'
 
-export const baseURL = 'http://localhost:3000'
+export const baseURL = 'https://gastroweb.onrender.com/'
 
 var api = axios.create({ baseURL })
 
