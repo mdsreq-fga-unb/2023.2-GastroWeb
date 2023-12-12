@@ -21,7 +21,7 @@ class Receitas(Base):
     __tablename__ = "receitas"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    titulo = Column(String(100), nullable=False)
+    titulo = Column(String(150), nullable=False)
     instrucoes = Column(Text, nullable=False)
 
 
@@ -36,7 +36,7 @@ class Ingrediente(Base):
         "Receitas", backref=backref("ingredientes", cascade="all, delete-orphan")
     )
 
-    ingrediente = Column(String(50), nullable=False)
+    ingrediente = Column(String(500), nullable=False)
 
     __table_args__ = (
         UniqueConstraint(

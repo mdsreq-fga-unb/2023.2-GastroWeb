@@ -173,7 +173,7 @@ export default {
   background-color: white
   border-radius: 20px
   padding: 20px
-  height: 310px
+  height: 350px
   align-items: center
   justify-content: center
 
