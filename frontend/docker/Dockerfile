@@ -4,7 +4,7 @@ WORKDIR /frontend
 
 ENV TZ=America/Sao_Paulo
 
-COPY ./frontend .
+COPY ../frontend .
 
 RUN npm install
 
