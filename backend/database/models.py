@@ -33,7 +33,7 @@ class Ingrediente(Base):
     id_receitas = Column(Integer, ForeignKey("receitas.id"), nullable=False)
 
     receita = relationship(
-        "Receitas", backref=backref("ingredientes", cascade="all, delete-orphan")
+        "Receitas", backref=backref("ingredientes", cascade="all, delete-orphan", lazy="selectin")
     )
 
     ingrediente = Column(String(500), nullable=False)
@@ -52,7 +52,7 @@ class Fotos(Base):
     id_receita = Column(Integer, ForeignKey("receitas.id"), nullable=False)
 
     receita = relationship(
-        "Receitas", backref=backref("fotos", cascade="all, delete-orphan")
+        "Receitas", backref=backref("fotos", cascade="all, delete-orphan", lazy="selectin")
     )
 
     foto = Column(String, nullable=False)
@@ -101,10 +101,10 @@ class TagsEReceita(Base):
     id_tag = Column(Integer, ForeignKey("tag.id"), nullable=False)
 
     receita = relationship(
-        "Receitas", backref=backref("tags_assoc", cascade="all, delete-orphan")
+        "Receitas", backref=backref("tags_assoc", cascade="all, delete-orphan", lazy="selectin")
     )
     tags = relationship(
-        "Tags", backref=backref("receita_assoc", cascade="all, delete-orphan")
+        "Tags", backref=backref("receita_assoc", cascade="all, delete-orphan", lazy="selectin")
     )
 
     __table_args__ = (
@@ -130,10 +130,10 @@ class CategoriaEReceita(Base):
     id_categoria = Column(Integer, ForeignKey("categorias.id"), nullable=False)
 
     receita = relationship(
-        "Receitas", backref=backref("categoria_assoc", cascade="all, delete-orphan")
+        "Receitas", backref=backref("categoria_assoc", cascade="all, delete-orphan", lazy="selectin")
     )
     categoria = relationship(
-        "Categorias", backref=backref("receita_assoc", cascade="all, delete-orphan")
+        "Categorias", backref=backref("receita_assoc", cascade="all, delete-orphan", lazy="selectin")
     )
 
     __table_args__ = (
