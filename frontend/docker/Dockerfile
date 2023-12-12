@@ -10,6 +10,8 @@ RUN npm install
 
 RUN yarn global add @quasar/cli
 
-EXPOSE $PORT
+EXPOSE 9000
+
+ENV PORT 9000
 
 CMD ["quasar", "dev", "--host", "0.0.0.0", "--port", "$PORT"]

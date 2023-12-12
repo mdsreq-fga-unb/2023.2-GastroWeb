@@ -1,0 +1,12 @@
+version: 1
+services:
+  - name: backend
+    env:
+      - key: PORT
+        description: "Port for the backend service"
+        default: 3000  # ou outro valor padrão que faça sentido para seu aplicativo
+  - name: frontend
+    env:
+      - key: PORT
+        description: "Port for the frontend service"
+        default: 9000  # ou outro valor padrão que faça sentido para seu aplicativo
