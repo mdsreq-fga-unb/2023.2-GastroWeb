@@ -15,14 +15,6 @@ from typing import Annotated
 app = FastAPI()
 router = APIRouter()
 
-@app.on_event("startup")
-async def start():
-    await create_database()
-    await popula_bd()
-    
-
-
-
 origins = ["*"]
 app.add_middleware(
     CORSMiddleware,
